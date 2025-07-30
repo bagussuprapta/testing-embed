@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
-  <title>Navbar Monis v2 (Sliding Category Simple, Always Below)</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: 'tw-'
+    }
+  </script>
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/meilisearch/dist/bundles/meilisearch.umd.js"></script>
   <style>
@@ -30,7 +34,7 @@
       }
     }
 
-    .category-menu.hidden {
+    .category-menu.tw-hidden {
       transform: translateY(-100%);
       opacity: 0;
     }
@@ -468,87 +472,87 @@
   </style>
 </head>
 
-<body class="bg-white">
+<body class="tw-bg-white">
   <!-- Navbar Desktop -->
-  <header class="hidden lg:block w-full border-b bg-white z-30 sticky top-0">
-    <div class="max-w-[1350px] mx-auto flex items-center justify-between h-20 px-4">
+  <header class="tw-hidden lg:tw-block tw-w-full tw-border-b tw-bg-white tw-z-30 tw-sticky tw-top-0">
+    <div class="tw-max-w-[1350px] tw-mx-auto tw-flex tw-items-center tw-justify-between tw-h-20 tw-px-4">
       <!-- Left: Logo -->
-      <div class="flex items-center gap-x-3">
-        <a href="https://www.monis.rent/" class="flex items-center mb-1">
-          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+      <div class="tw-flex tw-items-center tw-gap-x-3">
+        <a href="https://www.monis.rent/" class="tw-flex tw-items-center tw-mb-1">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="tw-h-8 tw-w-auto tw-max-w-[120px] tw-object-contain" />
         </a>
         <!-- Center: Location, Search -->
-        <div class="flex-1 flex justify-center" style="min-width: 0;">
-          <div class="flex items-center bg-white rounded-full h-12 border" style="width: 600px;">
+        <div class="tw-flex-1 tw-flex tw-justify-center" style="min-width: 0;">
+          <div class="tw-flex tw-items-center tw-bg-white tw-rounded-full tw-h-12 tw-border" style="width: 600px;">
             <!-- Location -->
-            <div class="relative inline-block">
-              <button id="locationBtn" class="flex items-center gap-2 px-4 rounded-full focus:outline-none" style="width: 120px;">
-                <div class="flex flex-col items-start leading-tight">
-                  <div class="flex items-center gap-1">
-                    <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="14"></span>
-                    <span class="text-xs text-gray-400">Location</span>
+            <div class="tw-relative tw-inline-block">
+              <button id="locationBtn" class="tw-flex tw-items-center tw-gap-2 tw-px-4 tw-rounded-full focus:tw-outline-none" style="width: 120px;">
+                <div class="tw-flex tw-flex-col tw-items-start tw-leading-tight">
+                  <div class="tw-flex tw-items-center tw-gap-1">
+                    <span class="iconify tw-text-gray-400" data-icon="mdi:map-marker-outline" data-width="14"></span>
+                    <span class="tw-text-xs tw-text-gray-400">Location</span>
                   </div>
-                  <span id="locationLabel" class="text-xs ml-1 text-black font-semibold">Bali</span>
+                  <span id="locationLabel" class="tw-text-xs tw-ml-1 tw-text-black tw-font-semibold">Bali</span>
                 </div>
               </button>
-              <div id="locationPopup" class="absolute bg-white rounded-xl border location-popup z-50 left-0 top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+              <div id="locationPopup" class="tw-absolute tw-bg-white tw-rounded-xl tw-border location-popup tw-z-50 tw-left-0 tw-top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
                 <ul>
                   <li>
-                    <button class="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100" onclick="setLocation('Bali')">
-                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                    <button class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-text-left tw-px-4 tw-py-2 hover:tw-bg-gray-100" onclick="setLocation('Bali')">
+                      <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
                       <span>Bali</span>
                     </button>
                   </li>
                   <li>
-                    <button class="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100" onclick="setLocation('Chiang Mai')">
-                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                    <button class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-text-left tw-px-4 tw-py-2 hover:tw-bg-gray-100" onclick="setLocation('Chiang Mai')">
+                      <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
                       <span>Chiang Mai</span>
                     </button>
                   </li>
                 </ul>
               </div>
             </div>
-            <span class="border-l h-full"></span>
+            <span class="tw-border-l tw-h-full"></span>
             <!-- Search -->
-            <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
-              <span class="iconify text-black" data-icon="mdi:magnify" data-width="25"></span>
-              <input id="search-input-desktop" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full" placeholder="Rent electrical adjustable desk" />
+            <div class="tw-flex tw-items-center tw-gap-2 tw-bg-gray-100 tw-rounded-r-full tw-flex-1 tw-h-full tw-px-3">
+              <span class="iconify tw-text-black" data-icon="mdi:magnify" data-width="25"></span>
+              <input id="search-input-desktop" type="text" class="tw-bg-transparent tw-rounded-r-full tw-outline-none tw-w-full tw-text-sm tw-h-full" placeholder="Rent electrical adjustable desk" />
               <span id="search-spinner-desktop" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
             </div>
           </div>
         </div>
       </div>
       <!-- Right: Link & Icon -->
-      <div class="flex items-center gap-2 ml-6">
-        <a href="https://my.monis.rent/how-it-works" class="text-sm h-8 flex items-center px-2 navbar-link-hover text-gray-700">How it works</a>
-        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+      <div class="tw-flex tw-items-center tw-gap-2 tw-ml-6">
+        <a href="https://my.monis.rent/how-it-works" class="tw-text-sm tw-h-8 tw-flex tw-items-center tw-px-2 navbar-link-hover tw-text-gray-700">How it works</a>
+        <a href="https://my.monis.rent/cart" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover tw-relative">
           <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
         </a>
-        <div class="relative">
-          <button id="desktopProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <div class="tw-relative">
+          <button id="desktopProfileBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
             <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
           </button>
           <!-- Profile Dropdown Menu -->
-          <div id="desktopProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
-            <div class="flex flex-col py-1">
-              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
-                <span class="whitespace-nowrap">My Orders</span>
+          <div id="desktopProfileDropdown" class="tw-absolute tw-p-3 tw-right-0 tw-left-auto tw-mt-2 tw-mb-2 tw-bg-white tw-rounded-xl tw-shadow-sm tw-border tw-z-50 tw-hidden">
+            <div class="tw-flex tw-flex-col tw-py-1">
+              <a href="https://my.monis.rent/orders" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="tw-whitespace-nowrap">My Orders</span>
               </a>
-              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
-                <span class="whitespace-nowrap">My Profile</span>
+              <a href="https://my.monis.rent/profile" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="tw-whitespace-nowrap">My Profile</span>
               </a>
             </div>
           </div>
         </div>
-        <div class="relative">
-          <button id="desktopMenuBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <div class="tw-relative">
+          <button id="desktopMenuBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
             <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
           </button>
           <!-- Dropdown Menu -->
-          <div id="desktopDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 w-56 bg-white rounded-xl shadow-sm border z-50 hidden">
-            <div class="flex flex-col py-1" id="desktopDropdownContent">
+          <div id="desktopDropdown" class="tw-absolute tw-p-3 tw-right-0 tw-left-auto tw-mt-2 tw-mb-2 tw-w-56 tw-bg-white tw-rounded-xl tw-shadow-sm tw-border tw-z-50 tw-hidden">
+            <div class="tw-flex tw-flex-col tw-py-1" id="desktopDropdownContent">
               <!-- Menu items will be generated by JavaScript -->
             </div>
           </div>
@@ -558,78 +562,78 @@
   </header>
 
   <!-- Navbar Tablet (md:block lg:hidden) -->
-  <header class="hidden md:block lg:hidden w-full border-b bg-white z-30 sticky top-0">
-    <div class="max-w-[1350px] mx-auto flex items-center justify-between h-16 px-4">
+  <header class="tw-hidden md:tw-block lg:tw-hidden tw-w-full tw-border-b tw-bg-white tw-z-30 tw-sticky tw-top-0">
+    <div class="tw-max-w-[1350px] tw-mx-auto tw-flex tw-items-center tw-justify-between tw-h-16 tw-px-4">
       <!-- Left: Logo -->
-      <div class="flex items-center gap-x-3">
-        <a href="https://www.monis.rent/" class="flex items-center">
-          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+      <div class="tw-flex tw-items-center tw-gap-x-3">
+        <a href="https://www.monis.rent/" class="tw-flex tw-items-center">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="tw-h-8 tw-w-auto tw-max-w-[120px] tw-object-contain" />
         </a>
         <!-- Center: Location, Search -->
-        <div class="flex-1 flex justify-center" style="min-width: 0;">
-          <div class="flex items-center bg-white rounded-full h-12 border" style="width: 450px;">
+        <div class="tw-flex-1 tw-flex tw-justify-center" style="min-width: 0;">
+          <div class="tw-flex tw-items-center tw-bg-white tw-rounded-full tw-h-12 tw-border" style="width: 450px;">
             <!-- Location -->
-            <div class="relative inline-block">
-              <button id="locationBtnTablet" class="flex items-center gap-2 px-4 pr-6 h-8 rounded-full focus:outline-none relative" style="width: 110px;">
-                <div class="flex flex-col items-start leading-tight">
-                  <div class="flex items-center gap-1">
-                    <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
-                    <span class="text-xs text-gray-400">Location</span>
+            <div class="tw-relative tw-inline-block">
+              <button id="locationBtnTablet" class="tw-flex tw-items-center tw-gap-2 tw-px-4 tw-pr-6 tw-h-8 tw-rounded-full focus:tw-outline-none tw-relative" style="width: 110px;">
+                <div class="tw-flex tw-flex-col tw-items-start tw-leading-tight">
+                  <div class="tw-flex tw-items-center tw-gap-1">
+                    <span class="iconify tw-text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                    <span class="tw-text-xs tw-text-gray-400">Location</span>
                   </div>
-                  <span id="locationLabelTablet" class="text-xs text-black font-semibold ml-1">Bali</span>
+                  <span id="locationLabelTablet" class="tw-text-xs tw-text-black tw-font-semibold tw-ml-1">Bali</span>
                 </div>
               </button>
-              <div id="locationPopupTablet" class="absolute bg-white rounded-xl border location-popup z-50 left-0 top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
-                <ul class="whitespace-nowrap">
+              <div id="locationPopupTablet" class="tw-absolute tw-bg-white tw-rounded-xl tw-border location-popup tw-z-50 tw-left-0 tw-top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+                <ul class="tw-whitespace-nowrap">
                   <li>
-                    <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 flex items-center gap-2" onclick="setLocationTablet('Bali')">
-                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                    <button class="tw-block tw-w-full tw-text-left tw-px-6 tw-py-2 hover:tw-bg-gray-100 tw-flex tw-items-center tw-gap-2" onclick="setLocationTablet('Bali')">
+                      <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
                       <span>Bali</span>
                     </button>
                   </li>
                   <li>
-                    <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 flex items-center gap-2" onclick="setLocationTablet('Chiang Mai')">
-                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                    <button class="tw-block tw-w-full tw-text-left tw-px-6 tw-py-2 hover:tw-bg-gray-100 tw-flex tw-items-center tw-gap-2" onclick="setLocationTablet('Chiang Mai')">
+                      <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
                       <span>Chiang Mai</span>
                     </button>
                   </li>
                 </ul>
               </div>
             </div>
-            <span class="border-l h-full"></span>
+            <span class="tw-border-l tw-h-full"></span>
             <!-- Search -->
-            <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
-              <span class="iconify text-black" data-icon="mdi:magnify" data-width="25"></span>
-              <input id="search-input-tablet" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full pr-10" placeholder="Rent electrical adjustable desk" />
+            <div class="tw-flex tw-items-center tw-gap-2 tw-bg-gray-100 tw-rounded-r-full tw-flex-1 tw-h-full tw-px-3">
+              <span class="iconify tw-text-black" data-icon="mdi:magnify" data-width="25"></span>
+              <input id="search-input-tablet" type="text" class="tw-bg-transparent tw-rounded-r-full tw-outline-none tw-w-full tw-text-sm tw-h-full tw-pr-10" placeholder="Rent electrical adjustable desk" />
               <span id="search-spinner-tablet" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
             </div>
           </div>
         </div>
       </div>
       <!-- Right: Icon -->
-      <div class="flex items-center gap-3 ml-4">
-        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+      <div class="tw-flex tw-items-center tw-gap-3 tw-ml-4">
+        <a href="https://my.monis.rent/cart" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover tw-relative">
           <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
         </a>
-        <div class="relative">
-          <button id="tabletProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <div class="tw-relative">
+          <button id="tabletProfileBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
             <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
           </button>
           <!-- Tablet Profile Dropdown Menu -->
-          <div id="tabletProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
-            <div class="flex flex-col py-1">
-              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
-                <span class="whitespace-nowrap">My Orders</span>
+          <div id="tabletProfileDropdown" class="tw-absolute tw-p-3 tw-right-0 tw-left-auto tw-mt-2 tw-mb-2 tw-bg-white tw-rounded-xl tw-shadow-sm tw-border tw-z-50 tw-hidden">
+            <div class="tw-flex tw-flex-col tw-py-1">
+              <a href="https://my.monis.rent/orders" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="tw-whitespace-nowrap">My Orders</span>
               </a>
-              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
-                <span class="whitespace-nowrap">My Profile</span>
+              <a href="https://my.monis.rent/profile" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="tw-whitespace-nowrap">My Profile</span>
               </a>
             </div>
           </div>
         </div>
-        <button id="tabletMenuBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <button id="tabletMenuBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
           <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
         </button>
       </div>
@@ -637,82 +641,82 @@
   </header>
 
   <!-- Category Menu (SLIDE, ALWAYS BELOW NAVBAR) - Desktop Only -->
-  <nav id="categoryMenu" class="category-menu bg-gray-50 hidden lg:block">
-    <div class="max-w-[1350px] mx-auto flex space-x-4 py-2 px-4 overflow-x-auto no-scrollbar" id="desktopCategoryContainer">
+  <nav id="categoryMenu" class="category-menu tw-bg-gray-50 tw-hidden lg:tw-block">
+    <div class="tw-max-w-[1350px] tw-mx-auto tw-flex tw-space-x-4 tw-py-2 tw-px-4 tw-overflow-x-auto no-scrollbar" id="desktopCategoryContainer">
       <!-- Categories will be generated by JavaScript -->
     </div>
   </nav>
 
   <!-- Navbar Mobile (2 row: navbar + location) -->
-  <header class="md:hidden w-full border-b bg-white z-30 sticky top-0">
+  <header class="md:tw-hidden tw-w-full tw-border-b tw-bg-white tw-z-30 tw-sticky tw-top-0">
     <!-- Row 1: Navbar -->
-    <div class="flex items-center justify-between h-14 px-4">
-      <a href="https://www.monis.rent/" class="flex items-center">
-        <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+    <div class="tw-flex tw-items-center tw-justify-between tw-h-14 tw-px-4">
+      <a href="https://www.monis.rent/" class="tw-flex tw-items-center">
+        <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="tw-h-8 tw-w-auto tw-max-w-[120px] tw-object-contain" />
       </a>
-      <div class="flex items-center gap-2">
-        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+      <div class="tw-flex tw-items-center tw-gap-2">
+        <a href="https://my.monis.rent/cart" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover tw-relative">
           <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
         </a>
-        <div class="relative">
-          <button id="mobileProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <div class="tw-relative">
+          <button id="mobileProfileBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
             <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
           </button>
           <!-- Mobile Profile Dropdown Menu -->
-          <div id="mobileProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
-            <div class="flex flex-col py-1">
-              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
-                <span class="whitespace-nowrap">My Orders</span>
+          <div id="mobileProfileDropdown" class="tw-absolute tw-p-3 tw-right-0 tw-left-auto tw-mt-2 tw-mb-2 tw-bg-white tw-rounded-xl tw-shadow-sm tw-border tw-z-50 tw-hidden">
+            <div class="tw-flex tw-flex-col tw-py-1">
+              <a href="https://my.monis.rent/orders" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="tw-whitespace-nowrap">My Orders</span>
               </a>
-              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
-                <span class="whitespace-nowrap">My Profile</span>
+              <a href="https://my.monis.rent/profile" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+                <span class="iconify tw-text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="tw-whitespace-nowrap">My Profile</span>
               </a>
             </div>
           </div>
         </div>
-        <button id="mobileCategoryBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+        <button id="mobileCategoryBtn" class="tw-h-8 tw-w-8 tw-flex tw-items-center tw-justify-center tw-rounded-full navbar-icon-hover">
           <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
         </button>
       </div>
     </div>
     <!-- Row 2: Location Bar (Full Width) -->
-    <div class="w-full px-4 pb-2 relative">
-      <div class="flex items-center bg-white rounded-full h-10 border" style="min-width:0;">
+    <div class="tw-w-full tw-px-4 tw-pb-2 tw-relative">
+      <div class="tw-flex tw-items-center tw-bg-white tw-rounded-full tw-h-10 tw-border" style="min-width:0;">
         <!-- Location -->
-        <div class="relative inline-block">
-          <button id="locationBtnMobile" class="flex items-center gap-2 px-4 rounded-full focus:outline-none" style="width: 110px;">
-            <div class="flex flex-col items-start leading-tight">
-              <div class="flex items-center gap-1">
-                <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
-                <span class="text-xs text-gray-400 leading-none">Location</span>
+        <div class="tw-relative tw-inline-block">
+          <button id="locationBtnMobile" class="tw-flex tw-items-center tw-gap-2 tw-px-4 tw-rounded-full focus:tw-outline-none" style="width: 110px;">
+            <div class="tw-flex tw-flex-col tw-items-start tw-leading-tight">
+              <div class="tw-flex tw-items-center tw-gap-1">
+                <span class="iconify tw-text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                <span class="tw-text-xs tw-text-gray-400 tw-leading-none">Location</span>
               </div>
-              <span id="locationLabelMobile" class="text-xs text-black font-semibold leading-none ml-1">Bali</span>
+              <span id="locationLabelMobile" class="tw-text-xs tw-text-black tw-font-semibold tw-leading-none tw-ml-1">Bali</span>
             </div>
           </button>
-          <div id="locationPopupMobile" class="fixed bg-white rounded-xl border location-popup z-50" style="margin-top:12px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+          <div id="locationPopupMobile" class="tw-fixed tw-bg-white tw-rounded-xl tw-border location-popup tw-z-50" style="margin-top:12px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
             <ul>
               <li>
-                <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 text-sm flex items-center gap-2" onclick="setLocationMobile('Bali')">
-                  <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                <button class="tw-block tw-w-full tw-text-left tw-px-6 tw-py-2 hover:tw-bg-gray-100 tw-text-sm tw-flex tw-items-center tw-gap-2" onclick="setLocationMobile('Bali')">
+                  <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
                   <span>Bali</span>
                 </button>
               </li>
               <li>
-                <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 text-sm flex items-center gap-2" onclick="setLocationMobile('Chiang Mai')">
-                  <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                <button class="tw-block tw-w-full tw-text-left tw-px-6 tw-py-2 hover:tw-bg-gray-100 tw-text-sm tw-flex tw-items-center tw-gap-2" onclick="setLocationMobile('Chiang Mai')">
+                  <span class="iconify tw-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
                   <span>Chiang Mai</span>
                 </button>
               </li>
             </ul>
           </div>
         </div>
-        <span class="border-l h-full"></span>
+        <span class="tw-border-l tw-h-full"></span>
         <!-- Search -->
-        <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
-          <span class="iconify text-black" data-icon="mdi:magnify" data-width="22" style="font-size:22px;width:22px;min-width:22px;height:22px;"></span>
-          <input id="search-input-mobile" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full pr-1" placeholder="Rent electrical adjustable desk" />
+        <div class="tw-flex tw-items-center tw-gap-2 tw-bg-gray-100 tw-rounded-r-full tw-flex-1 tw-h-full tw-px-3">
+          <span class="iconify tw-text-black" data-icon="mdi:magnify" data-width="22" style="font-size:22px;width:22px;min-width:22px;height:22px;"></span>
+          <input id="search-input-mobile" type="text" class="tw-bg-transparent tw-rounded-r-full tw-outline-none tw-w-full tw-text-sm tw-h-full tw-pr-1" placeholder="Rent electrical adjustable desk" />
           <span id="search-spinner-mobile" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
         </div>
       </div>
@@ -720,21 +724,21 @@
   </header>
 
   <!-- Mobile Category Drawer: placed outside header for mobile & tablet access -->
-  <div id="mobileOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] mobile-overlay" onclick="closeMobileDrawer()"></div>
-  <nav id="mobileDrawer" class="fixed inset-y-0 left-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] mobile-drawer">
-    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
-      <span class="font-semibold text-lg">Menu</span>
-      <button onclick="closeMobileDrawer()" class="text-gray-500 hover:text-gray-700">
+  <div id="mobileOverlay" class="tw-fixed tw-inset-0 tw-bg-black/20 tw-backdrop-blur-sm tw-z-[100] mobile-overlay" onclick="closeMobileDrawer()"></div>
+  <nav id="mobileDrawer" class="tw-fixed tw-inset-y-0 tw-left-0 tw-w-full sm:tw-w-3/4 md:tw-max-w-md tw-flex tw-flex-col tw-bg-white tw-overflow-hidden tw-z-[101] mobile-drawer">
+    <div class="tw-flex tw-items-center tw-justify-between tw-h-14 tw-px-4 tw-border-b tw-flex-shrink-0">
+      <span class="tw-font-semibold tw-text-lg">Menu</span>
+      <button onclick="closeMobileDrawer()" class="tw-text-gray-500 hover:tw-text-gray-700">
         <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
       </button>
     </div>
-    <div class="flex-1 overflow-y-auto pb-4">
-      <div class="px-4 pt-4 pb-2">
-        <div class="flex flex-col gap-1" id="mobileCategoryContainer">
+    <div class="tw-flex-1 tw-overflow-y-auto tw-pb-4">
+      <div class="tw-px-4 tw-pt-4 tw-pb-2">
+        <div class="tw-flex tw-flex-col tw-gap-1" id="mobileCategoryContainer">
           <!-- Categories will be generated by JavaScript -->
         </div>
-        <hr class="my-2" />
-        <div class="flex flex-col gap-1 pb-2" id="mobileMenuItems">
+        <hr class="tw-my-2" />
+        <div class="tw-flex tw-flex-col tw-gap-1 tw-pb-2" id="mobileMenuItems">
           <!-- Menu items will be generated by JavaScript -->
         </div>
       </div>
@@ -742,21 +746,21 @@
   </nav>
 
   <!-- Mobile Category Drawer -->
-  <div id="categoryOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] category-overlay" onclick="closeCategoryDrawer()"></div>
-  <nav id="categoryDrawer" class="fixed inset-y-0 left-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] category-drawer">
-    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
-      <span class="font-semibold text-lg">Categories</span>
-      <button onclick="closeCategoryDrawer()" class="text-gray-500 hover:text-gray-700">
+  <div id="categoryOverlay" class="tw-fixed tw-inset-0 tw-bg-black/20 tw-backdrop-blur-sm tw-z-[100] category-overlay" onclick="closeCategoryDrawer()"></div>
+  <nav id="categoryDrawer" class="tw-fixed tw-inset-y-0 tw-left-0 tw-w-full sm:tw-w-3/4 md:tw-max-w-md tw-flex tw-flex-col tw-bg-white tw-overflow-hidden tw-z-[101] category-drawer">
+    <div class="tw-flex tw-items-center tw-justify-between tw-h-14 tw-px-4 tw-border-b tw-flex-shrink-0">
+      <span class="tw-font-semibold tw-text-lg">Categories</span>
+      <button onclick="closeCategoryDrawer()" class="tw-text-gray-500 hover:tw-text-gray-700">
         <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
       </button>
     </div>
-    <div class="flex-1 overflow-y-auto pb-4">
-      <div class="px-4 pt-4 pb-2">
-        <div class="flex flex-col gap-1" id="categoryDrawerCategoryContainer">
+    <div class="tw-flex-1 tw-overflow-y-auto tw-pb-4">
+      <div class="tw-px-4 tw-pt-4 tw-pb-2">
+        <div class="tw-flex tw-flex-col tw-gap-1" id="categoryDrawerCategoryContainer">
           <!-- Categories will be generated by JavaScript -->
         </div>
-        <hr class="my-2" />
-        <div class="flex flex-col gap-1 pb-2" id="categoryDrawerMenuItems">
+        <hr class="tw-my-2" />
+        <div class="tw-flex tw-flex-col tw-gap-1 tw-pb-2" id="categoryDrawerMenuItems">
           <!-- Menu items will be generated by JavaScript -->
         </div>
       </div>
@@ -764,24 +768,24 @@
   </nav>
 
   <!-- Tablet Menu Drawer: open mobile drawer (category) like on mobile -->
-  <div id="tabletOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] desktop-overlay"></div>
-  <nav id="tabletDrawer" class="fixed inset-y-0 right-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] desktop-drawer">
-    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
-      <span class="font-semibold text-lg">Menu</span>
-      <button class="text-gray-500 hover:text-gray-700">
+  <div id="tabletOverlay" class="tw-fixed tw-inset-0 tw-bg-black/20 tw-backdrop-blur-sm tw-z-[100] desktop-overlay"></div>
+  <nav id="tabletDrawer" class="tw-fixed tw-inset-y-0 tw-right-0 tw-w-full sm:tw-w-3/4 md:tw-max-w-md tw-flex tw-flex-col tw-bg-white tw-overflow-hidden tw-z-[101] desktop-drawer">
+    <div class="tw-flex tw-items-center tw-justify-between tw-h-14 tw-px-4 tw-border-b tw-flex-shrink-0">
+      <span class="tw-font-semibold tw-text-lg">Menu</span>
+      <button class="tw-text-gray-500 hover:tw-text-gray-700">
         <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
       </button>
     </div>
-    <div class="flex-1 overflow-y-auto pb-4">
-      <div class="px-4 pt-4 pb-2">
-        <div class="flex flex-col py-1" id="tabletMenuItems">
+    <div class="tw-flex-1 tw-overflow-y-auto tw-pb-4">
+      <div class="tw-px-4 tw-pt-4 tw-pb-2">
+        <div class="tw-flex tw-flex-col tw-py-1" id="tabletMenuItems">
           <!-- Menu items will be generated by JavaScript -->
         </div>
       </div>
-      <hr class="my-2" />
-      <div class="px-4 pt-2">
-        <p class="text-xs mb-3 text-neutral-500">Categories:</p>
-        <div class="flex flex-col gap-1" id="tabletCategoryContainer">
+      <hr class="tw-my-2" />
+      <div class="tw-px-4 tw-pt-2">
+        <p class="tw-text-xs tw-mb-3 tw-text-neutral-500">Categories:</p>
+        <div class="tw-flex tw-flex-col tw-gap-1" id="tabletCategoryContainer">
           <!-- Categories will be generated by JavaScript -->
         </div>
       </div>
@@ -932,7 +936,7 @@
             const categoryAnchor = cat.anchor;
             href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
           }
-          return `<a href="${href}" class="text-sm font-normal px-2 py-1 flex items-center select-none transition-all text-gray-800 hover:text-black whitespace-nowrap">${cat.name}</a>`;
+          return `<a href="${href}" class="tw-text-sm tw-font-normal tw-px-2 tw-py-1 tw-flex tw-items-center tw-select-none tw-transition-all tw-text-gray-800 hover:tw-text-black tw-whitespace-nowrap">${cat.name}</a>`;
         }).join('');
         desktopMenu.innerHTML = newHTML;
       }
@@ -952,11 +956,11 @@
           }
           const newLink = document.createElement('a');
           newLink.href = href;
-          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.className = 'tw-flex tw-items-center tw-gap-3 tw-px-2 tw-py-2 tw-rounded-lg hover:tw-bg-gray-100';
           newLink.innerHTML = `
-            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
-            <span class="text-sm flex-1">${cat.name}</span>
-            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            <span class="iconify tw-text-xl" data-icon="${cat.icon}"></span>
+            <span class="tw-text-sm tw-flex-1">${cat.name}</span>
+            <span class="iconify tw-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
           `;
           mobileCategoryContainer.appendChild(newLink);
         });
@@ -977,11 +981,11 @@
           }
           const newLink = document.createElement('a');
           newLink.href = href;
-          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.className = 'tw-flex tw-items-center tw-gap-3 tw-px-2 tw-py-2 tw-rounded-lg hover:tw-bg-gray-100';
           newLink.innerHTML = `
-            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
-            <span class="text-sm flex-1">${cat.name}</span>
-            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            <span class="iconify tw-text-xl" data-icon="${cat.icon}"></span>
+            <span class="tw-text-sm tw-flex-1">${cat.name}</span>
+            <span class="iconify tw-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
           `;
           categoryDrawerCategoryContainer.appendChild(newLink);
         });
@@ -1002,11 +1006,11 @@
           }
           const newLink = document.createElement('a');
           newLink.href = href;
-          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.className = 'tw-flex tw-items-center tw-gap-3 tw-px-2 tw-py-2 tw-rounded-lg hover:tw-bg-gray-100';
           newLink.innerHTML = `
-            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
-            <span class="text-sm flex-1">${cat.name}</span>
-            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            <span class="iconify tw-text-xl" data-icon="${cat.icon}"></span>
+            <span class="tw-text-sm tw-flex-1">${cat.name}</span>
+            <span class="iconify tw-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
           `;
           tabletCategoryContainer.appendChild(newLink);
         });
@@ -1020,17 +1024,17 @@
       menuItems.forEach(item => {
         if (variant === 'desktop' || variant === 'tablet') {
           html += `
-            <a href="${item.href}" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
-              <span class="iconify text-lg" data-icon="${item.icon}"></span>
+            <a href="${item.href}" class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1.5 tw-rounded-md hover:tw-bg-black hover:tw-text-white tw-text-black tw-text-sm tw-transition-colors">
+              <span class="iconify tw-text-lg" data-icon="${item.icon}"></span>
               <span>${item.name}</span>
             </a>
           `;
         } else {
           html += `
-            <a href="${item.href}" class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100">
-              <span class="iconify text-xl" data-icon="${item.icon}"></span>
-              <span class="text-sm flex-1">${item.name}</span>
-              <span class="iconify text-gray-400" data-icon="mdi:arrow-top-right"></span>
+            <a href="${item.href}" class="tw-flex tw-items-center tw-gap-3 tw-px-2 tw-py-2 tw-rounded-lg hover:tw-bg-gray-100">
+              <span class="iconify tw-text-xl" data-icon="${item.icon}"></span>
+              <span class="tw-text-sm tw-flex-1">${item.name}</span>
+              <span class="iconify tw-text-gray-400" data-icon="mdi:arrow-top-right"></span>
             </a>
           `;
         }
@@ -1081,14 +1085,14 @@
       const categoryMenu = document.getElementById('categoryMenu');
 
       function showCategoryMenuIfAtTop() {
-        if (window.innerWidth >= 768 && (window.pageYOffset || document.documentElement.scrollTop) === 0) {
-          categoryMenu && categoryMenu.classList.remove('hidden');
+        if (window.innerWidth >= 1024 && (window.pageYOffset || document.documentElement.scrollTop) === 0) {
+          categoryMenu && categoryMenu.classList.remove('tw-hidden');
         }
       }
 
       window.addEventListener('scroll', function () {
         // Only run on desktop (lg and up)
-        if (window.innerWidth < 768) return;
+        if (window.innerWidth < 1024) return;
 
         if (!categoryMenu) return;
 
@@ -1096,17 +1100,17 @@
 
         // Always show menu at top
         if (currentScroll === 0) {
-          categoryMenu.classList.remove('hidden');
+          categoryMenu.classList.remove('tw-hidden');
           lastScrollTop = 0;
           return;
         }
 
         if (currentScroll > lastScrollTop) {
           // Hide on scroll down
-          categoryMenu.classList.add('hidden');
+          categoryMenu.classList.add('tw-hidden');
         } else {
           // Show on scroll up
-          categoryMenu.classList.remove('hidden');
+          categoryMenu.classList.remove('tw-hidden');
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative value
@@ -1114,15 +1118,15 @@
 
       // Reset category menu on resize
       window.addEventListener('resize', function () {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1024) {
           // Hide menu on mobile/tablet
           if (categoryMenu) {
-            categoryMenu.classList.add('hidden');
+            categoryMenu.classList.add('tw-hidden');
           }
         } else {
           // Show menu on desktop
           if (categoryMenu) {
-            categoryMenu.classList.remove('hidden');
+            categoryMenu.classList.remove('tw-hidden');
           }
           showCategoryMenuIfAtTop();
         }
@@ -1179,26 +1183,26 @@
       if (desktopMenuBtn && desktopDropdown) {
         desktopMenuBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          desktopDropdown.classList.toggle('hidden');
+          desktopDropdown.classList.toggle('tw-hidden');
           // Hide profile dropdown if open
-          if (desktopProfileDropdown) desktopProfileDropdown.classList.add('hidden');
+          if (desktopProfileDropdown) desktopProfileDropdown.classList.add('tw-hidden');
         });
         document.addEventListener('click', function (e) {
           if (!desktopMenuBtn.contains(e.target)) {
-            desktopDropdown.classList.add('hidden');
+            desktopDropdown.classList.add('tw-hidden');
           }
         });
       }
       if (desktopProfileBtn && desktopProfileDropdown) {
         desktopProfileBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          desktopProfileDropdown.classList.toggle('hidden');
+          desktopProfileDropdown.classList.toggle('tw-hidden');
           // Hide menu dropdown if open
-          if (desktopDropdown) desktopDropdown.classList.add('hidden');
+          if (desktopDropdown) desktopDropdown.classList.add('tw-hidden');
         });
         document.addEventListener('click', function (e) {
           if (!desktopProfileBtn.contains(e.target)) {
-            desktopProfileDropdown.classList.add('hidden');
+            desktopProfileDropdown.classList.add('tw-hidden');
           }
         });
       }
@@ -1231,7 +1235,7 @@
           `;
           if (inputId === 'search-input-mobile') {
             // For mobile: attach to parent row
-            const parentBar = searchInput.closest('.flex.items-center.bg-white.rounded-full.h-10.border');
+            const parentBar = searchInput.closest('.tw-flex.tw-items-center.tw-bg-white.tw-rounded-full.tw-h-10.tw-border');
             if (parentBar) {
               parentBar.style.position = 'relative';
               parentBar.appendChild(resultsDiv);
@@ -1241,7 +1245,7 @@
             }
           } else {
             // For desktop/tablet: attach to correct parent
-            const parentBar = searchInput.closest('.flex.items-center.bg-white.rounded-full.h-12.border');
+            const parentBar = searchInput.closest('.tw-flex.tw-items-center.tw-bg-white.tw-rounded-full.tw-h-12.tw-border');
             if (parentBar) {
               parentBar.style.position = 'relative';
               parentBar.appendChild(resultsDiv);
@@ -1469,11 +1473,11 @@
       if (tabletProfileBtn && tabletProfileDropdown) {
         tabletProfileBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          tabletProfileDropdown.classList.toggle('hidden');
+          tabletProfileDropdown.classList.toggle('tw-hidden');
         });
         document.addEventListener('click', function (e) {
           if (!tabletProfileBtn.contains(e.target)) {
-            tabletProfileDropdown.classList.add('hidden');
+            tabletProfileDropdown.classList.add('tw-hidden');
           }
         });
       }
@@ -1483,11 +1487,11 @@
       if (mobileProfileBtn && mobileProfileDropdown) {
         mobileProfileBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          mobileProfileDropdown.classList.toggle('hidden');
+          mobileProfileDropdown.classList.toggle('tw-hidden');
         });
         document.addEventListener('click', function (e) {
           if (!mobileProfileBtn.contains(e.target)) {
-            mobileProfileDropdown.classList.add('hidden');
+            mobileProfileDropdown.classList.add('tw-hidden');
           }
         });
       }

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navbar Monis v2 (Sliding Category Simple, Always Below)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meilisearch/dist/bundles/meilisearch.umd.js"></script>
+  <style>
+    .category-menu {
+      transition: all 0.3s ease;
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 80px;
+      /* adjust according to navbar height, can be customized */
+      z-index: 20;
+      transform: translateY(0);
+      opacity: 1;
+      display: none;
+      /* Hidden by default */
+    }
+
+    /* Show only on desktop (lg and up) */
+    @media (min-width: 1024px) {
+      .category-menu {
+        display: block;
+      }
+    }
+
+    .category-menu.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .location-popup {
+      display: none;
+    }
+
+    .location-popup.active {
+      display: block;
+    }
+
+    .mobile-drawer {
+      transition: transform 0.3s;
+      transform: translateX(-100%);
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .mobile-overlay {
+      display: none;
+    }
+
+    .mobile-overlay.open {
+      display: block;
+    }
+
+    /* Category Drawer for Mobile/Tablet */
+    .category-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-100%);
+    }
+
+    .category-drawer.open {
+      transform: translateX(0);
+    }
+
+    .category-overlay {
+      display: none;
+    }
+
+    .category-overlay.open {
+      display: block;
+    }
+
+    /* Desktop Drawer */
+    .desktop-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(100%);
+    }
+
+    .desktop-drawer.open {
+      transform: translateX(0);
+    }
+
+    .desktop-overlay {
+      display: none;
+    }
+
+    .desktop-overlay.open {
+      display: block !important;
+    }
+
+    /* Show desktop drawer only on desktop */
+    @media (max-width: 767px) {
+      .desktop-drawer {
+        display: none !important;
+      }
+
+      .desktop-overlay {
+        display: none !important;
+      }
+    }
+
+    /* Tablet drawer uses the same class as desktop drawer */
+    /* Tablet drawer visible on md:block lg:hidden */
+    @media (max-width: 767px) {
+      #tabletDrawer {
+        display: none !important;
+      }
+
+      #tabletOverlay {
+        display: none !important;
+      }
+
+      #search-input-mobile~.search-results-autocomplete {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100vw !important;
+        border-radius: 14px;
+        margin-left: 0 !important;
+      }
+    }
+
+    .category-menu a:hover {
+      background: #000;
+      color: #fff;
+      border-radius: 9999px;
+    }
+
+    /* Navbar icon hover effect */
+    .navbar-icon-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar-icon-hover:hover .iconify {
+      color: #fff !important;
+    }
+
+    .navbar-link-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Search autocomplete dropdown style */
+    .search-results-autocomplete {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      width: 100%;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      max-height: 420px;
+      overflow-y: auto;
+      z-index: 999;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      padding: 0;
+      margin-top: 2px;
+      font-size: 14px;
+      transition: box-shadow 0.2s;
+    }
+
+    .search-results-autocomplete .facets-container {
+      display: flex;
+      flex-direction: column;
+      max-height: 420px;
+      min-width: 0;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      width: 100%;
+      border-bottom: 1px solid #f3f3f3;
+      padding: 4px 8px 4px 8px;
+      margin-top: 2px;
+      overflow-x: auto;
+      background: #fafbfc;
+      border-radius: 14px 14px 0 0;
+      flex-shrink: 0;
+    }
+
+    .search-results-autocomplete .facets-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 0;
+      overflow-x: unset;
+      overflow-y: unset;
+    }
+
+    .search-results-autocomplete .facets-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .search-results-autocomplete .facet-button {
+      white-space: nowrap;
+      flex-shrink: 0;
+      background: #f3f4f6;
+      color: #333;
+      border: none;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      margin-bottom: 1px;
+      width: auto;
+      display: inline-block;
+      align-self: flex-start;
+    }
+
+    .search-results-autocomplete .facet-button.selected {
+      background: #67b9e8;
+      color: #fff;
+    }
+
+    .search-results-autocomplete .facets-title {
+      font-weight: 600;
+      margin-bottom: 3px;
+      margin-left: 2px;
+      font-size: 12px;
+      color: #222;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop a,
+    .search-results-autocomplete #search-results-list-tablet a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a>div,
+    .search-results-autocomplete #search-results-list-tablet>a>div {
+      padding: 12px 18px;
+      border-bottom: 1px solid #f3f3f3;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      transition: background 0.15s;
+      border-radius: 0;
+    }
+
+    .search-results-autocomplete .results-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0px;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a:last-child>div,
+    .search-results-autocomplete #search-results-list-tablet>a:last-child>div {
+      border-bottom: none;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a:hover>div,
+    .search-results-autocomplete #search-results-list-tablet>a:hover>div {
+      background: #f3f4f6;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      min-width: 120px;
+    }
+
+    .search-results-autocomplete .facets-title {
+      margin-bottom: 8px;
+    }
+
+    .search-results-autocomplete .facets-scroll {
+      margin-bottom: 8px;
+    }
+
+    .search-results-autocomplete .load-more-btn {
+      background: #67b9e8;
+      color: #fff;
+      border: none;
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      cursor: pointer;
+      margin: 1px 0 1px 0;
+      transition: all 0.2s;
+    }
+
+    .search-results-autocomplete .load-more-btn:hover {
+      background: #409ad6;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      box-shadow: none;
+    }
+
+    @media (max-width: 767px) {
+      .search-results-autocomplete {
+        max-width: 100vw;
+        left: 0;
+        border-radius: 12px;
+      }
+
+      .search-results-autocomplete .facets-container {
+        flex-direction: column;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        border-radius: 12px 12px 0 0;
+        padding: 3px 6px 3px 6px;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 0 12px 12px;
+      }
+
+      .search-results-autocomplete .facets-scroll {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 3px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+    }
+
+    .search-spinner-autocomplete {
+      display: none;
+    }
+
+    /* Location dropdown hover: black bg, white text, rounded */
+    #locationPopup button:hover,
+    #locationPopupTablet button:hover,
+    #locationPopupMobile button:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 8px !important;
+    }
+
+    #locationPopup button:hover .iconify,
+    #locationPopupTablet button:hover .iconify,
+    #locationPopupMobile button:hover .iconify {
+      color: #fff !important;
+    }
+
+    /* Reduce location dropdown button padding and add spacing */
+    #locationPopup,
+    #locationPopupTablet,
+    #locationPopupMobile {
+      /* Hilangkan batasan lebar agar mengikuti konten */
+      min-width: unset !important;
+      max-width: unset !important;
+      width: auto !important;
+      font-size: 13px !important;
+      padding: 8px 10px !important;
+      margin-top: 12px !important;
+    }
+
+    #locationPopup button,
+    #locationPopupTablet button,
+    #locationPopupMobile button {
+      font-size: 14px !important;
+      padding: 5px 12px !important;
+      white-space: nowrap !important;
+      border-radius: 8px !important;
+    }
+
+    #locationPopup ul,
+    #locationPopupTablet ul,
+    #locationPopupMobile ul {
+      padding: 0 !important;
+    }
+
+    #locationPopup li,
+    #locationPopupTablet li,
+    #locationPopupMobile li {
+      margin-bottom: 6px;
+    }
+
+    #locationPopup li:last-child,
+    #locationPopupTablet li:last-child,
+    #locationPopupMobile li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* --- Facet sidebar left & search result right (DESKTOP ONLY) --- */
+    @media (min-width: 768px) {
+      .search-results-autocomplete .facets-container {
+        flex-direction: row;
+        align-items: flex-start;
+        height: 420px;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        min-width: 160px;
+        max-width: 200px;
+        width: 160px;
+        border-bottom: none;
+        border-right: 1px solid #f3f3f3;
+        border-radius: 14px 0 0 14px;
+        margin-top: 0;
+        margin-bottom: 0;
+        background: #fafbfc;
+        height: 100%;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 14px 14px 0;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 0;
+        flex: 1;
+        max-height: 420px;
+        height: 420px;
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .search-results-autocomplete .facets-container {
+        flex-direction: column;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+
+    #locationPopupMobile {
+      margin-top: 12px !important;
+      left: unset !important;
+      right: unset !important;
+      width: auto !important;
+      min-width: unset !important;
+      max-width: unset !important;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <!-- Navbar Desktop -->
+  <header class="hidden lg:block w-full border-b bg-white z-30 sticky top-0">
+    <div class="max-w-[1350px] mx-auto flex items-center justify-between h-20 px-4">
+      <!-- Left: Logo -->
+      <div class="flex items-center gap-x-3">
+        <a href="https://www.monis.rent/" class="flex items-center mb-1">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+        </a>
+        <!-- Center: Location, Search -->
+        <div class="flex-1 flex justify-center" style="min-width: 0;">
+          <div class="flex items-center bg-white rounded-full h-12 border" style="width: 600px;">
+            <!-- Location -->
+            <div class="relative inline-block">
+              <button id="locationBtn" class="flex items-center gap-2 px-4 rounded-full focus:outline-none" style="width: 120px;">
+                <div class="flex flex-col items-start leading-tight">
+                  <div class="flex items-center gap-1">
+                    <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="14"></span>
+                    <span class="text-xs text-gray-400">Location</span>
+                  </div>
+                  <span id="locationLabel" class="text-xs ml-1 text-black font-semibold">Bali</span>
+                </div>
+              </button>
+              <div id="locationPopup" class="absolute bg-white rounded-xl border location-popup z-50 left-0 top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+                <ul>
+                  <li>
+                    <button class="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100" onclick="setLocation('Bali')">
+                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                      <span>Bali</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100" onclick="setLocation('Chiang Mai')">
+                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                      <span>Chiang Mai</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="border-l h-full"></span>
+            <!-- Search -->
+            <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
+              <span class="iconify text-black" data-icon="mdi:magnify" data-width="25"></span>
+              <input id="search-input-desktop" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full" placeholder="Rent electrical adjustable desk" />
+              <span id="search-spinner-desktop" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Link & Icon -->
+      <div class="flex items-center gap-2 ml-6">
+        <a href="https://my.monis.rent/how-it-works" class="text-sm h-8 flex items-center px-2 navbar-link-hover text-gray-700">How it works</a>
+        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="relative">
+          <button id="desktopProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Profile Dropdown Menu -->
+          <div id="desktopProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
+            <div class="flex flex-col py-1">
+              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="whitespace-nowrap">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="whitespace-nowrap">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <button id="desktopMenuBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+          </button>
+          <!-- Dropdown Menu -->
+          <div id="desktopDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 w-56 bg-white rounded-xl shadow-sm border z-50 hidden">
+            <div class="flex flex-col py-1" id="desktopDropdownContent">
+              <!-- Menu items will be generated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Tablet (md:block lg:hidden) -->
+  <header class="hidden md:block lg:hidden w-full border-b bg-white z-30 sticky top-0">
+    <div class="max-w-[1350px] mx-auto flex items-center justify-between h-16 px-4">
+      <!-- Left: Logo -->
+      <div class="flex items-center gap-x-3">
+        <a href="https://www.monis.rent/" class="flex items-center">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+        </a>
+        <!-- Center: Location, Search -->
+        <div class="flex-1 flex justify-center" style="min-width: 0;">
+          <div class="flex items-center bg-white rounded-full h-12 border" style="width: 450px;">
+            <!-- Location -->
+            <div class="relative inline-block">
+              <button id="locationBtnTablet" class="flex items-center gap-2 px-4 pr-6 h-8 rounded-full focus:outline-none relative" style="width: 110px;">
+                <div class="flex flex-col items-start leading-tight">
+                  <div class="flex items-center gap-1">
+                    <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                    <span class="text-xs text-gray-400">Location</span>
+                  </div>
+                  <span id="locationLabelTablet" class="text-xs text-black font-semibold ml-1">Bali</span>
+                </div>
+              </button>
+              <div id="locationPopupTablet" class="absolute bg-white rounded-xl border location-popup z-50 left-0 top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+                <ul class="whitespace-nowrap">
+                  <li>
+                    <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 flex items-center gap-2" onclick="setLocationTablet('Bali')">
+                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                      <span>Bali</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 flex items-center gap-2" onclick="setLocationTablet('Chiang Mai')">
+                      <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                      <span>Chiang Mai</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="border-l h-full"></span>
+            <!-- Search -->
+            <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
+              <span class="iconify text-black" data-icon="mdi:magnify" data-width="25"></span>
+              <input id="search-input-tablet" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full pr-10" placeholder="Rent electrical adjustable desk" />
+              <span id="search-spinner-tablet" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Icon -->
+      <div class="flex items-center gap-3 ml-4">
+        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="relative">
+          <button id="tabletProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Tablet Profile Dropdown Menu -->
+          <div id="tabletProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
+            <div class="flex flex-col py-1">
+              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="whitespace-nowrap">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="whitespace-nowrap">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button id="tabletMenuBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+          <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Menu (SLIDE, ALWAYS BELOW NAVBAR) - Desktop Only -->
+  <nav id="categoryMenu" class="category-menu bg-gray-50 hidden lg:block">
+    <div class="max-w-[1350px] mx-auto flex space-x-4 py-2 px-4 overflow-x-auto no-scrollbar" id="desktopCategoryContainer">
+      <!-- Categories will be generated by JavaScript -->
+    </div>
+  </nav>
+
+  <!-- Navbar Mobile (2 row: navbar + location) -->
+  <header class="md:hidden w-full border-b bg-white z-30 sticky top-0">
+    <!-- Row 1: Navbar -->
+    <div class="flex items-center justify-between h-14 px-4">
+      <a href="https://www.monis.rent/" class="flex items-center">
+        <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="h-8 w-auto max-w-[120px] object-contain" />
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="https://my.monis.rent/cart" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover relative">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="relative">
+          <button id="mobileProfileBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Mobile Profile Dropdown Menu -->
+          <div id="mobileProfileDropdown" class="absolute p-3 right-0 left-auto mt-2 mb-2 bg-white rounded-xl shadow-sm border z-50 hidden">
+            <div class="flex flex-col py-1">
+              <a href="https://my.monis.rent/orders" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                <span class="whitespace-nowrap">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+                <span class="iconify text-lg" data-icon="mdi:account-circle-outline"></span>
+                <span class="whitespace-nowrap">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button id="mobileCategoryBtn" class="h-8 w-8 flex items-center justify-center rounded-full navbar-icon-hover">
+          <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Row 2: Location Bar (Full Width) -->
+    <div class="w-full px-4 pb-2 relative">
+      <div class="flex items-center bg-white rounded-full h-10 border" style="min-width:0;">
+        <!-- Location -->
+        <div class="relative inline-block">
+          <button id="locationBtnMobile" class="flex items-center gap-2 px-4 rounded-full focus:outline-none" style="width: 110px;">
+            <div class="flex flex-col items-start leading-tight">
+              <div class="flex items-center gap-1">
+                <span class="iconify text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                <span class="text-xs text-gray-400 leading-none">Location</span>
+              </div>
+              <span id="locationLabelMobile" class="text-xs text-black font-semibold leading-none ml-1">Bali</span>
+            </div>
+          </button>
+          <div id="locationPopupMobile" class="fixed bg-white rounded-xl border location-popup z-50" style="margin-top:12px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+            <ul>
+              <li>
+                <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 text-sm flex items-center gap-2" onclick="setLocationMobile('Bali')">
+                  <span class="iconify text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                  <span>Bali</span>
+                </button>
+              </li>
+              <li>
+                <button class="block w-full text-left px-6 py-2 hover:bg-gray-100 text-sm flex items-center gap-2" onclick="setLocationMobile('Chiang Mai')">
+                  <span class="iconify text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                  <span>Chiang Mai</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="border-l h-full"></span>
+        <!-- Search -->
+        <div class="flex items-center gap-2 bg-gray-100 rounded-r-full flex-1 h-full px-3">
+          <span class="iconify text-black" data-icon="mdi:magnify" data-width="22" style="font-size:22px;width:22px;min-width:22px;height:22px;"></span>
+          <input id="search-input-mobile" type="text" class="bg-transparent rounded-r-full outline-none w-full text-sm h-full pr-1" placeholder="Rent electrical adjustable desk" />
+          <span id="search-spinner-mobile" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Category Drawer: placed outside header for mobile & tablet access -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] mobile-overlay" onclick="closeMobileDrawer()"></div>
+  <nav id="mobileDrawer" class="fixed inset-y-0 left-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] mobile-drawer">
+    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
+      <span class="font-semibold text-lg">Menu</span>
+      <button onclick="closeMobileDrawer()" class="text-gray-500 hover:text-gray-700">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto pb-4">
+      <div class="px-4 pt-4 pb-2">
+        <div class="flex flex-col gap-1" id="mobileCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+        <hr class="my-2" />
+        <div class="flex flex-col gap-1 pb-2" id="mobileMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Category Drawer -->
+  <div id="categoryOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] category-overlay" onclick="closeCategoryDrawer()"></div>
+  <nav id="categoryDrawer" class="fixed inset-y-0 left-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] category-drawer">
+    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
+      <span class="font-semibold text-lg">Categories</span>
+      <button onclick="closeCategoryDrawer()" class="text-gray-500 hover:text-gray-700">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto pb-4">
+      <div class="px-4 pt-4 pb-2">
+        <div class="flex flex-col gap-1" id="categoryDrawerCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+        <hr class="my-2" />
+        <div class="flex flex-col gap-1 pb-2" id="categoryDrawerMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tablet Menu Drawer: open mobile drawer (category) like on mobile -->
+  <div id="tabletOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[100] desktop-overlay"></div>
+  <nav id="tabletDrawer" class="fixed inset-y-0 right-0 w-full sm:w-3/4 md:max-w-md flex flex-col bg-white overflow-hidden z-[101] desktop-drawer">
+    <div class="flex items-center justify-between h-14 px-4 border-b flex-shrink-0">
+      <span class="font-semibold text-lg">Menu</span>
+      <button class="text-gray-500 hover:text-gray-700">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto pb-4">
+      <div class="px-4 pt-4 pb-2">
+        <div class="flex flex-col py-1" id="tabletMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+      <hr class="my-2" />
+      <div class="px-4 pt-2">
+        <p class="text-xs mb-3 text-neutral-500">Categories:</p>
+        <div class="flex flex-col gap-1" id="tabletCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // --- Location Popup ---
+    const locationBtn = document.getElementById('locationBtn');
+    const locationPopup = document.getElementById('locationPopup');
+    const locationLabel = document.getElementById('locationLabel');
+    // --- Location Popup Tablet ---
+    const locationBtnTablet = document.getElementById('locationBtnTablet');
+    const locationPopupTablet = document.getElementById('locationPopupTablet');
+    const locationLabelTablet = document.getElementById('locationLabelTablet');
+    // --- Location Popup Mobile ---
+    const locationBtnMobile = document.getElementById('locationBtnMobile');
+    const locationPopupMobile = document.getElementById('locationPopupMobile');
+    const locationLabelMobile = document.getElementById('locationLabelMobile');
+
+    function updateAllLocationLabels(loc) {
+      if (locationLabel) locationLabel.textContent = loc;
+      if (locationLabelTablet) locationLabelTablet.textContent = loc;
+      if (locationLabelMobile) locationLabelMobile.textContent = loc;
+    }
+
+    function updateAllCategoryLinks(loc) {
+      // Update all category links for location
+      const categoryLinks = document.querySelectorAll('a[href*="/categories/"]');
+      categoryLinks.forEach(link => {
+        const currentPath = link.href.split('/categories/')[1];
+        if (currentPath) {
+          const category = currentPath.split('/')[0];
+          // Replace space with dash and lowercase
+          const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+          link.href = `https://my.monis.rent/categories/${category}/${formattedLocation}`;
+        }
+      });
+    }
+
+    function setLocation(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopup) locationPopup.classList.remove('active');
+    }
+    function setLocationTablet(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopupTablet) locationPopupTablet.classList.remove('active');
+    }
+    function setLocationMobile(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopupMobile) locationPopupMobile.classList.remove('active');
+    }
+
+    const menuItems = [
+      { name: 'My Orders', href: 'https://my.monis.rent/orders', icon: 'mdi:clipboard-text-outline' },
+      { name: 'How does it work?', href: 'https://my.monis.rent/how-it-works', icon: 'mdi:help-circle-outline' },
+      { name: 'Help Desk', href: 'https://help.monis.rent/en/', icon: 'mdi:earth' },
+      { name: 'Affiliate Program', href: 'https://monis.rent/affiliate', icon: 'mdi:account-group-outline' },
+      { name: 'Become a Merchant', href: 'https://monis.rent/become-a-seller', icon: 'mdi:storefront-outline' },
+      { name: 'Loyalty Program', href: 'https://my.monis.rent/points-system', icon: 'mdi:currency-usd-circle-outline' }
+    ];
+
+    const locationCategories = {
+      'bali': [
+        { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+        { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+        { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+        { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+        { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+        { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+        { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+        { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+        { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+      ],
+      'chiang-mai': [
+        { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+        { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+        { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+        { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+        { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+        { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+        { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+        { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+        { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+      ]
+    };
+
+    function updateCategoryMenus(loc) {
+      const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+      const categories = locationCategories[formattedLocation] || locationCategories['bali'];
+
+      // Update desktop category menu
+      const desktopMenu = document.getElementById('desktopCategoryContainer');
+      if (desktopMenu) {
+        const newHTML = categories.map(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          return `<a href="${href}" class="text-sm font-normal px-2 py-1 flex items-center select-none transition-all text-gray-800 hover:text-black whitespace-nowrap">${cat.name}</a>`;
+        }).join('');
+        desktopMenu.innerHTML = newHTML;
+      }
+
+      // Update mobile drawer
+      const mobileCategoryContainer = document.getElementById('mobileCategoryContainer');
+      if (mobileCategoryContainer) {
+        const existingCategoryLinks = mobileCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.innerHTML = `
+            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
+            <span class="text-sm flex-1">${cat.name}</span>
+            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+          `;
+          mobileCategoryContainer.appendChild(newLink);
+        });
+      }
+
+      // Update mobile category drawer
+      const categoryDrawerCategoryContainer = document.getElementById('categoryDrawerCategoryContainer');
+      if (categoryDrawerCategoryContainer) {
+        const existingCategoryLinks = categoryDrawerCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.innerHTML = `
+            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
+            <span class="text-sm flex-1">${cat.name}</span>
+            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+          `;
+          categoryDrawerCategoryContainer.appendChild(newLink);
+        });
+      }
+
+      // Update tablet drawer
+      const tabletCategoryContainer = document.getElementById('tabletCategoryContainer');
+      if (tabletCategoryContainer) {
+        const existingCategoryLinks = tabletCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.className = 'flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100';
+          newLink.innerHTML = `
+            <span class="iconify text-xl" data-icon="${cat.icon}"></span>
+            <span class="text-sm flex-1">${cat.name}</span>
+            <span class="iconify text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+          `;
+          tabletCategoryContainer.appendChild(newLink);
+        });
+      }
+    }
+
+    function renderMenuItems(targetId, variant = 'desktop') {
+      const container = document.getElementById(targetId);
+      if (!container) return;
+      let html = '';
+      menuItems.forEach(item => {
+        if (variant === 'desktop' || variant === 'tablet') {
+          html += `
+            <a href="${item.href}" class="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-black hover:text-white text-black text-sm transition-colors">
+              <span class="iconify text-lg" data-icon="${item.icon}"></span>
+              <span>${item.name}</span>
+            </a>
+          `;
+        } else {
+          html += `
+            <a href="${item.href}" class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100">
+              <span class="iconify text-xl" data-icon="${item.icon}"></span>
+              <span class="text-sm flex-1">${item.name}</span>
+              <span class="iconify text-gray-400" data-icon="mdi:arrow-top-right"></span>
+            </a>
+          `;
+        }
+      });
+      container.innerHTML = html;
+    }
+    const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+    if (document.getElementById('desktopCategoryContainer')) {
+      updateCategoryMenus(savedLoc);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // --- Location Popup Event ---
+      if (locationBtn && locationPopup) {
+        locationBtn.addEventListener('click', function (e) {
+          locationPopup.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtn.contains(e.target)) {
+            locationPopup.classList.remove('active');
+          }
+        });
+      }
+      if (locationBtnTablet && locationPopupTablet) {
+        locationBtnTablet.addEventListener('click', function (e) {
+          locationPopupTablet.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtnTablet.contains(e.target)) {
+            locationPopupTablet.classList.remove('active');
+          }
+        });
+      }
+      if (locationBtnMobile && locationPopupMobile) {
+        locationBtnMobile.addEventListener('click', function (e) {
+          locationPopupMobile.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtnMobile.contains(e.target)) {
+            locationPopupMobile.classList.remove('active');
+          }
+        });
+      }
+
+      // --- Desktop Category Menu Hide/Show on Scroll ---
+      let lastScrollTop = 0;
+      const categoryMenu = document.getElementById('categoryMenu');
+
+      function showCategoryMenuIfAtTop() {
+        if (window.innerWidth >= 768 && (window.pageYOffset || document.documentElement.scrollTop) === 0) {
+          categoryMenu && categoryMenu.classList.remove('hidden');
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        // Only run on desktop (lg and up)
+        if (window.innerWidth < 768) return;
+
+        if (!categoryMenu) return;
+
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Always show menu at top
+        if (currentScroll === 0) {
+          categoryMenu.classList.remove('hidden');
+          lastScrollTop = 0;
+          return;
+        }
+
+        if (currentScroll > lastScrollTop) {
+          // Hide on scroll down
+          categoryMenu.classList.add('hidden');
+        } else {
+          // Show on scroll up
+          categoryMenu.classList.remove('hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative value
+      });
+
+      // Reset category menu on resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth < 768) {
+          // Hide menu on mobile/tablet
+          if (categoryMenu) {
+            categoryMenu.classList.add('hidden');
+          }
+        } else {
+          // Show menu on desktop
+          if (categoryMenu) {
+            categoryMenu.classList.remove('hidden');
+          }
+          showCategoryMenuIfAtTop();
+        }
+      });
+
+      // --- Mobile & Tablet Drawer (Category) ---
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const tabletMenuBtn = document.getElementById('tabletMenuBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+
+      function openMobileDrawer() {
+        mobileDrawer.classList.add('open');
+        mobileOverlay.classList.add('open');
+      }
+      function closeMobileDrawer() {
+        mobileDrawer.classList.remove('open');
+        mobileOverlay.classList.remove('open');
+      }
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileDrawer);
+      }
+      if (tabletMenuBtn) {
+        tabletMenuBtn.addEventListener('click', openMobileDrawer);
+      }
+      window.closeMobileDrawer = closeMobileDrawer; // for HTML onclick
+
+      // --- Category Drawer Mobile/Tablet ---
+      const mobileCategoryBtn = document.getElementById('mobileCategoryBtn');
+      const categoryDrawer = document.getElementById('categoryDrawer');
+      const categoryOverlay = document.getElementById('categoryOverlay');
+
+      function openCategoryDrawer() {
+        categoryDrawer.classList.add('open');
+        categoryOverlay.classList.add('open');
+      }
+      function closeCategoryDrawer() {
+        categoryDrawer.classList.remove('open');
+        categoryOverlay.classList.remove('open');
+      }
+
+      if (mobileCategoryBtn) {
+        mobileCategoryBtn.addEventListener('click', openCategoryDrawer);
+      }
+      window.closeCategoryDrawer = closeCategoryDrawer; // for HTML onclick
+
+      // --- Desktop Drawer ---
+      const desktopMenuBtn = document.getElementById('desktopMenuBtn');
+      const desktopDropdown = document.getElementById('desktopDropdown');
+      const desktopProfileBtn = document.getElementById('desktopProfileBtn');
+      const desktopProfileDropdown = document.getElementById('desktopProfileDropdown');
+
+      if (desktopMenuBtn && desktopDropdown) {
+        desktopMenuBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          desktopDropdown.classList.toggle('hidden');
+          // Hide profile dropdown if open
+          if (desktopProfileDropdown) desktopProfileDropdown.classList.add('hidden');
+        });
+        document.addEventListener('click', function (e) {
+          if (!desktopMenuBtn.contains(e.target)) {
+            desktopDropdown.classList.add('hidden');
+          }
+        });
+      }
+      if (desktopProfileBtn && desktopProfileDropdown) {
+        desktopProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          desktopProfileDropdown.classList.toggle('hidden');
+          // Hide menu dropdown if open
+          if (desktopDropdown) desktopDropdown.classList.add('hidden');
+        });
+        document.addEventListener('click', function (e) {
+          if (!desktopProfileBtn.contains(e.target)) {
+            desktopProfileDropdown.classList.add('hidden');
+          }
+        });
+      }
+
+      // Show menu at top on load (desktop)
+      showCategoryMenuIfAtTop();
+
+      // --- Search Autocomplete ---
+      // For desktop, tablet, and mobile inputs
+      const inputIds = ['search-input-desktop', 'search-input-tablet', 'search-input-mobile'];
+      inputIds.forEach(function (inputId) {
+        const searchInput = document.getElementById(inputId);
+        if (!searchInput) return;
+        // Create search results container
+        let resultsDiv = searchInput.parentNode.querySelector('.search-results-autocomplete');
+        if (!resultsDiv) {
+          resultsDiv = document.createElement('div');
+          resultsDiv.className = 'search-results-autocomplete';
+          resultsDiv.id = 'search-results-' + inputId;
+          resultsDiv.innerHTML = `
+            <div class="facets-container">
+              <div class="facets-sidebar">
+                <div id="location-facets-${inputId}"></div>
+                <div id="category-facets-${inputId}" style="margin-top: 1px;"></div>
+              </div>
+              <div class="results-container">
+                <div id="search-results-list-${inputId}"></div>
+              </div>
+            </div>
+          `;
+          if (inputId === 'search-input-mobile') {
+            // For mobile: attach to parent row
+            const parentBar = searchInput.closest('.flex.items-center.bg-white.rounded-full.h-10.border');
+            if (parentBar) {
+              parentBar.style.position = 'relative';
+              parentBar.appendChild(resultsDiv);
+            } else {
+              searchInput.parentNode.style.position = 'relative';
+              searchInput.parentNode.appendChild(resultsDiv);
+            }
+          } else {
+            // For desktop/tablet: attach to correct parent
+            const parentBar = searchInput.closest('.flex.items-center.bg-white.rounded-full.h-12.border');
+            if (parentBar) {
+              parentBar.style.position = 'relative';
+              parentBar.appendChild(resultsDiv);
+            } else {
+              searchInput.parentNode.style.position = 'relative';
+              searchInput.parentNode.appendChild(resultsDiv);
+            }
+          }
+        }
+        const resultsList = document.getElementById('search-results-list-' + inputId);
+        const locationFacets = document.getElementById('location-facets-' + inputId);
+        const categoryFacets = document.getElementById('category-facets-' + inputId);
+        // Right spinner for input
+        let rightSpinner = null;
+        if (inputId === 'search-input-desktop') {
+          rightSpinner = document.getElementById('search-spinner-desktop');
+        } else if (inputId === 'search-input-tablet') {
+          rightSpinner = document.getElementById('search-spinner-tablet');
+        } else if (inputId === 'search-input-mobile') {
+          rightSpinner = document.getElementById('search-spinner-mobile');
+        }
+        const client = new MeiliSearch({
+          host: 'https://client.searchfa.st/',
+          apiKey: '86ef24ee88f4053cb165cfed5be82a213871eb16113bd17fbc2ba25d7d19b298'
+        });
+        const getAbsoluteUrl = (url) => {
+          if (!url) return '#';
+          if (url.startsWith('http://') || url.startsWith('https://')) return url;
+          return `https://${url}`;
+        };
+        let selectedLocations = new Set();
+        let selectedCategories = new Set();
+        let currentPage = 0;
+        let hasMoreResults = true;
+        let currentHits = [];
+        const renderFacets = (facets) => {
+          // Render category facets
+          if (facets && facets.category) {
+            const categoryEntries = Object.entries(facets.category);
+            if (categoryEntries.length > 0) {
+              categoryFacets.innerHTML = `
+                <div class="facets-title">Categories</div>
+                <div class="facets-scroll">
+                  ${categoryEntries.map(([category, count]) => `
+                    <button 
+                      class="facet-button${selectedCategories.has(category) ? ' selected' : ''}"
+                      type="button"
+                      data-category="${category}"
+                    >
+                      ${category} (${count})
+                    </button>
+                  `).join('')}
+                </div>
+              `;
+            } else {
+              categoryFacets.innerHTML = '';
+            }
+          } else {
+            categoryFacets.innerHTML = '';
+          }
+          // Render location facets
+          if (facets && facets.location) {
+            const locationEntries = Object.entries(facets.location);
+            if (locationEntries.length > 0) {
+              locationFacets.innerHTML = `
+                <div class="facets-title">Locations</div>
+                <div class="facets-scroll">
+                  ${locationEntries.map(([location, count]) => `
+                    <button 
+                      class="facet-button${selectedLocations.has(location) ? ' selected' : ''}"
+                      type="button"
+                      data-location="${location}"
+                    >
+                      ${location} (${count})
+                    </button>
+                  `).join('')}
+                </div>
+              `;
+            } else {
+              locationFacets.innerHTML = '';
+            }
+          } else {
+            locationFacets.innerHTML = '';
+          }
+        };
+        const performSearch = async (isLoadMore = false) => {
+          const query = searchInput.value.trim();
+          // Show right spinner at start
+          rightSpinner.style.display = 'block';
+          if (query.length < 2 && !isLoadMore) {
+            resultsDiv.style.display = 'none';
+            resultsList.innerHTML = '';
+            rightSpinner.style.display = 'none';
+            return;
+          }
+          try {
+            const index = client.index('ITGbps8D35v3LXzX3WXX');
+            const response = await index.search(query, {
+              limit: 10,
+              offset: isLoadMore ? currentPage * 10 : 0,
+              attributesToRetrieve: ['id', 'title', 'description', 'img', 'price', 'category', 'location', 'merchant', 'url'],
+              facets: ['location', 'category'],
+              filter: [
+                selectedLocations.size > 0 ? `location IN [${Array.from(selectedLocations).map(l => `"${l}"`).join(', ')}]` : null,
+                selectedCategories.size > 0 ? `category IN [${Array.from(selectedCategories).map(c => `"${c}"`).join(', ')}]` : null
+              ].filter(Boolean).join(' AND ')
+            });
+            hasMoreResults = response.hits.length === 10;
+            if (isLoadMore) {
+              currentHits = [...currentHits, ...response.hits];
+            } else {
+              currentHits = response.hits;
+              currentPage = 0;
+            }
+            renderFacets(response.facetDistribution);
+            if (currentHits.length === 0) {
+              resultsList.innerHTML = `
+                <div style="padding: 20px; text-align: center;">
+                  <div style="color: gray; margin-bottom: 15px;">
+                    No results found.
+                  </div>
+                  <a href="https://my.monis.rent" style="
+                    display: inline-block;
+                    background: #67b9e8;
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 24px;
+                    border-radius: 100px;
+                    font-size: 14px;
+                    transition: all 0.2s;
+                  ">
+                    Show all products
+                  </a>
+                </div>
+              `;
+            } else {
+              resultsList.innerHTML = `
+                ${currentHits.map(result => `
+                  <a href="${getAbsoluteUrl(result.url)}" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; gap: 15px; align-items: center;">
+                      <div style="flex-shrink: 0; width: 80px; height: 80px; background: #f5f5f5; border-radius: 8px; overflow: hidden;">
+                        ${result.img ? `<img src="${result.img}" alt="${result.title}" style="width: 100%; height: 100%; object-fit: cover;">` : ''}
+                      </div>
+                      <div style="flex: 1;">
+                        <div style="font-weight: 600; margin-top: 4px;">${result.title} ${result.location ? `<span style=\"background: #f0f0f0; padding: 2px 6px; margin-right: 5px; border-radius: 100px; font-size: 12px;\">${result.location}</span>` : ''}</div>
+                        <div style="font-size: 13px; color: #555; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; margin-top: 4px;">${result.description || ''}</div>
+                        ${result.price ? `<div style=\"margin-top: 4px; color: #000; font-weight: 500;\">From $${result.price / 4}/week</div>` : ''}
+                      </div>
+                    </div>
+                  </a>
+                `).join('')}
+                ${hasMoreResults ? `
+                  <div style="text-align: center; padding: 8px 0;">
+                    <button 
+                      type="button"
+                      class="load-more-btn"
+                    >
+                      Show more
+                    </button>
+                  </div>
+                ` : ''}
+              `;
+            }
+            resultsDiv.style.display = 'block';
+          } catch (err) {
+            resultsList.innerHTML = '<div style="padding: 10px; color: red;">Search error.</div>';
+            resultsDiv.style.display = 'block';
+          } finally {
+            // Delay to show spinner
+            setTimeout(() => {
+              rightSpinner.style.display = 'none';
+            }, 200);
+          }
+        };
+        // Facet and load more event handler
+        resultsDiv.addEventListener('click', function (e) {
+          if (e.target.matches('.facet-button[data-category]')) {
+            const category = e.target.getAttribute('data-category');
+            if (selectedCategories.has(category)) {
+              selectedCategories.delete(category);
+            } else {
+              selectedCategories.add(category);
+            }
+            currentPage = 0;
+            performSearch();
+          } else if (e.target.matches('.facet-button[data-location]')) {
+            const location = e.target.getAttribute('data-location');
+            if (selectedLocations.has(location)) {
+              selectedLocations.delete(location);
+            } else {
+              selectedLocations.add(location);
+            }
+            currentPage = 0;
+            performSearch();
+          } else if (e.target.matches('.load-more-btn')) {
+            currentPage++;
+            performSearch(true);
+          }
+        });
+        let debounceTimeout;
+        searchInput.addEventListener('input', function () {
+          clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => performSearch(), 300);
+        });
+        document.addEventListener('click', (e) => {
+          if (!resultsDiv.contains(e.target) && !searchInput.contains(e.target)) {
+            resultsDiv.style.display = 'none';
+          }
+        });
+        // Fix spinner z-index
+        searchInput.parentNode.style.position = 'relative';
+        if (rightSpinner) rightSpinner.style.zIndex = 1000;
+      });
+
+      // Menu items for dropdown and drawer
+      renderMenuItems('desktopDropdownContent', 'desktop');
+      renderMenuItems('mobileMenuItems', 'mobile');
+      renderMenuItems('categoryDrawerMenuItems', 'mobile');
+      renderMenuItems('tabletMenuItems', 'tablet');
+
+      // --- Tablet & Mobile Profile Dropdown ---
+      // Tablet
+      const tabletProfileBtn = document.getElementById('tabletProfileBtn');
+      const tabletProfileDropdown = document.getElementById('tabletProfileDropdown');
+      if (tabletProfileBtn && tabletProfileDropdown) {
+        tabletProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          tabletProfileDropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', function (e) {
+          if (!tabletProfileBtn.contains(e.target)) {
+            tabletProfileDropdown.classList.add('hidden');
+          }
+        });
+      }
+      // Mobile
+      const mobileProfileBtn = document.getElementById('mobileProfileBtn');
+      const mobileProfileDropdown = document.getElementById('mobileProfileDropdown');
+      if (mobileProfileBtn && mobileProfileDropdown) {
+        mobileProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          mobileProfileDropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', function (e) {
+          if (!mobileProfileBtn.contains(e.target)) {
+            mobileProfileDropdown.classList.add('hidden');
+          }
+        });
+      }
+    });
+
+    window.addEventListener('pageshow', function () {
+      const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+      updateAllLocationLabels(savedLoc);
+      updateAllCategoryLinks(savedLoc);
+      updateCategoryMenus(savedLoc);
+    });
+  </script>
+</body>
+
+</html>

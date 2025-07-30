@@ -1,0 +1,2647 @@
+{
+  "All Categories": {
+    "slug": "all-categories",
+    "categories": [
+      {
+        "name": "Monitors",
+        "slug": "monitors",
+        "icon": "https://strapi.monis.rent/uploads/monitor_56d115575a.svg",
+        "short_description": "Perfect for events, offices, and creative projects.",
+        "items": [
+          {
+            "name": "30\" Full HD Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/30_Full_HD_Gaming_Monitor_5_9b321bb7e5.jpg",
+            "slug": "mi-30-curved-monitor",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Gaming Monitor", "Full HD"]
+          },
+          {
+            "name": "27\" 2K+ Grading Monitor ",
+            "image": "https://strapi.monis.rent/uploads/Ben_Q_2_K_Grading_Monitor_27_front_d138954555.jpg",
+            "slug": "ben-q-2-k-grading-monitor-27",
+            "brand": "BenQ",
+            "brandSlug": "benq",
+            "brandDomain": "benq.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=benq.com",
+            "tags": ["2K Monitor", "Grading Monitor"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor MP251",
+            "image": "https://strapi.monis.rent/uploads/MSI_PRO_MP_251_5_74ae3c1380.jpg",
+            "slug": "24-full-hd-office-monitor-mp-251-cm",
+            "brand": "MSI",
+            "brandSlug": "msi",
+            "brandDomain": "msi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=msi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor MR400",
+            "image": "https://strapi.monis.rent/uploads/LG_27_MR_400_B_5_2d36f13bb0.jpg",
+            "slug": "27-full-hd-office-monitor-mr-400-cm",
+            "brand": "LG",
+            "brandSlug": "lg",
+            "brandDomain": "lg.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor MiD",
+            "image": "https://strapi.monis.rent/uploads/24_essentail_front_ea36cec7cf.jpg",
+            "slug": "27-work-monitor-mi-d",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor A27i ",
+            "image": "https://strapi.monis.rent/uploads/A27i_front_35acc32043.jpg",
+            "slug": "27-work-monitor-a27i",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 4K+ Grading Monitor",
+            "image": "https://strapi.monis.rent/uploads/27_4_K_60_Hz_IPS_Grading_Monitor_front_01b90d6ac0.jpg",
+            "slug": "4k-grading-monitor-27",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Grading Monitor"]
+          },
+          {
+            "name": "34\" 4K Curved Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Ultra_Wide_Curved_Monitor_front_3636b63aed.jpg",
+            "slug": "4-k-ultra-wide-34",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor S27",
+            "image": "https://strapi.monis.rent/uploads/S27_C330_GAE_5_0c984d3b44.jpg",
+            "slug": "27-full-hd-office-monitor-s27-cm",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 4K Multimedia Monitor",
+            "image": "https://strapi.monis.rent/uploads/27_4_K_A27_U_Multitasking_Monitor_1_ce29d15357.jpg",
+            "slug": "27-4-k-multimedia-monitor",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor"]
+          },
+          {
+            "name": "32\" QHD Ergonomic Monitor",
+            "image": "https://strapi.monis.rent/uploads/32_LG_Fine_Art_addtition_1_1c49831c40.jpg",
+            "slug": "32-4-k-ergonomic-monitor",
+            "brand": "LG",
+            "brandSlug": "lg",
+            "brandDomain": "lg.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com",
+            "tags": []
+          },
+          {
+            "name": "34\" 4K Gaming Monitor WQi",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-gaming-monitor-w-qi-cm",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "34\" 4K Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-curved-monitor-180-hz",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor A24i",
+            "image": "https://strapi.monis.rent/uploads/24_Full_HD_Office_Monitor_A24i_1_7f987306af.jpg",
+            "slug": "24-full-hd-office-monitor-a24i-2",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor 1C",
+            "image": "https://strapi.monis.rent/uploads/24_Full_HD_75_Hz_IPS_Desktop_1_C_Monitor_front_7eeba14881.jpg",
+            "slug": "full-hd-office-24",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 5K Apple Studio Display",
+            "image": "https://strapi.monis.rent/uploads/Apple_Studio_Display_6_94c6329a05.jpg",
+            "slug": "apple-studio-display",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["5K Monitor"]
+          }
+        ]
+      },
+      {
+        "name": "Office Accessories",
+        "slug": "office-accessories",
+        "icon": "https://strapi.monis.rent/uploads/keyboard_icon_94cb64afa5.png",
+        "short_description": "Ideal for enhancing productivity, organization, and workspace comfort.",
+        "items": [
+          {
+            "name": "6-in-1 Converter Hub",
+            "image": "https://strapi.monis.rent/uploads/mac_dongle_product_photo_0316bc4b50.jpg",
+            "slug": "6-in-1-converter-hub",
+            "brand": "Ugreen",
+            "brandSlug": "ugreen",
+            "brandDomain": "ugreen.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id",
+            "tags": ["Converter"]
+          },
+          {
+            "name": "USB-C 3.1 100W 10Gbps Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_3_1_100_W_10_Gbps_Cable_5_e809734c67.jpg",
+            "slug": "usb-c-3-1-100-w-10-gbps-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Smart Power Strip 6",
+            "image": "https://strapi.monis.rent/uploads/Xiaomi_MI_Smart_Power_Strip_Plug_white_4b97124ba0.jpg",
+            "slug": "smart-power-strip-6",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "WiFi Range Extender",
+            "image": "https://strapi.monis.rent/uploads/Wifi_Range_Extender_AC_1200_6_0fe8118acf.jpg",
+            "slug": "wi-fi-range-extender",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["WiFi"]
+          },
+          {
+            "name": "Extension Cable",
+            "image": "https://strapi.monis.rent/uploads/extension_cable_547a728512.jpg",
+            "slug": "extension-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Power Strip", "Cable"]
+          },
+          {
+            "name": "Dual-Band Wi-Fi 6 Router",
+            "image": "https://strapi.monis.rent/uploads/Archer_AX_72_AX_5400_Dual_Band_Gigabit_Wi_Fi_6_Router_4_69792f5825.jpg",
+            "slug": "wi-fi-6-router-5-g",
+            "brand": "Tp-Link",
+            "brandSlug": "tp-link",
+            "brandDomain": "tp-link.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=tp-link.com",
+            "tags": ["WiFi"]
+          },
+          {
+            "name": "USB-C to DisplayPort Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_to_Display_Port_Cable_new_8b1864b821.jpg",
+            "slug": "usb-c-to-display-port-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Smart Power Strip 3",
+            "image": "https://strapi.monis.rent/uploads/Xiaomi_MI_Smart_Power_Strip_Plug_black_3965e07e42.jpg",
+            "slug": "international-power-strip",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "Apple Magic Trackpad",
+            "image": "https://strapi.monis.rent/uploads/apple_magic_trackpad_1_5430d919cc.jpg",
+            "slug": "apple-magic-trackpad",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Ergonomic Laptop Stand",
+            "image": "https://strapi.monis.rent/uploads/Laptop_stand_back_new2_91df29c3c8.jpg",
+            "slug": "ergonomic-laptop-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Monitor Light Bar",
+            "image": "https://strapi.monis.rent/uploads/Monitor_Light_Bar_1_8e97972171.jpg",
+            "slug": "metal-monitor-light-bar",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "USB-C to HDMI Display Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_to_HDMI_Display_Cable_21f0cb1e2b.jpg",
+            "slug": "usb-c-to-hdmi-display-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Mini DisplayPort to HDMI Adapter",
+            "image": "https://strapi.monis.rent/uploads/Belkin_4_K_Mini_Display_Port_to_HDMI_Adapter1_a1328b288b.jpg",
+            "slug": "mini-display-port-to-hdmi-adapter",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Power Strip",
+            "image": "https://strapi.monis.rent/uploads/Extension_cord_1_356d82388f.jpg",
+            "slug": "power-strip-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "6-in-1 Converter Hub",
+            "image": "https://strapi.monis.rent/uploads/6in1_converter_hub_3_29f66b2a36.jpg",
+            "slug": "6-in-1-converter-hub-cm",
+            "brand": "Ugreen",
+            "brandSlug": "ugreen",
+            "brandDomain": "ugreen.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id",
+            "tags": ["Converter"]
+          },
+          {
+            "name": "Logitech 4K Webcam",
+            "image": "https://strapi.monis.rent/uploads/Logitech_Brio_4_K_Webcam_6_d7ea7e69b0.jpg",
+            "slug": "logitech-4-k-webcam",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Webcam"]
+          },
+          {
+            "name": "Apple Magic Mouse",
+            "image": "https://strapi.monis.rent/uploads/Apple_Magic_Mouse_4_022f966524.jpg",
+            "slug": "apple-magic-mouse",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Adjustable Monitor Stand",
+            "image": "https://strapi.monis.rent/uploads/Adjustable_Monitor_Stand_4_e6ae3a1d06.jpg",
+            "slug": "adjustable-monitor-stand-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Ergonomic Laptop Stand",
+            "image": "https://strapi.monis.rent/uploads/Laptop_Stand_3_94230b18eb.jpg",
+            "slug": "ergonomic-laptop-stand-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Monitor Light Bar",
+            "image": "https://strapi.monis.rent/uploads/Monitor_Light_Bar_1_8e97972171.jpg",
+            "slug": "monitor-light-bar-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "Logitech M331 Silent Mouse",
+            "image": "https://strapi.monis.rent/uploads/mouse_side_M33_030834aea0.jpg",
+            "slug": "logitech-mx-mouse",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Adjustable Monitor Stand",
+            "image": "https://strapi.monis.rent/uploads/Adjustable_Monitor_Stand_4_e6ae3a1d06.jpg",
+            "slug": "adjustable-monitor-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Logitech MX Keyboard",
+            "image": "https://strapi.monis.rent/uploads/Logitech_MX_keys_1_9977480ae1.jpg",
+            "slug": "logitech-mx-keyboard",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Keyboard"]
+          },
+          {
+            "name": "Logitech MX Master Mouse S3",
+            "image": "https://strapi.monis.rent/uploads/Logitech_S3_6_4cf1e523b8.jpg",
+            "slug": "logitech-mx-master-mouse-s3",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Apple Magic Keyboard",
+            "image": "https://strapi.monis.rent/uploads/magic_keyboard_with_touch_id_1_7124075f1d.jpg",
+            "slug": "apple-magic-keyboard",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Keyboard"]
+          },
+          {
+            "name": "Portable TV Stand ",
+            "image": "https://strapi.monis.rent/uploads/Oximus_TC_6100_2_5b3b7d0822.jpg",
+            "slug": "portable-tv-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          }
+        ]
+      },
+      {
+        "name": "Smart Home",
+        "slug": "smart-home",
+        "icon": "https://strapi.monis.rent/uploads/smart_home_icon_98d8e26fb9.png",
+        "short_description": "Perfect for modern living, effortless control, and seamless convenience.",
+        "items": [
+          {
+            "name": "Table Fan",
+            "image": "https://strapi.monis.rent/uploads/Kris_Table_Fan_4_fba4785b6b.jpg",
+            "slug": "table-fan",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Washing machine 7kg",
+            "image": "https://strapi.monis.rent/uploads/Washer_Samsung_WW_70_T3020_WW_1_a82f1bb83d.jpg",
+            "slug": "washing-machine-7kg",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Clothes Rack",
+            "image": "https://strapi.monis.rent/uploads/Cloths_Rack_1_31865a537e.jpg",
+            "slug": "clothes-rack",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "De'Longhi Autentica Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/De_Longhi_Autentica_1_78b97e38d9.jpg",
+            "slug": "de-longhi-autentica",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Dolce Gusto Capsule Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/Dolce_Gusto_Type_9781_5_dd90ffc8b2.jpg",
+            "slug": "capsule-coffee-machine",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Nespresso Capsule Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/Nespresso_Inissia_M105_2_8f9255da68.jpg",
+            "slug": "nespresso-inissia",
+            "brand": "Nespresso",
+            "brandSlug": "nespresso",
+            "brandDomain": "nespresso.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=nespresso.co.id",
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "50'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_50_1_9de8d7fa6b.jpg",
+            "slug": "smart-tv-4-k-50-grom-rent",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "2 in 1 Washing machine",
+            "image": "https://strapi.monis.rent/uploads/2_in_1_Washing_machine_1_1527e869e8.jpg",
+            "slug": "2-in-1-washing-machine",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "65'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/smart_tv_4k_65_1_7f45a982ed.jpg",
+            "slug": "smart-tv-4-k-65",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "55'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/55_4_K_TV_5_6d395b4acc.jpg",
+            "slug": "smart-tv-4-k-55",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Steam Iron",
+            "image": "https://strapi.monis.rent/uploads/Iron_3df40eabbf.jpg",
+            "slug": "steam-iron",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Starlink Kit (incl. plan)",
+            "image": "https://strapi.monis.rent/uploads/Starlink_V4_Gen_3_7_41ef714dbb.jpg",
+            "slug": "starlink-kit-incl-plan",
+            "brand": "Starlink",
+            "brandSlug": "starlink",
+            "brandDomain": "starlink.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=starlink.com",
+            "tags": []
+          },
+          {
+            "name": "43\" Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_43_1_8c5b8dbc8b.jpg",
+            "slug": "43-smart-tv-4-k",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Mini Bar Fridge",
+            "image": "https://strapi.monis.rent/uploads/Mini_Bar_1_1305a9b18c.jpg",
+            "slug": "mini-bar-fridge",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Drying Rack",
+            "image": "https://strapi.monis.rent/uploads/Drying_Rack_1_808f3ffdc7.jpg",
+            "slug": "drying-rack",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Hanger Bundle",
+            "image": "https://strapi.monis.rent/uploads/Hanger_Bundle_1_e538364409.jpg",
+            "slug": "hanger-bundle",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "XGIMI H2 Projector",
+            "image": "https://strapi.monis.rent/uploads/XGIMI_H2_Harman_Kardon_2_fdfefd5099.jpg",
+            "slug": "xgimi-h2-projector",
+            "brand": "Xgimi",
+            "brandSlug": null,
+            "brandDomain": "www.xgimi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Kettle",
+            "image": "https://strapi.monis.rent/uploads/Kettle_1_82d5a63e48.jpg",
+            "slug": "kettle",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Wanbo T6 Projector ",
+            "image": "https://strapi.monis.rent/uploads/Projector_Wanbo_T6_Max_1_aa4529e8fd.jpg",
+            "slug": "wanbo-t6-projector",
+            "brand": "Wanbo",
+            "brandSlug": null,
+            "brandDomain": "www.wanbo.cn",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Ironing Board",
+            "image": "https://strapi.monis.rent/uploads/Ironing_Board_1_2d7a7a9d95.jpg",
+            "slug": "ironing-board",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Microwave",
+            "image": "https://strapi.monis.rent/uploads/Microwave_435dc5759b.jpg",
+            "slug": "microwave",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "3 in 1 Blender",
+            "image": "https://strapi.monis.rent/uploads/KLAZ_3_in_1_Blender_1_e4ed6edf96.jpg",
+            "slug": "3-in-1-blender",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          }
+        ]
+      },
+      {
+        "name": "Gaming",
+        "slug": "gaming",
+        "icon": "https://strapi.monis.rent/uploads/monitor2_f2ad324f1d.svg",
+        "short_description": "Perfect for events, tournaments, and immersive play experiences.",
+        "items": [
+          {
+            "name": "Switch 2 Controller Pack",
+            "image": "https://strapi.monis.rent/uploads/Nintendo_Switch_2_extra_controller_1_6508ccd5e2.jpg",
+            "slug": "switch-2-controller-pack",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Controller"]
+          },
+          {
+            "name": "Marshall Woburn III Bluetooth",
+            "image": "https://strapi.monis.rent/uploads/marshall_woburn_2_1_227171e0f8.jpg",
+            "slug": "marshall-woburn-ii-bluetooth",
+            "brand": "Marshall",
+            "brandSlug": "marshall",
+            "brandDomain": "marshall.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "Sony PlayStation®5",
+            "image": "https://strapi.monis.rent/uploads/Monis_PS_5_Titel_Photo_e3d9eb0af1.jpg",
+            "slug": "play-station-5",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Game Console"]
+          },
+          {
+            "name": "PS5 Wireless Controller",
+            "image": "https://strapi.monis.rent/uploads/Sony_charging_station_4_d0825bba0c.jpg",
+            "slug": "ps-5-wireless-controller",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Controller"]
+          },
+          {
+            "name": "PS5 Disc Games",
+            "image": "https://strapi.monis.rent/uploads/PS_5_Games_Titel_Photo_0946d017bb.jpg",
+            "slug": "ps-5-games",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "34\" 4K Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-curved-monitor-180-hz",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "50'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_50_1_9de8d7fa6b.jpg",
+            "slug": "smart-tv-4-k-50-grom-rent",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "65'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/smart_tv_4k_65_1_7f45a982ed.jpg",
+            "slug": "smart-tv-4-k-65",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "55'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/55_4_K_TV_5_6d395b4acc.jpg",
+            "slug": "smart-tv-4-k-55",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Sony PlayStation 5",
+            "image": "https://strapi.monis.rent/uploads/Sony_Play_Station_5_1_83581eeb3e.jpg",
+            "slug": "sony-play-station-5",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Game Console"]
+          },
+          {
+            "name": "43\" Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_43_1_8c5b8dbc8b.jpg",
+            "slug": "43-smart-tv-4-k",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Sony PSVR2 VR Headset",
+            "image": "https://strapi.monis.rent/uploads/Sony_PSVR_2_VR_Headset_1_2662290f33.jpg",
+            "slug": "sony-psvr-2-vr-headset",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": []
+          },
+          {
+            "name": "Nintendo Switch 2",
+            "image": "https://strapi.monis.rent/uploads/Nintendo_Switch_2_3_207ed0a9cd.jpg",
+            "slug": "nintendo-switch-2",
+            "brand": "Nintendo",
+            "brandSlug": "nintendo",
+            "brandDomain": "nintendo.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=nintendo.com",
+            "tags": []
+          }
+        ]
+      },
+      {
+        "name": "Health & Fitness",
+        "slug": "health-and-fitness",
+        "icon": "https://strapi.monis.rent/uploads/fitness_9317b04742.svg",
+        "short_description": "Perfect for supporting active lifestyles, wellness, and personal health goals.",
+        "items": [
+          {
+            "name": "Home Spinning Bike",
+            "image": "https://strapi.monis.rent/uploads/Home_Spinning_Bike_4_45de07b098.jpg",
+            "slug": "home-spinning-bike-yesoul-S3",
+            "brand": "Yesoul",
+            "brandSlug": null,
+            "brandDomain": "www.yesoulfitness.asia",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.yesoulfitness.asia",
+            "tags": ["Cardio Equipment"]
+          },
+          {
+            "name": "Adjustable Dumbbell Weight Set",
+            "image": "https://strapi.monis.rent/uploads/Dumbbell_Barbell_50kg_Set_3_731d6080d4.jpg",
+            "slug": "adjustable-dumbbell-weight-set",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Weight Training"]
+          },
+          {
+            "name": "Massage Gun",
+            "image": "https://strapi.monis.rent/uploads/Massage_Gun_2_a8d7d7bda8.jpg",
+            "slug": "massage-gun",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Muscle Recovery"]
+          },
+          {
+            "name": "Foldable Walking Pad R2 Pro",
+            "image": "https://strapi.monis.rent/uploads/Kingsmith_R2_Pro_R_2_Pro_1_30df9226bf.jpg",
+            "slug": "foldable-walk-pad",
+            "brand": "Kingsmith",
+            "brandSlug": "kingsmith",
+            "brandDomain": "kingsmith.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=kingsmith.com",
+            "tags": ["Cardio Equipment"]
+          },
+          {
+            "name": "Treadmill",
+            "image": "https://strapi.monis.rent/uploads/Treadmill_2_7379507162.jpg",
+            "slug": "treadmill",
+            "brand": "Kinetic",
+            "brandSlug": null,
+            "brandDomain": "www.kinetic.fit",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.kinetic.fit",
+            "tags": ["Cardio Equipment"]
+          }
+        ]
+      },
+      {
+        "name": "Audio & Video",
+        "slug": "audio-and-video",
+        "icon": "https://strapi.monis.rent/uploads/monitor_4427e7e6b9.svg",
+        "short_description": "Perfect for presentations, events, and high-quality media production.",
+        "items": [
+          {
+            "name": "Marshall Woburn III Bluetooth",
+            "image": "https://strapi.monis.rent/uploads/marshall_woburn_2_1_227171e0f8.jpg",
+            "slug": "marshall-woburn-ii-bluetooth",
+            "brand": "Marshall",
+            "brandSlug": "marshall",
+            "brandDomain": "marshall.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "Logitech 4K Webcam",
+            "image": "https://strapi.monis.rent/uploads/Logitech_Brio_4_K_Webcam_6_d7ea7e69b0.jpg",
+            "slug": "logitech-4-k-webcam",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Webcam"]
+          },
+          {
+            "name": "Podcast Microphone Kit",
+            "image": "https://strapi.monis.rent/uploads/Shure_MV_7_Podcast_Microphone_Kit_1_fefd9453fb.jpg",
+            "slug": "podcast-microphone-kit",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Microphone"]
+          },
+          {
+            "name": "Soundbar Dolby Atmos",
+            "image": "https://strapi.monis.rent/uploads/Soundbar_Dolby_Atmos_9a749dc791.jpg",
+            "slug": "soundbar-dolby-atmos",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "XLR Female to 3.5mm Cable",
+            "image": "https://strapi.monis.rent/uploads/XLR_to_3_5mm_Cable_Photo_1_37b141dafc.jpg",
+            "slug": "xlr-female-to-3-5mm-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "XGIMI H2 Projector",
+            "image": "https://strapi.monis.rent/uploads/XGIMI_H2_Harman_Kardon_2_fdfefd5099.jpg",
+            "slug": "xgimi-h2-projector",
+            "brand": "Xgimi",
+            "brandSlug": null,
+            "brandDomain": "www.xgimi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Wanbo T6 Projector ",
+            "image": "https://strapi.monis.rent/uploads/Projector_Wanbo_T6_Max_1_aa4529e8fd.jpg",
+            "slug": "wanbo-t6-projector",
+            "brand": "Wanbo",
+            "brandSlug": null,
+            "brandDomain": "www.wanbo.cn",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn",
+            "tags": ["Projector"]
+          }
+        ]
+      },
+      {
+        "name": "Furniture",
+        "slug": "furniture",
+        "icon": "https://strapi.monis.rent/uploads/chair_icon_429ba0af10.png",
+        "short_description": "Ideal for flexible workspaces, home offices, and event setups.",
+        "items": [
+          {
+            "name": "Magnetic Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/Magnatic_Whiteboard_6aa8a86e74.jpg",
+            "slug": "magnetic-whiteboard",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Electrical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/Electrical_Desk_1_18774dbd25.jpg",
+            "slug": "electrical-adjustable-desk-cm",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Desk"]
+          },
+          {
+            "name": "Standing Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/Whiteboard_6c1ea066f8.jpg",
+            "slug": "standing-whiteboard-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Ergonomic Chair Furradec",
+            "image": "https://strapi.monis.rent/uploads/Furradec_Haru_Plus_1_452a27fb44.jpg",
+            "slug": "ergonomic-chair-furradec-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Mechanical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/Mechanical_Adjustable_Desk_front_new_a83b8077b0.jpg",
+            "slug": "adjustable-wooden-desk",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Desk"]
+          },
+          {
+            "name": "Ergonomic Office Chair Anya",
+            "image": "https://strapi.monis.rent/uploads/Modena_Anya_4_387695b8a1.jpg",
+            "slug": "ergonomic-office-chair-anya-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Standing Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/standing_whiteboard_240x120_4a5a6f2c47.jpg",
+            "slug": "standing-whiteboard-120x240",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Ergonomic Office Chair",
+            "image": "https://strapi.monis.rent/uploads/fantech_oca259s_chair_6_b632a0c529.jpg",
+            "slug": "ergonomic-office-chair",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Electrical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/desk_titel_new_3db151d44c.jpg",
+            "slug": "electrical-adjustable-desk",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Desk"]
+          }
+        ]
+      },
+      {
+        "name": "Computer",
+        "slug": "computer",
+        "icon": "https://strapi.monis.rent/uploads/monitor_7ed9a4585d.svg",
+        "short_description": "Perfect for creative projects, development, and remote work.",
+        "items": [
+          {
+            "name": "Apple Mac Studio",
+            "image": "https://strapi.monis.rent/uploads/Mac_Studio_M1_6_7488521ebb.jpg",
+            "slug": "apple-mac-studio",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          },
+          {
+            "name": "15\" Office Windows Laptop",
+            "image": "https://strapi.monis.rent/uploads/15_Office_Windows_Laptop_1_c1221bb234.jpg",
+            "slug": "office-windows-laptop",
+            "brand": "Windows",
+            "brandSlug": "windows",
+            "brandDomain": "microsoft.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=microsoft.com",
+            "tags": ["Laptop"]
+          },
+          {
+            "name": "Apple Mac Mini M2",
+            "image": "https://strapi.monis.rent/uploads/Apple_Mac_Mini_M2_6_1d4fce6808.jpg",
+            "slug": "apple-mac-mini-m2-new",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          },
+          {
+            "name": "Apple Mac Mini M4",
+            "image": "https://strapi.monis.rent/uploads/Mac_mini_M4_front_b152d10743.jpg",
+            "slug": "apple-mac-mini-m4",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Xiaomi",
+        "slug": "xiaomi",
+        "domain": "xiaomi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com"
+      },
+      {
+        "name": "Ugreen",
+        "slug": "ugreen",
+        "domain": "ugreen.co.id",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id"
+      },
+      {
+        "name": "Yesoul",
+        "slug": null,
+        "domain": "www.yesoulfitness.asia",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.yesoulfitness.asia"
+      },
+      {
+        "name": "Marshall",
+        "slug": "marshall",
+        "domain": "marshall.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com"
+      },
+      {
+        "name": "Ikea",
+        "slug": null,
+        "domain": "www.ikea.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com"
+      },
+      {
+        "name": "BenQ",
+        "slug": "benq",
+        "domain": "benq.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=benq.com"
+      },
+      {
+        "name": "MSI",
+        "slug": "msi",
+        "domain": "msi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=msi.com"
+      },
+      {
+        "name": "Sony",
+        "slug": "sony",
+        "domain": "sony.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com"
+      },
+      {
+        "name": "LG",
+        "slug": "lg",
+        "domain": "lg.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com"
+      },
+      {
+        "name": "Apple",
+        "slug": "apple",
+        "domain": "apple.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com"
+      },
+      {
+        "name": "Tp-Link",
+        "slug": "tp-link",
+        "domain": "tp-link.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=tp-link.com"
+      },
+      {
+        "name": "Fantech",
+        "slug": "fantech",
+        "domain": "fantechworld.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com"
+      },
+      {
+        "name": "Samsung",
+        "slug": "samsung",
+        "domain": "samsung.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com"
+      },
+      {
+        "name": "Windows",
+        "slug": "windows",
+        "domain": "microsoft.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=microsoft.com"
+      },
+      {
+        "name": "Logitech",
+        "slug": "logitech",
+        "domain": "logitech.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com"
+      },
+      {
+        "name": "Nespresso",
+        "slug": "nespresso",
+        "domain": "nespresso.co.id",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=nespresso.co.id"
+      },
+      {
+        "name": "Starlink",
+        "slug": "starlink",
+        "domain": "starlink.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=starlink.com"
+      },
+      {
+        "name": "Kingsmith",
+        "slug": "kingsmith",
+        "domain": "kingsmith.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=kingsmith.com"
+      },
+      {
+        "name": "Nintendo",
+        "slug": "nintendo",
+        "domain": "nintendo.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=nintendo.com"
+      },
+      {
+        "name": "Xgimi",
+        "slug": null,
+        "domain": "www.xgimi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com"
+      },
+      {
+        "name": "Wanbo",
+        "slug": null,
+        "domain": "www.wanbo.cn",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn"
+      },
+      {
+        "name": "Kinetic",
+        "slug": null,
+        "domain": "www.kinetic.fit",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.kinetic.fit"
+      }
+    ],
+    "brandsFilter": [
+      "Xiaomi",
+      "Ugreen",
+      "Yesoul",
+      "Marshall",
+      "Ikea",
+      "BenQ",
+      "MSI",
+      "Sony",
+      "LG",
+      "Apple",
+      "Tp-Link",
+      "Fantech",
+      "Samsung",
+      "Windows",
+      "Logitech",
+      "Nespresso",
+      "Starlink",
+      "Kingsmith",
+      "Nintendo",
+      "Xgimi",
+      "Wanbo",
+      "Kinetic"
+    ],
+    "tags": [
+      "Gaming Monitor",
+      "Full HD",
+      "Converter",
+      "Cable",
+      "Power Strip",
+      "Kitchen Appliances",
+      "Laundry Essentials",
+      "Controller",
+      "Cardio Equipment",
+      "WiFi",
+      "Speaker",
+      "2K Monitor",
+      "Grading Monitor",
+      "Whiteboard",
+      "Game Console",
+      "Mac",
+      "4K Monitor",
+      "Desk",
+      "Mouse",
+      "Stand",
+      "Chair",
+      "Laptop",
+      "Webcam",
+      "TV",
+      "Microphone",
+      "Weight Training",
+      "Muscle Recovery",
+      "Keyboard",
+      "Projector",
+      "5K Monitor"
+    ]
+  },
+  "Monitors": {
+    "slug": "monitors",
+    "categories": [
+      {
+        "name": "Monitors",
+        "slug": "monitors",
+        "icon": "https://strapi.monis.rent/uploads/monitor_56d115575a.svg",
+        "short_description": "Perfect for events, offices, and creative projects.",
+        "items": [
+          {
+            "name": "30\" Full HD Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/30_Full_HD_Gaming_Monitor_5_9b321bb7e5.jpg",
+            "slug": "mi-30-curved-monitor",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Gaming Monitor", "Full HD"]
+          },
+          {
+            "name": "27\" 2K+ Grading Monitor ",
+            "image": "https://strapi.monis.rent/uploads/Ben_Q_2_K_Grading_Monitor_27_front_d138954555.jpg",
+            "slug": "ben-q-2-k-grading-monitor-27",
+            "brand": "BenQ",
+            "brandSlug": "benq",
+            "brandDomain": "benq.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=benq.com",
+            "tags": ["2K Monitor", "Grading Monitor"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor MP251",
+            "image": "https://strapi.monis.rent/uploads/MSI_PRO_MP_251_5_74ae3c1380.jpg",
+            "slug": "24-full-hd-office-monitor-mp-251-cm",
+            "brand": "MSI",
+            "brandSlug": "msi",
+            "brandDomain": "msi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=msi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor MR400",
+            "image": "https://strapi.monis.rent/uploads/LG_27_MR_400_B_5_2d36f13bb0.jpg",
+            "slug": "27-full-hd-office-monitor-mr-400-cm",
+            "brand": "LG",
+            "brandSlug": "lg",
+            "brandDomain": "lg.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor MiD",
+            "image": "https://strapi.monis.rent/uploads/24_essentail_front_ea36cec7cf.jpg",
+            "slug": "27-work-monitor-mi-d",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor A27i ",
+            "image": "https://strapi.monis.rent/uploads/A27i_front_35acc32043.jpg",
+            "slug": "27-work-monitor-a27i",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 4K+ Grading Monitor",
+            "image": "https://strapi.monis.rent/uploads/27_4_K_60_Hz_IPS_Grading_Monitor_front_01b90d6ac0.jpg",
+            "slug": "4k-grading-monitor-27",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Grading Monitor"]
+          },
+          {
+            "name": "34\" 4K Curved Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Ultra_Wide_Curved_Monitor_front_3636b63aed.jpg",
+            "slug": "4-k-ultra-wide-34",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor"]
+          },
+          {
+            "name": "27\" Full HD Office Monitor S27",
+            "image": "https://strapi.monis.rent/uploads/S27_C330_GAE_5_0c984d3b44.jpg",
+            "slug": "27-full-hd-office-monitor-s27-cm",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 4K Multimedia Monitor",
+            "image": "https://strapi.monis.rent/uploads/27_4_K_A27_U_Multitasking_Monitor_1_ce29d15357.jpg",
+            "slug": "27-4-k-multimedia-monitor",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor"]
+          },
+          {
+            "name": "32\" QHD Ergonomic Monitor",
+            "image": "https://strapi.monis.rent/uploads/32_LG_Fine_Art_addtition_1_1c49831c40.jpg",
+            "slug": "32-4-k-ergonomic-monitor",
+            "brand": "LG",
+            "brandSlug": "lg",
+            "brandDomain": "lg.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com",
+            "tags": []
+          },
+          {
+            "name": "34\" 4K Gaming Monitor WQi",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-gaming-monitor-w-qi-cm",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "34\" 4K Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-curved-monitor-180-hz",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor A24i",
+            "image": "https://strapi.monis.rent/uploads/24_Full_HD_Office_Monitor_A24i_1_7f987306af.jpg",
+            "slug": "24-full-hd-office-monitor-a24i-2",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "24\" Full HD Office Monitor 1C",
+            "image": "https://strapi.monis.rent/uploads/24_Full_HD_75_Hz_IPS_Desktop_1_C_Monitor_front_7eeba14881.jpg",
+            "slug": "full-hd-office-24",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Full HD"]
+          },
+          {
+            "name": "27\" 5K Apple Studio Display",
+            "image": "https://strapi.monis.rent/uploads/Apple_Studio_Display_6_94c6329a05.jpg",
+            "slug": "apple-studio-display",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["5K Monitor"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Xiaomi",
+        "slug": "xiaomi",
+        "domain": "xiaomi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com"
+      },
+      {
+        "name": "BenQ",
+        "slug": "benq",
+        "domain": "benq.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=benq.com"
+      },
+      {
+        "name": "MSI",
+        "slug": "msi",
+        "domain": "msi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=msi.com"
+      },
+      {
+        "name": "LG",
+        "slug": "lg",
+        "domain": "lg.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=lg.com"
+      },
+      {
+        "name": "Samsung",
+        "slug": "samsung",
+        "domain": "samsung.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com"
+      },
+      {
+        "name": "Apple",
+        "slug": "apple",
+        "domain": "apple.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com"
+      }
+    ],
+    "brandsFilter": ["Xiaomi", "BenQ", "MSI", "LG", "Samsung", "Apple"],
+    "tags": ["Gaming Monitor", "Full HD", "2K Monitor", "Grading Monitor", "4K Monitor", "5K Monitor"]
+  },
+  "Office Accessories": {
+    "slug": "office-accessories",
+    "categories": [
+      {
+        "name": "Office Accessories",
+        "slug": "office-accessories",
+        "icon": "https://strapi.monis.rent/uploads/keyboard_icon_94cb64afa5.png",
+        "short_description": "Ideal for enhancing productivity, organization, and workspace comfort.",
+        "items": [
+          {
+            "name": "6-in-1 Converter Hub",
+            "image": "https://strapi.monis.rent/uploads/mac_dongle_product_photo_0316bc4b50.jpg",
+            "slug": "6-in-1-converter-hub",
+            "brand": "Ugreen",
+            "brandSlug": "ugreen",
+            "brandDomain": "ugreen.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id",
+            "tags": ["Converter"]
+          },
+          {
+            "name": "USB-C 3.1 100W 10Gbps Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_3_1_100_W_10_Gbps_Cable_5_e809734c67.jpg",
+            "slug": "usb-c-3-1-100-w-10-gbps-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Smart Power Strip 6",
+            "image": "https://strapi.monis.rent/uploads/Xiaomi_MI_Smart_Power_Strip_Plug_white_4b97124ba0.jpg",
+            "slug": "smart-power-strip-6",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "WiFi Range Extender",
+            "image": "https://strapi.monis.rent/uploads/Wifi_Range_Extender_AC_1200_6_0fe8118acf.jpg",
+            "slug": "wi-fi-range-extender",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["WiFi"]
+          },
+          {
+            "name": "Extension Cable",
+            "image": "https://strapi.monis.rent/uploads/extension_cable_547a728512.jpg",
+            "slug": "extension-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Power Strip", "Cable"]
+          },
+          {
+            "name": "Dual-Band Wi-Fi 6 Router",
+            "image": "https://strapi.monis.rent/uploads/Archer_AX_72_AX_5400_Dual_Band_Gigabit_Wi_Fi_6_Router_4_69792f5825.jpg",
+            "slug": "wi-fi-6-router-5-g",
+            "brand": "Tp-Link",
+            "brandSlug": "tp-link",
+            "brandDomain": "tp-link.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=tp-link.com",
+            "tags": ["WiFi"]
+          },
+          {
+            "name": "USB-C to DisplayPort Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_to_Display_Port_Cable_new_8b1864b821.jpg",
+            "slug": "usb-c-to-display-port-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Smart Power Strip 3",
+            "image": "https://strapi.monis.rent/uploads/Xiaomi_MI_Smart_Power_Strip_Plug_black_3965e07e42.jpg",
+            "slug": "international-power-strip",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "Apple Magic Trackpad",
+            "image": "https://strapi.monis.rent/uploads/apple_magic_trackpad_1_5430d919cc.jpg",
+            "slug": "apple-magic-trackpad",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Ergonomic Laptop Stand",
+            "image": "https://strapi.monis.rent/uploads/Laptop_stand_back_new2_91df29c3c8.jpg",
+            "slug": "ergonomic-laptop-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Monitor Light Bar",
+            "image": "https://strapi.monis.rent/uploads/Monitor_Light_Bar_1_8e97972171.jpg",
+            "slug": "metal-monitor-light-bar",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "USB-C to HDMI Display Cable",
+            "image": "https://strapi.monis.rent/uploads/USB_C_to_HDMI_Display_Cable_21f0cb1e2b.jpg",
+            "slug": "usb-c-to-hdmi-display-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Mini DisplayPort to HDMI Adapter",
+            "image": "https://strapi.monis.rent/uploads/Belkin_4_K_Mini_Display_Port_to_HDMI_Adapter1_a1328b288b.jpg",
+            "slug": "mini-display-port-to-hdmi-adapter",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "Power Strip",
+            "image": "https://strapi.monis.rent/uploads/Extension_cord_1_356d82388f.jpg",
+            "slug": "power-strip-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Power Strip"]
+          },
+          {
+            "name": "6-in-1 Converter Hub",
+            "image": "https://strapi.monis.rent/uploads/6in1_converter_hub_3_29f66b2a36.jpg",
+            "slug": "6-in-1-converter-hub-cm",
+            "brand": "Ugreen",
+            "brandSlug": "ugreen",
+            "brandDomain": "ugreen.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id",
+            "tags": ["Converter"]
+          },
+          {
+            "name": "Logitech 4K Webcam",
+            "image": "https://strapi.monis.rent/uploads/Logitech_Brio_4_K_Webcam_6_d7ea7e69b0.jpg",
+            "slug": "logitech-4-k-webcam",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Webcam"]
+          },
+          {
+            "name": "Apple Magic Mouse",
+            "image": "https://strapi.monis.rent/uploads/Apple_Magic_Mouse_4_022f966524.jpg",
+            "slug": "apple-magic-mouse",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Adjustable Monitor Stand",
+            "image": "https://strapi.monis.rent/uploads/Adjustable_Monitor_Stand_4_e6ae3a1d06.jpg",
+            "slug": "adjustable-monitor-stand-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Ergonomic Laptop Stand",
+            "image": "https://strapi.monis.rent/uploads/Laptop_Stand_3_94230b18eb.jpg",
+            "slug": "ergonomic-laptop-stand-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Monitor Light Bar",
+            "image": "https://strapi.monis.rent/uploads/Monitor_Light_Bar_1_8e97972171.jpg",
+            "slug": "monitor-light-bar-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "Logitech M331 Silent Mouse",
+            "image": "https://strapi.monis.rent/uploads/mouse_side_M33_030834aea0.jpg",
+            "slug": "logitech-mx-mouse",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Adjustable Monitor Stand",
+            "image": "https://strapi.monis.rent/uploads/Adjustable_Monitor_Stand_4_e6ae3a1d06.jpg",
+            "slug": "adjustable-monitor-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          },
+          {
+            "name": "Logitech MX Keyboard",
+            "image": "https://strapi.monis.rent/uploads/Logitech_MX_keys_1_9977480ae1.jpg",
+            "slug": "logitech-mx-keyboard",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Keyboard"]
+          },
+          {
+            "name": "Logitech MX Master Mouse S3",
+            "image": "https://strapi.monis.rent/uploads/Logitech_S3_6_4cf1e523b8.jpg",
+            "slug": "logitech-mx-master-mouse-s3",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Mouse"]
+          },
+          {
+            "name": "Apple Magic Keyboard",
+            "image": "https://strapi.monis.rent/uploads/magic_keyboard_with_touch_id_1_7124075f1d.jpg",
+            "slug": "apple-magic-keyboard",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Keyboard"]
+          },
+          {
+            "name": "Portable TV Stand ",
+            "image": "https://strapi.monis.rent/uploads/Oximus_TC_6100_2_5b3b7d0822.jpg",
+            "slug": "portable-tv-stand",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Stand"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Ugreen",
+        "slug": "ugreen",
+        "domain": "ugreen.co.id",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=ugreen.co.id"
+      },
+      {
+        "name": "Xiaomi",
+        "slug": "xiaomi",
+        "domain": "xiaomi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com"
+      },
+      {
+        "name": "Tp-Link",
+        "slug": "tp-link",
+        "domain": "tp-link.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=tp-link.com"
+      },
+      {
+        "name": "Apple",
+        "slug": "apple",
+        "domain": "apple.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com"
+      },
+      {
+        "name": "Logitech",
+        "slug": "logitech",
+        "domain": "logitech.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com"
+      }
+    ],
+    "brandsFilter": ["Ugreen", "Xiaomi", "Tp-Link", "Apple", "Logitech"],
+    "tags": ["Converter", "Cable", "Power Strip", "WiFi", "Mouse", "Stand", "Webcam", "Keyboard"]
+  },
+  "Smart Home": {
+    "slug": "smart-home",
+    "categories": [
+      {
+        "name": "Smart Home",
+        "slug": "smart-home",
+        "icon": "https://strapi.monis.rent/uploads/smart_home_icon_98d8e26fb9.png",
+        "short_description": "Perfect for modern living, effortless control, and seamless convenience.",
+        "items": [
+          {
+            "name": "Table Fan",
+            "image": "https://strapi.monis.rent/uploads/Kris_Table_Fan_4_fba4785b6b.jpg",
+            "slug": "table-fan",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Washing machine 7kg",
+            "image": "https://strapi.monis.rent/uploads/Washer_Samsung_WW_70_T3020_WW_1_a82f1bb83d.jpg",
+            "slug": "washing-machine-7kg",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Clothes Rack",
+            "image": "https://strapi.monis.rent/uploads/Cloths_Rack_1_31865a537e.jpg",
+            "slug": "clothes-rack",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "De'Longhi Autentica Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/De_Longhi_Autentica_1_78b97e38d9.jpg",
+            "slug": "de-longhi-autentica",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Dolce Gusto Capsule Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/Dolce_Gusto_Type_9781_5_dd90ffc8b2.jpg",
+            "slug": "capsule-coffee-machine",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Nespresso Capsule Coffee Machine",
+            "image": "https://strapi.monis.rent/uploads/Nespresso_Inissia_M105_2_8f9255da68.jpg",
+            "slug": "nespresso-inissia",
+            "brand": "Nespresso",
+            "brandSlug": "nespresso",
+            "brandDomain": "nespresso.co.id",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=nespresso.co.id",
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "50'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_50_1_9de8d7fa6b.jpg",
+            "slug": "smart-tv-4-k-50-grom-rent",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "2 in 1 Washing machine",
+            "image": "https://strapi.monis.rent/uploads/2_in_1_Washing_machine_1_1527e869e8.jpg",
+            "slug": "2-in-1-washing-machine",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "65'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/smart_tv_4k_65_1_7f45a982ed.jpg",
+            "slug": "smart-tv-4-k-65",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "55'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/55_4_K_TV_5_6d395b4acc.jpg",
+            "slug": "smart-tv-4-k-55",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Steam Iron",
+            "image": "https://strapi.monis.rent/uploads/Iron_3df40eabbf.jpg",
+            "slug": "steam-iron",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Starlink Kit (incl. plan)",
+            "image": "https://strapi.monis.rent/uploads/Starlink_V4_Gen_3_7_41ef714dbb.jpg",
+            "slug": "starlink-kit-incl-plan",
+            "brand": "Starlink",
+            "brandSlug": "starlink",
+            "brandDomain": "starlink.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=starlink.com",
+            "tags": []
+          },
+          {
+            "name": "43\" Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_43_1_8c5b8dbc8b.jpg",
+            "slug": "43-smart-tv-4-k",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Mini Bar Fridge",
+            "image": "https://strapi.monis.rent/uploads/Mini_Bar_1_1305a9b18c.jpg",
+            "slug": "mini-bar-fridge",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Drying Rack",
+            "image": "https://strapi.monis.rent/uploads/Drying_Rack_1_808f3ffdc7.jpg",
+            "slug": "drying-rack",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Hanger Bundle",
+            "image": "https://strapi.monis.rent/uploads/Hanger_Bundle_1_e538364409.jpg",
+            "slug": "hanger-bundle",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "XGIMI H2 Projector",
+            "image": "https://strapi.monis.rent/uploads/XGIMI_H2_Harman_Kardon_2_fdfefd5099.jpg",
+            "slug": "xgimi-h2-projector",
+            "brand": "Xgimi",
+            "brandSlug": null,
+            "brandDomain": "www.xgimi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Kettle",
+            "image": "https://strapi.monis.rent/uploads/Kettle_1_82d5a63e48.jpg",
+            "slug": "kettle",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "Wanbo T6 Projector ",
+            "image": "https://strapi.monis.rent/uploads/Projector_Wanbo_T6_Max_1_aa4529e8fd.jpg",
+            "slug": "wanbo-t6-projector",
+            "brand": "Wanbo",
+            "brandSlug": null,
+            "brandDomain": "www.wanbo.cn",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Ironing Board",
+            "image": "https://strapi.monis.rent/uploads/Ironing_Board_1_2d7a7a9d95.jpg",
+            "slug": "ironing-board",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Laundry Essentials"]
+          },
+          {
+            "name": "Microwave",
+            "image": "https://strapi.monis.rent/uploads/Microwave_435dc5759b.jpg",
+            "slug": "microwave",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          },
+          {
+            "name": "3 in 1 Blender",
+            "image": "https://strapi.monis.rent/uploads/KLAZ_3_in_1_Blender_1_e4ed6edf96.jpg",
+            "slug": "3-in-1-blender",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Kitchen Appliances"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Ikea",
+        "slug": null,
+        "domain": "www.ikea.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com"
+      },
+      {
+        "name": "Nespresso",
+        "slug": "nespresso",
+        "domain": "nespresso.co.id",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=nespresso.co.id"
+      },
+      {
+        "name": "Samsung",
+        "slug": "samsung",
+        "domain": "samsung.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com"
+      },
+      {
+        "name": "Starlink",
+        "slug": "starlink",
+        "domain": "starlink.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=starlink.com"
+      },
+      {
+        "name": "Xgimi",
+        "slug": null,
+        "domain": "www.xgimi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com"
+      },
+      {
+        "name": "Wanbo",
+        "slug": null,
+        "domain": "www.wanbo.cn",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn"
+      }
+    ],
+    "brandsFilter": ["Ikea", "Nespresso", "Samsung", "Starlink", "Xgimi", "Wanbo"],
+    "tags": ["Kitchen Appliances", "Laundry Essentials", "TV", "Projector"]
+  },
+  "Gaming": {
+    "slug": "gaming",
+    "categories": [
+      {
+        "name": "Gaming",
+        "slug": "gaming",
+        "icon": "https://strapi.monis.rent/uploads/monitor2_f2ad324f1d.svg",
+        "short_description": "Perfect for events, tournaments, and immersive play experiences.",
+        "items": [
+          {
+            "name": "Switch 2 Controller Pack",
+            "image": "https://strapi.monis.rent/uploads/Nintendo_Switch_2_extra_controller_1_6508ccd5e2.jpg",
+            "slug": "switch-2-controller-pack",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Controller"]
+          },
+          {
+            "name": "Marshall Woburn III Bluetooth",
+            "image": "https://strapi.monis.rent/uploads/marshall_woburn_2_1_227171e0f8.jpg",
+            "slug": "marshall-woburn-ii-bluetooth",
+            "brand": "Marshall",
+            "brandSlug": "marshall",
+            "brandDomain": "marshall.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "Sony PlayStation®5",
+            "image": "https://strapi.monis.rent/uploads/Monis_PS_5_Titel_Photo_e3d9eb0af1.jpg",
+            "slug": "play-station-5",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Game Console"]
+          },
+          {
+            "name": "PS5 Wireless Controller",
+            "image": "https://strapi.monis.rent/uploads/Sony_charging_station_4_d0825bba0c.jpg",
+            "slug": "ps-5-wireless-controller",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Controller"]
+          },
+          {
+            "name": "PS5 Disc Games",
+            "image": "https://strapi.monis.rent/uploads/PS_5_Games_Titel_Photo_0946d017bb.jpg",
+            "slug": "ps-5-games",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": []
+          },
+          {
+            "name": "34\" 4K Gaming Monitor",
+            "image": "https://strapi.monis.rent/uploads/34_4_K_Gaming_Monitor_7_3f6b2ba627.jpg",
+            "slug": "34-4-k-curved-monitor-180-hz",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["4K Monitor", "Gaming Monitor"]
+          },
+          {
+            "name": "50'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_50_1_9de8d7fa6b.jpg",
+            "slug": "smart-tv-4-k-50-grom-rent",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "65'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/smart_tv_4k_65_1_7f45a982ed.jpg",
+            "slug": "smart-tv-4-k-65",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "55'' Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/55_4_K_TV_5_6d395b4acc.jpg",
+            "slug": "smart-tv-4-k-55",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Sony PlayStation 5",
+            "image": "https://strapi.monis.rent/uploads/Sony_Play_Station_5_1_83581eeb3e.jpg",
+            "slug": "sony-play-station-5",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": ["Game Console"]
+          },
+          {
+            "name": "43\" Smart TV 4K",
+            "image": "https://strapi.monis.rent/uploads/Smart_TV_4_K_43_1_8c5b8dbc8b.jpg",
+            "slug": "43-smart-tv-4-k",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["TV"]
+          },
+          {
+            "name": "Sony PSVR2 VR Headset",
+            "image": "https://strapi.monis.rent/uploads/Sony_PSVR_2_VR_Headset_1_2662290f33.jpg",
+            "slug": "sony-psvr-2-vr-headset",
+            "brand": "Sony",
+            "brandSlug": "sony",
+            "brandDomain": "sony.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com",
+            "tags": []
+          },
+          {
+            "name": "Nintendo Switch 2",
+            "image": "https://strapi.monis.rent/uploads/Nintendo_Switch_2_3_207ed0a9cd.jpg",
+            "slug": "nintendo-switch-2",
+            "brand": "Nintendo",
+            "brandSlug": "nintendo",
+            "brandDomain": "nintendo.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=nintendo.com",
+            "tags": []
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Marshall",
+        "slug": "marshall",
+        "domain": "marshall.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com"
+      },
+      {
+        "name": "Sony",
+        "slug": "sony",
+        "domain": "sony.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=sony.com"
+      },
+      {
+        "name": "Xiaomi",
+        "slug": "xiaomi",
+        "domain": "xiaomi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com"
+      },
+      {
+        "name": "Samsung",
+        "slug": "samsung",
+        "domain": "samsung.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com"
+      },
+      {
+        "name": "Nintendo",
+        "slug": "nintendo",
+        "domain": "nintendo.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=nintendo.com"
+      }
+    ],
+    "brandsFilter": ["Marshall", "Sony", "Xiaomi", "Samsung", "Nintendo"],
+    "tags": ["Controller", "Speaker", "Game Console", "4K Monitor", "Gaming Monitor", "TV"]
+  },
+  "Health & Fitness": {
+    "slug": "health-and-fitness",
+    "categories": [
+      {
+        "name": "Health & Fitness",
+        "slug": "health-and-fitness",
+        "icon": "https://strapi.monis.rent/uploads/fitness_9317b04742.svg",
+        "short_description": "Perfect for supporting active lifestyles, wellness, and personal health goals.",
+        "items": [
+          {
+            "name": "Home Spinning Bike",
+            "image": "https://strapi.monis.rent/uploads/Home_Spinning_Bike_4_45de07b098.jpg",
+            "slug": "home-spinning-bike-yesoul-S3",
+            "brand": "Yesoul",
+            "brandSlug": null,
+            "brandDomain": "www.yesoulfitness.asia",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.yesoulfitness.asia",
+            "tags": ["Cardio Equipment"]
+          },
+          {
+            "name": "Adjustable Dumbbell Weight Set",
+            "image": "https://strapi.monis.rent/uploads/Dumbbell_Barbell_50kg_Set_3_731d6080d4.jpg",
+            "slug": "adjustable-dumbbell-weight-set",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Weight Training"]
+          },
+          {
+            "name": "Massage Gun",
+            "image": "https://strapi.monis.rent/uploads/Massage_Gun_2_a8d7d7bda8.jpg",
+            "slug": "massage-gun",
+            "brand": "Xiaomi",
+            "brandSlug": "xiaomi",
+            "brandDomain": "xiaomi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com",
+            "tags": ["Muscle Recovery"]
+          },
+          {
+            "name": "Foldable Walking Pad R2 Pro",
+            "image": "https://strapi.monis.rent/uploads/Kingsmith_R2_Pro_R_2_Pro_1_30df9226bf.jpg",
+            "slug": "foldable-walk-pad",
+            "brand": "Kingsmith",
+            "brandSlug": "kingsmith",
+            "brandDomain": "kingsmith.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=kingsmith.com",
+            "tags": ["Cardio Equipment"]
+          },
+          {
+            "name": "Treadmill",
+            "image": "https://strapi.monis.rent/uploads/Treadmill_2_7379507162.jpg",
+            "slug": "treadmill",
+            "brand": "Kinetic",
+            "brandSlug": null,
+            "brandDomain": "www.kinetic.fit",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.kinetic.fit",
+            "tags": ["Cardio Equipment"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Yesoul",
+        "slug": null,
+        "domain": "www.yesoulfitness.asia",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.yesoulfitness.asia"
+      },
+      {
+        "name": "Xiaomi",
+        "slug": "xiaomi",
+        "domain": "xiaomi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=xiaomi.com"
+      },
+      {
+        "name": "Kingsmith",
+        "slug": "kingsmith",
+        "domain": "kingsmith.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=kingsmith.com"
+      },
+      {
+        "name": "Kinetic",
+        "slug": null,
+        "domain": "www.kinetic.fit",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.kinetic.fit"
+      }
+    ],
+    "brandsFilter": ["Yesoul", "Xiaomi", "Kingsmith", "Kinetic"],
+    "tags": ["Cardio Equipment", "Weight Training", "Muscle Recovery"]
+  },
+  "Audio & Video": {
+    "slug": "audio-and-video",
+    "categories": [
+      {
+        "name": "Audio & Video",
+        "slug": "audio-and-video",
+        "icon": "https://strapi.monis.rent/uploads/monitor_4427e7e6b9.svg",
+        "short_description": "Perfect for presentations, events, and high-quality media production.",
+        "items": [
+          {
+            "name": "Marshall Woburn III Bluetooth",
+            "image": "https://strapi.monis.rent/uploads/marshall_woburn_2_1_227171e0f8.jpg",
+            "slug": "marshall-woburn-ii-bluetooth",
+            "brand": "Marshall",
+            "brandSlug": "marshall",
+            "brandDomain": "marshall.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "Logitech 4K Webcam",
+            "image": "https://strapi.monis.rent/uploads/Logitech_Brio_4_K_Webcam_6_d7ea7e69b0.jpg",
+            "slug": "logitech-4-k-webcam",
+            "brand": "Logitech",
+            "brandSlug": "logitech",
+            "brandDomain": "logitech.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com",
+            "tags": ["Webcam"]
+          },
+          {
+            "name": "Podcast Microphone Kit",
+            "image": "https://strapi.monis.rent/uploads/Shure_MV_7_Podcast_Microphone_Kit_1_fefd9453fb.jpg",
+            "slug": "podcast-microphone-kit",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Microphone"]
+          },
+          {
+            "name": "Soundbar Dolby Atmos",
+            "image": "https://strapi.monis.rent/uploads/Soundbar_Dolby_Atmos_9a749dc791.jpg",
+            "slug": "soundbar-dolby-atmos",
+            "brand": "Samsung",
+            "brandSlug": "samsung",
+            "brandDomain": "samsung.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com",
+            "tags": ["Speaker"]
+          },
+          {
+            "name": "XLR Female to 3.5mm Cable",
+            "image": "https://strapi.monis.rent/uploads/XLR_to_3_5mm_Cable_Photo_1_37b141dafc.jpg",
+            "slug": "xlr-female-to-3-5mm-cable",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Cable"]
+          },
+          {
+            "name": "XGIMI H2 Projector",
+            "image": "https://strapi.monis.rent/uploads/XGIMI_H2_Harman_Kardon_2_fdfefd5099.jpg",
+            "slug": "xgimi-h2-projector",
+            "brand": "Xgimi",
+            "brandSlug": null,
+            "brandDomain": "www.xgimi.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com",
+            "tags": ["Projector"]
+          },
+          {
+            "name": "Wanbo T6 Projector ",
+            "image": "https://strapi.monis.rent/uploads/Projector_Wanbo_T6_Max_1_aa4529e8fd.jpg",
+            "slug": "wanbo-t6-projector",
+            "brand": "Wanbo",
+            "brandSlug": null,
+            "brandDomain": "www.wanbo.cn",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn",
+            "tags": ["Projector"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Marshall",
+        "slug": "marshall",
+        "domain": "marshall.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=marshall.com"
+      },
+      {
+        "name": "Logitech",
+        "slug": "logitech",
+        "domain": "logitech.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=logitech.com"
+      },
+      {
+        "name": "Samsung",
+        "slug": "samsung",
+        "domain": "samsung.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=samsung.com"
+      },
+      {
+        "name": "Xgimi",
+        "slug": null,
+        "domain": "www.xgimi.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.xgimi.com"
+      },
+      {
+        "name": "Wanbo",
+        "slug": null,
+        "domain": "www.wanbo.cn",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.wanbo.cn"
+      }
+    ],
+    "brandsFilter": ["Marshall", "Logitech", "Samsung", "Xgimi", "Wanbo"],
+    "tags": ["Speaker", "Webcam", "Microphone", "Cable", "Projector"]
+  },
+  "Furniture": {
+    "slug": "furniture",
+    "categories": [
+      {
+        "name": "Furniture",
+        "slug": "furniture",
+        "icon": "https://strapi.monis.rent/uploads/chair_icon_429ba0af10.png",
+        "short_description": "Ideal for flexible workspaces, home offices, and event setups.",
+        "items": [
+          {
+            "name": "Magnetic Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/Magnatic_Whiteboard_6aa8a86e74.jpg",
+            "slug": "magnetic-whiteboard",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Electrical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/Electrical_Desk_1_18774dbd25.jpg",
+            "slug": "electrical-adjustable-desk-cm",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Desk"]
+          },
+          {
+            "name": "Standing Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/Whiteboard_6c1ea066f8.jpg",
+            "slug": "standing-whiteboard-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Ergonomic Chair Furradec",
+            "image": "https://strapi.monis.rent/uploads/Furradec_Haru_Plus_1_452a27fb44.jpg",
+            "slug": "ergonomic-chair-furradec-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Mechanical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/Mechanical_Adjustable_Desk_front_new_a83b8077b0.jpg",
+            "slug": "adjustable-wooden-desk",
+            "brand": "Ikea",
+            "brandSlug": null,
+            "brandDomain": "www.ikea.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com",
+            "tags": ["Desk"]
+          },
+          {
+            "name": "Ergonomic Office Chair Anya",
+            "image": "https://strapi.monis.rent/uploads/Modena_Anya_4_387695b8a1.jpg",
+            "slug": "ergonomic-office-chair-anya-cm",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Standing Whiteboard",
+            "image": "https://strapi.monis.rent/uploads/standing_whiteboard_240x120_4a5a6f2c47.jpg",
+            "slug": "standing-whiteboard-120x240",
+            "brand": null,
+            "brandSlug": null,
+            "brandDomain": null,
+            "brandFavicon": null,
+            "tags": ["Whiteboard"]
+          },
+          {
+            "name": "Ergonomic Office Chair",
+            "image": "https://strapi.monis.rent/uploads/fantech_oca259s_chair_6_b632a0c529.jpg",
+            "slug": "ergonomic-office-chair",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Chair"]
+          },
+          {
+            "name": "Electrical Adjustable Desk",
+            "image": "https://strapi.monis.rent/uploads/desk_titel_new_3db151d44c.jpg",
+            "slug": "electrical-adjustable-desk",
+            "brand": "Fantech",
+            "brandSlug": "fantech",
+            "brandDomain": "fantechworld.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com",
+            "tags": ["Desk"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Fantech",
+        "slug": "fantech",
+        "domain": "fantechworld.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=fantechworld.com"
+      },
+      {
+        "name": "Ikea",
+        "slug": null,
+        "domain": "www.ikea.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=www.ikea.com"
+      }
+    ],
+    "brandsFilter": ["Fantech", "Ikea"],
+    "tags": ["Whiteboard", "Desk", "Chair"]
+  },
+  "Computer": {
+    "slug": "computer",
+    "categories": [
+      {
+        "name": "Computer",
+        "slug": "computer",
+        "icon": "https://strapi.monis.rent/uploads/monitor_7ed9a4585d.svg",
+        "short_description": "Perfect for creative projects, development, and remote work.",
+        "items": [
+          {
+            "name": "Apple Mac Studio",
+            "image": "https://strapi.monis.rent/uploads/Mac_Studio_M1_6_7488521ebb.jpg",
+            "slug": "apple-mac-studio",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          },
+          {
+            "name": "15\" Office Windows Laptop",
+            "image": "https://strapi.monis.rent/uploads/15_Office_Windows_Laptop_1_c1221bb234.jpg",
+            "slug": "office-windows-laptop",
+            "brand": "Windows",
+            "brandSlug": "windows",
+            "brandDomain": "microsoft.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=microsoft.com",
+            "tags": ["Laptop"]
+          },
+          {
+            "name": "Apple Mac Mini M2",
+            "image": "https://strapi.monis.rent/uploads/Apple_Mac_Mini_M2_6_1d4fce6808.jpg",
+            "slug": "apple-mac-mini-m2-new",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          },
+          {
+            "name": "Apple Mac Mini M4",
+            "image": "https://strapi.monis.rent/uploads/Mac_mini_M4_front_b152d10743.jpg",
+            "slug": "apple-mac-mini-m4",
+            "brand": "Apple",
+            "brandSlug": "apple",
+            "brandDomain": "apple.com",
+            "brandFavicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+            "tags": ["Mac"]
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Apple",
+        "slug": "apple",
+        "domain": "apple.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=apple.com"
+      },
+      {
+        "name": "Windows",
+        "slug": "windows",
+        "domain": "microsoft.com",
+        "favicon": "https://www.google.com/s2/favicons?sz=128&domain=microsoft.com"
+      }
+    ],
+    "brandsFilter": ["Apple", "Windows"],
+    "tags": ["Mac", "Laptop"]
+  }
+}

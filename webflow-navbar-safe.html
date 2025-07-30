@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navbar Monis v2 (Safe for Webflow Embed)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meilisearch/dist/bundles/meilisearch.umd.js"></script>
+  <style>
+    .monis-navbar {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .monis-navbar * {
+      box-sizing: border-box;
+    }
+
+    .monis-navbar .monis-flex {
+      display: flex !important;
+    }
+
+    .monis-navbar .monis-items-center {
+      align-items: center !important;
+    }
+
+    .monis-navbar .monis-justify-between {
+      justify-content: space-between !important;
+    }
+
+    .monis-navbar .monis-justify-center {
+      justify-content: center !important;
+    }
+
+    .monis-navbar .monis-w-full {
+      width: 100% !important;
+    }
+
+    .monis-navbar .monis-h-8 {
+      height: 32px !important;
+    }
+
+    .monis-navbar .monis-h-10 {
+      height: 40px !important;
+    }
+
+    .monis-navbar .monis-h-12 {
+      height: 48px !important;
+    }
+
+    .monis-navbar .monis-h-14 {
+      height: 56px !important;
+    }
+
+    .monis-navbar .monis-h-16 {
+      height: 64px !important;
+    }
+
+    .monis-navbar .monis-h-20 {
+      height: 80px !important;
+    }
+
+    .monis-navbar .monis-px-2 {
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+    }
+
+    .monis-navbar .monis-px-3 {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .monis-navbar .monis-px-4 {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    .monis-navbar .monis-py-1 {
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
+    }
+
+    .monis-navbar .monis-py-2 {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
+
+    .monis-navbar .monis-gap-1 {
+      gap: 4px !important;
+    }
+
+    .monis-navbar .monis-gap-2 {
+      gap: 8px !important;
+    }
+
+    .monis-navbar .monis-gap-3 {
+      gap: 12px !important;
+    }
+
+    .monis-navbar .monis-gap-x-3 {
+      column-gap: 12px !important;
+    }
+
+    .monis-navbar .monis-ml-1 {
+      margin-left: 4px !important;
+    }
+
+    .monis-navbar .monis-ml-4 {
+      margin-left: 16px !important;
+    }
+
+    .monis-navbar .monis-ml-6 {
+      margin-left: 24px !important;
+    }
+
+    .monis-navbar .monis-mb-1 {
+      margin-bottom: 4px !important;
+    }
+
+    .monis-navbar .monis-mt-2 {
+      margin-top: 8px !important;
+    }
+
+    .monis-navbar .monis-mb-2 {
+      margin-bottom: 8px !important;
+    }
+
+    .monis-navbar .monis-text-xs {
+      font-size: 12px !important;
+    }
+
+    .monis-navbar .monis-text-sm {
+      font-size: 14px !important;
+    }
+
+    .monis-navbar .monis-text-lg {
+      font-size: 18px !important;
+    }
+
+    .monis-navbar .monis-font-semibold {
+      font-weight: 600 !important;
+    }
+
+    .monis-navbar .monis-text-black {
+      color: #000 !important;
+    }
+
+    .monis-navbar .monis-text-gray-400 {
+      color: #9ca3af !important;
+    }
+
+    .monis-navbar .monis-text-gray-700 {
+      color: #374151 !important;
+    }
+
+    .monis-navbar .monis-bg-white {
+      background-color: #fff !important;
+    }
+
+    .monis-navbar .monis-bg-gray-50 {
+      background-color: #f9fafb !important;
+    }
+
+    .monis-navbar .monis-bg-gray-100 {
+      background-color: #f3f4f6 !important;
+    }
+
+    .monis-navbar .monis-bg-transparent {
+      background-color: transparent !important;
+    }
+
+    .monis-navbar .monis-border {
+      border: 1px solid #e5e7eb !important;
+    }
+
+    .monis-navbar .monis-border-b {
+      border-bottom: 1px solid #e5e7eb !important;
+    }
+
+    .monis-navbar .monis-border-l {
+      border-left: 1px solid #e5e7eb !important;
+    }
+
+    .monis-navbar .monis-rounded-full {
+      border-radius: 9999px !important;
+    }
+
+    .monis-navbar .monis-rounded-xl {
+      border-radius: 12px !important;
+    }
+
+    .monis-navbar .monis-rounded-md {
+      border-radius: 6px !important;
+    }
+
+    .monis-navbar .monis-rounded-r-full {
+      border-top-right-radius: 9999px !important;
+      border-bottom-right-radius: 9999px !important;
+    }
+
+    .monis-navbar .monis-rounded-lg {
+      border-radius: 8px !important;
+    }
+
+    .monis-navbar .monis-relative {
+      position: relative !important;
+    }
+
+    .monis-navbar .monis-absolute {
+      position: absolute !important;
+    }
+
+    .monis-navbar .monis-fixed {
+      position: fixed !important;
+    }
+
+    .monis-navbar .monis-sticky {
+      position: sticky !important;
+    }
+
+    .monis-navbar .monis-top-0 {
+      top: 0 !important;
+    }
+
+    .monis-navbar .monis-left-0 {
+      left: 0 !important;
+    }
+
+    .monis-navbar .monis-right-0 {
+      right: 0 !important;
+    }
+
+    .monis-navbar .monis-top-full {
+      top: 100% !important;
+    }
+
+    .monis-navbar .monis-z-20 {
+      z-index: 20 !important;
+    }
+
+    .monis-navbar .monis-z-30 {
+      z-index: 30 !important;
+    }
+
+    .monis-navbar .monis-z-50 {
+      z-index: 50 !important;
+    }
+
+    .monis-navbar .monis-w-auto {
+      width: auto !important;
+    }
+
+    .monis-navbar .monis-w-8 {
+      width: 32px !important;
+    }
+
+    .monis-navbar .monis-w-56 {
+      width: 224px !important;
+    }
+
+    .monis-navbar .monis-max-w-120px {
+      max-width: 120px !important;
+    }
+
+    .monis-navbar .monis-max-w-1350px {
+      max-width: 1350px !important;
+    }
+
+    .monis-navbar .monis-mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .monis-navbar .monis-flex-1 {
+      flex: 1 1 0% !important;
+    }
+
+    .monis-navbar .monis-flex-col {
+      flex-direction: column !important;
+    }
+
+    .monis-navbar .monis-items-start {
+      align-items: flex-start !important;
+    }
+
+    .monis-navbar .monis-leading-tight {
+      line-height: 1.25 !important;
+    }
+
+    .monis-navbar .monis-leading-none {
+      line-height: 1 !important;
+    }
+
+    .monis-navbar .monis-outline-none {
+      outline: none !important;
+    }
+
+    .monis-navbar .monis-whitespace-nowrap {
+      white-space: nowrap !important;
+    }
+
+    .monis-navbar .monis-overflow-x-auto {
+      overflow-x: auto !important;
+    }
+
+    .monis-navbar .monis-overflow-hidden {
+      overflow: hidden !important;
+    }
+
+    .monis-navbar .monis-object-contain {
+      object-fit: contain !important;
+    }
+
+    .monis-navbar .monis-transition-colors {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+      transition-duration: 150ms !important;
+    }
+
+    .monis-navbar .monis-transition-all {
+      transition-property: all !important;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+      transition-duration: 150ms !important;
+    }
+
+    .monis-navbar .monis-shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .monis-navbar .monis-backdrop-blur-sm {
+      backdrop-filter: blur(4px) !important;
+    }
+
+    .monis-navbar .monis-inset-0 {
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+    }
+
+    .monis-navbar .monis-inset-y-0 {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+
+    .monis-navbar .monis-pb-2 {
+      padding-bottom: 8px !important;
+    }
+
+    .monis-navbar .monis-pb-4 {
+      padding-bottom: 16px !important;
+    }
+
+    .monis-navbar .monis-pt-4 {
+      padding-top: 16px !important;
+    }
+
+    .monis-navbar .monis-space-x-4>*+* {
+      margin-left: 16px !important;
+    }
+
+    .monis-navbar .monis-overflow-y-auto {
+      overflow-y: auto !important;
+    }
+
+    .monis-navbar .monis-flex-shrink-0 {
+      flex-shrink: 0 !important;
+    }
+
+    .monis-navbar .monis-border-b-0 {
+      border-bottom: 0 !important;
+    }
+
+    .monis-navbar .monis-my-2 {
+      margin-top: 8px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .monis-navbar .monis-text-gray-500 {
+      color: #6b7280 !important;
+    }
+
+    .monis-navbar .monis-text-xl {
+      font-size: 20px !important;
+    }
+
+    .monis-navbar .monis-text-neutral-500 {
+      color: #737373 !important;
+    }
+
+    .monis-navbar .monis-mb-3 {
+      margin-bottom: 12px !important;
+    }
+
+    .monis-navbar .monis-pt-2 {
+      padding-top: 8px !important;
+    }
+
+    /* Custom classes for navbar functionality dan responsive akan ditambahkan di tahap berikutnya */
+
+    /* Responsive breakpoints */
+    .monis-navbar .monis-hidden {
+      display: none !important;
+    }
+
+    .monis-navbar .monis-md-block {
+      display: block !important;
+    }
+
+    .monis-navbar .monis-lg-block {
+      display: block !important;
+    }
+
+    .monis-navbar .monis-md-hidden {
+      display: none !important;
+    }
+
+    .monis-navbar .monis-lg-hidden {
+      display: none !important;
+    }
+
+    /* Custom navbar functionality */
+    .monis-navbar .monis-category-menu {
+      transition: all 0.3s ease;
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 80px;
+      z-index: 20;
+      transform: translateY(0);
+      opacity: 1;
+      display: none;
+    }
+
+    .monis-navbar .monis-category-menu.monis-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .monis-navbar .monis-no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .monis-navbar .monis-no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .monis-navbar .monis-location-popup {
+      display: none;
+    }
+
+    .monis-navbar .monis-location-popup.monis-active {
+      display: block;
+    }
+
+    .monis-navbar .monis-mobile-drawer {
+      transition: transform 0.3s;
+      transform: translateX(-100%);
+    }
+
+    .monis-navbar .monis-mobile-drawer.monis-open {
+      transform: translateX(0);
+    }
+
+    .monis-navbar .monis-mobile-overlay {
+      display: none;
+    }
+
+    .monis-navbar .monis-mobile-overlay.monis-open {
+      display: block;
+    }
+
+    .monis-navbar .monis-category-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-100%);
+    }
+
+    .monis-navbar .monis-category-drawer.monis-open {
+      transform: translateX(0);
+    }
+
+    .monis-navbar .monis-category-overlay {
+      display: none;
+    }
+
+    .monis-navbar .monis-category-overlay.monis-open {
+      display: block;
+    }
+
+    .monis-navbar .monis-desktop-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(100%);
+    }
+
+    .monis-navbar .monis-desktop-drawer.monis-open {
+      transform: translateX(0);
+    }
+
+    .monis-navbar .monis-desktop-overlay {
+      display: none;
+    }
+
+    .monis-navbar .monis-desktop-overlay.monis-open {
+      display: block !important;
+    }
+
+    /* Hover effects */
+    .monis-navbar .monis-navbar-icon-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .monis-navbar .monis-navbar-icon-hover:hover .iconify {
+      color: #fff !important;
+    }
+
+    .monis-navbar .monis-navbar-link-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .monis-navbar .monis-hover-bg-gray-100:hover {
+      background-color: #f3f4f6 !important;
+    }
+
+    .monis-navbar .monis-hover-bg-black:hover {
+      background-color: #000 !important;
+    }
+
+    .monis-navbar .monis-hover-text-white:hover {
+      color: #fff !important;
+    }
+
+    .monis-navbar .monis-hover-text-gray-700:hover {
+      color: #374151 !important;
+    }
+
+    /* Additional utility classes */
+    .monis-navbar .monis-pr-1 {
+      padding-right: 4px !important;
+    }
+
+    .monis-navbar .monis-pr-6 {
+      padding-right: 24px !important;
+    }
+
+    .monis-navbar .monis-pr-10 {
+      padding-right: 40px !important;
+    }
+
+    .monis-navbar .monis-py-1-5 {
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
+    }
+
+    .monis-navbar .monis-px-6 {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+
+    .monis-navbar .monis-w-3-4 {
+      width: 75% !important;
+    }
+
+    .monis-navbar .monis-md-max-w-md {
+      max-width: 448px !important;
+    }
+
+    .monis-navbar .monis-sm-w-3-4 {
+      width: 75% !important;
+    }
+
+    .monis-navbar .monis-z-100 {
+      z-index: 100 !important;
+    }
+
+    .monis-navbar .monis-z-101 {
+      z-index: 101 !important;
+    }
+
+    .monis-navbar .monis-bg-black-20 {
+      background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* Search autocomplete styles */
+    .monis-navbar .monis-search-results-autocomplete {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      width: 100%;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      max-height: 420px;
+      overflow-y: auto;
+      z-index: 999;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      padding: 0;
+      margin-top: 2px;
+      font-size: 14px;
+      transition: box-shadow 0.2s;
+    }
+
+    .monis-navbar .monis-search-spinner-right {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 10;
+      color: #0ea5e9;
+    }
+
+    /* Responsive media queries */
+    @media (min-width: 768px) {
+      .monis-navbar .monis-md-block {
+        display: block !important;
+      }
+
+      .monis-navbar .monis-md-hidden {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .monis-navbar .monis-lg-block {
+        display: block !important;
+      }
+
+      .monis-navbar .monis-lg-hidden {
+        display: none !important;
+      }
+
+      .monis-navbar .monis-category-menu {
+        display: block !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .monis-navbar .monis-desktop-drawer {
+        display: none !important;
+      }
+
+      .monis-navbar .monis-desktop-overlay {
+        display: none !important;
+      }
+
+      .monis-navbar #monis-tabletDrawer {
+        display: none !important;
+      }
+
+      .monis-navbar #monis-tabletOverlay {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="monis-navbar">
+    <!-- Navbar Desktop -->
+    <header class="monis-hidden monis-lg-block monis-w-full monis-border-b monis-bg-white monis-z-30 monis-sticky monis-top-0">
+      <div class="monis-max-w-1350px monis-mx-auto monis-flex monis-items-center monis-justify-between monis-h-20 monis-px-4">
+        <!-- Left: Logo -->
+        <div class="monis-flex monis-items-center monis-gap-x-3">
+          <a href="https://www.monis.rent/" class="monis-flex monis-items-center monis-mb-1">
+            <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="monis-h-8 monis-w-auto monis-max-w-120px monis-object-contain" />
+          </a>
+          <!-- Center: Location, Search -->
+          <div class="monis-flex-1 monis-flex monis-justify-center" style="min-width: 0;">
+            <div class="monis-flex monis-items-center monis-bg-white monis-rounded-full monis-h-12 monis-border" style="width: 600px;">
+              <!-- Location -->
+              <div class="monis-relative monis-inline-block">
+                <button id="monis-locationBtn" class="monis-flex monis-items-center monis-gap-2 monis-px-4 monis-rounded-full monis-outline-none" style="width: 120px;">
+                  <div class="monis-flex monis-flex-col monis-items-start monis-leading-tight">
+                    <div class="monis-flex monis-items-center monis-gap-1">
+                      <span class="iconify monis-text-gray-400" data-icon="mdi:map-marker-outline" data-width="14"></span>
+                      <span class="monis-text-xs monis-text-gray-400">Location</span>
+                    </div>
+                    <span id="monis-locationLabel" class="monis-text-xs monis-ml-1 monis-text-black monis-font-semibold">Bali</span>
+                  </div>
+                </button>
+                <div id="monis-locationPopup" class="monis-absolute monis-bg-white monis-rounded-xl monis-border monis-location-popup monis-z-50 monis-left-0 monis-top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+                  <ul>
+                    <li>
+                      <button class="monis-flex monis-items-center monis-gap-2 monis-w-full monis-text-left monis-px-4 monis-py-2 monis-hover-bg-gray-100" onclick="setLocation('Bali')">
+                        <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                        <span>Bali</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="monis-flex monis-items-center monis-gap-2 monis-w-full monis-text-left monis-px-4 monis-py-2 monis-hover-bg-gray-100" onclick="setLocation('Chiang Mai')">
+                        <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                        <span>Chiang Mai</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <span class="monis-border-l monis-h-full"></span>
+              <!-- Search -->
+              <div class="monis-flex monis-items-center monis-gap-2 monis-bg-gray-100 monis-rounded-r-full monis-flex-1 monis-h-full monis-px-3">
+                <span class="iconify monis-text-black" data-icon="mdi:magnify" data-width="25"></span>
+                <input id="monis-search-input-desktop" type="text" class="monis-bg-transparent monis-rounded-r-full monis-outline-none monis-w-full monis-text-sm monis-h-full" placeholder="Rent electrical adjustable desk" />
+                <span id="monis-search-spinner-desktop" class="iconify monis-search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22"
+                  style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Link & Icon -->
+        <div class="monis-flex monis-items-center monis-gap-2 monis-ml-6">
+          <a href="https://my.monis.rent/how-it-works" class="monis-text-sm monis-h-8 monis-flex monis-items-center monis-px-2 monis-navbar-link-hover monis-text-gray-700">How it works</a>
+          <a href="https://my.monis.rent/cart" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover monis-relative">
+            <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+          </a>
+          <div class="monis-relative">
+            <button id="monis-desktopProfileBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+              <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+            </button>
+            <!-- Profile Dropdown Menu -->
+            <div id="monis-desktopProfileDropdown" class="monis-absolute monis-p-3 monis-right-0 monis-left-auto monis-mt-2 monis-mb-2 monis-bg-white monis-rounded-xl monis-shadow-sm monis-border monis-z-50 monis-hidden">
+              <div class="monis-flex monis-flex-col monis-py-1">
+                <a href="https://my.monis.rent/orders" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Orders</span>
+                </a>
+                <a href="https://my.monis.rent/profile" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:account-circle-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="monis-relative">
+            <button id="monis-desktopMenuBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+              <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+            </button>
+            <!-- Dropdown Menu -->
+            <div id="monis-desktopDropdown" class="monis-absolute monis-p-3 monis-right-0 monis-left-auto monis-mt-2 monis-mb-2 monis-w-56 monis-bg-white monis-rounded-xl monis-shadow-sm monis-border monis-z-50 monis-hidden">
+              <div class="monis-flex monis-flex-col monis-py-1" id="monis-desktopDropdownContent">
+                <!-- Menu items will be generated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Category Menu (SLIDE, ALWAYS BELOW NAVBAR) - Desktop Only -->
+    <nav id="monis-categoryMenu" class="monis-category-menu monis-bg-gray-50 monis-hidden monis-lg-block">
+      <div class="monis-max-w-1350px monis-mx-auto monis-flex monis-space-x-4 monis-py-2 monis-px-4 monis-overflow-x-auto monis-no-scrollbar" id="monis-desktopCategoryContainer">
+        <!-- Categories will be generated by JavaScript -->
+      </div>
+    </nav>
+
+    <!-- Navbar Tablet (md:block lg:hidden) -->
+    <header class="monis-hidden monis-md-block monis-lg-hidden monis-w-full monis-border-b monis-bg-white monis-z-30 monis-sticky monis-top-0">
+      <div class="monis-max-w-1350px monis-mx-auto monis-flex monis-items-center monis-justify-between monis-h-16 monis-px-4">
+        <!-- Left: Logo -->
+        <div class="monis-flex monis-items-center monis-gap-x-3">
+          <a href="https://www.monis.rent/" class="monis-flex monis-items-center">
+            <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="monis-h-8 monis-w-auto monis-max-w-120px monis-object-contain" />
+          </a>
+          <!-- Center: Location, Search -->
+          <div class="monis-flex-1 monis-flex monis-justify-center" style="min-width: 0;">
+            <div class="monis-flex monis-items-center monis-bg-white monis-rounded-full monis-h-12 monis-border" style="width: 450px;">
+              <!-- Location -->
+              <div class="monis-relative monis-inline-block">
+                <button id="monis-locationBtnTablet" class="monis-flex monis-items-center monis-gap-2 monis-px-4 monis-pr-6 monis-h-8 monis-rounded-full monis-outline-none monis-relative" style="width: 110px;">
+                  <div class="monis-flex monis-flex-col monis-items-start monis-leading-tight">
+                    <div class="monis-flex monis-items-center monis-gap-1">
+                      <span class="iconify monis-text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                      <span class="monis-text-xs monis-text-gray-400">Location</span>
+                    </div>
+                    <span id="monis-locationLabelTablet" class="monis-text-xs monis-text-black monis-font-semibold monis-ml-1">Bali</span>
+                  </div>
+                </button>
+                <div id="monis-locationPopupTablet" class="monis-absolute monis-bg-white monis-rounded-xl monis-border monis-location-popup monis-z-50 monis-left-0 monis-top-full" style="margin-top:8px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+                  <ul class="monis-whitespace-nowrap">
+                    <li>
+                      <button class="monis-block monis-w-full monis-text-left monis-px-6 monis-py-2 monis-hover-bg-gray-100 monis-flex monis-items-center monis-gap-2" onclick="setLocationTablet('Bali')">
+                        <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                        <span>Bali</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="monis-block monis-w-full monis-text-left monis-px-6 monis-py-2 monis-hover-bg-gray-100 monis-flex monis-items-center monis-gap-2" onclick="setLocationTablet('Chiang Mai')">
+                        <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                        <span>Chiang Mai</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <span class="monis-border-l monis-h-full"></span>
+              <!-- Search -->
+              <div class="monis-flex monis-items-center monis-gap-2 monis-bg-gray-100 monis-rounded-r-full monis-flex-1 monis-h-full monis-px-3">
+                <span class="iconify monis-text-black" data-icon="mdi:magnify" data-width="25"></span>
+                <input id="monis-search-input-tablet" type="text" class="monis-bg-transparent monis-rounded-r-full monis-outline-none monis-w-full monis-text-sm monis-h-full monis-pr-10" placeholder="Rent electrical adjustable desk" />
+                <span id="monis-search-spinner-tablet" class="iconify monis-search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Icon -->
+        <div class="monis-flex monis-items-center monis-gap-3 monis-ml-4">
+          <a href="https://my.monis.rent/cart" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover monis-relative">
+            <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+          </a>
+          <div class="monis-relative">
+            <button id="monis-tabletProfileBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+              <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+            </button>
+            <!-- Tablet Profile Dropdown Menu -->
+            <div id="monis-tabletProfileDropdown" class="monis-absolute monis-p-3 monis-right-0 monis-left-auto monis-mt-2 monis-mb-2 monis-bg-white monis-rounded-xl monis-shadow-sm monis-border monis-z-50 monis-hidden">
+              <div class="monis-flex monis-flex-col monis-py-1">
+                <a href="https://my.monis.rent/orders" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Orders</span>
+                </a>
+                <a href="https://my.monis.rent/profile" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:account-circle-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button id="monis-tabletMenuBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar Mobile (2 row: navbar + location) -->
+    <header class="monis-md-hidden monis-w-full monis-border-b monis-bg-white monis-z-30 monis-sticky monis-top-0">
+      <!-- Row 1: Navbar -->
+      <div class="monis-flex monis-items-center monis-justify-between monis-h-14 monis-px-4">
+        <a href="https://www.monis.rent/" class="monis-flex monis-items-center">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="monis-h-8 monis-w-auto monis-max-w-120px monis-object-contain" />
+        </a>
+        <div class="monis-flex monis-items-center monis-gap-2">
+          <a href="https://my.monis.rent/cart" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover monis-relative">
+            <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+          </a>
+          <div class="monis-relative">
+            <button id="monis-mobileProfileBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+              <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+            </button>
+            <!-- Mobile Profile Dropdown Menu -->
+            <div id="monis-mobileProfileDropdown" class="monis-absolute monis-p-3 monis-right-0 monis-left-auto monis-mt-2 monis-mb-2 monis-bg-white monis-rounded-xl monis-shadow-sm monis-border monis-z-50 monis-hidden">
+              <div class="monis-flex monis-flex-col monis-py-1">
+                <a href="https://my.monis.rent/orders" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:clipboard-text-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Orders</span>
+                </a>
+                <a href="https://my.monis.rent/profile" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                  <span class="iconify monis-text-lg" data-icon="mdi:account-circle-outline"></span>
+                  <span class="monis-whitespace-nowrap">My Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button id="monis-mobileCategoryBtn" class="monis-h-8 monis-w-8 monis-flex monis-items-center monis-justify-center monis-rounded-full monis-navbar-icon-hover">
+            <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+          </button>
+        </div>
+      </div>
+      <!-- Row 2: Location Bar (Full Width) -->
+      <div class="monis-w-full monis-px-4 monis-pb-2 monis-relative">
+        <div class="monis-flex monis-items-center monis-bg-white monis-rounded-full monis-h-10 monis-border" style="min-width:0;">
+          <!-- Location -->
+          <div class="monis-relative monis-inline-block">
+            <button id="monis-locationBtnMobile" class="monis-flex monis-items-center monis-gap-2 monis-px-4 monis-rounded-full monis-outline-none" style="width: 110px;">
+              <div class="monis-flex monis-flex-col monis-items-start monis-leading-tight">
+                <div class="monis-flex monis-items-center monis-gap-1">
+                  <span class="iconify monis-text-gray-400" data-icon="mdi:map-marker-outline" data-width="12"></span>
+                  <span class="monis-text-xs monis-text-gray-400 monis-leading-none">Location</span>
+                </div>
+                <span id="monis-locationLabelMobile" class="monis-text-xs monis-text-black monis-font-semibold monis-leading-none monis-ml-1">Bali</span>
+              </div>
+            </button>
+            <div id="monis-locationPopupMobile" class="monis-fixed monis-bg-white monis-rounded-xl monis-border monis-location-popup monis-z-50" style="margin-top:12px; box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">
+              <ul>
+                <li>
+                  <button class="monis-block monis-w-full monis-text-left monis-px-6 monis-py-2 monis-hover-bg-gray-100 monis-text-sm monis-flex monis-items-center monis-gap-2" onclick="setLocationMobile('Bali')">
+                    <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-indonesia"></span>
+                    <span>Bali</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="monis-block monis-w-full monis-text-left monis-px-6 monis-py-2 monis-hover-bg-gray-100 monis-text-sm monis-flex monis-items-center monis-gap-2" onclick="setLocationMobile('Chiang Mai')">
+                    <span class="iconify monis-text-lg" data-icon="emojione-v1:flag-for-thailand"></span>
+                    <span>Chiang Mai</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <span class="monis-border-l monis-h-full"></span>
+          <!-- Search -->
+          <div class="monis-flex monis-items-center monis-gap-2 monis-bg-gray-100 monis-rounded-r-full monis-flex-1 monis-h-full monis-px-3">
+            <span class="iconify monis-text-black" data-icon="mdi:magnify" data-width="22" style="font-size:22px;width:22px;min-width:22px;height:22px;"></span>
+            <input id="monis-search-input-mobile" type="text" class="monis-bg-transparent monis-rounded-r-full monis-outline-none monis-w-full monis-text-sm monis-h-full monis-pr-1" placeholder="Rent electrical adjustable desk" />
+            <span id="monis-search-spinner-mobile" class="iconify monis-search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Category Drawer: placed outside header for mobile & tablet access -->
+    <div id="monis-mobileOverlay" class="monis-fixed monis-inset-0 monis-bg-black-20 monis-backdrop-blur-sm monis-z-100 monis-mobile-overlay" onclick="closeMobileDrawer()"></div>
+    <nav id="monis-mobileDrawer" class="monis-fixed monis-inset-y-0 monis-left-0 monis-w-full monis-sm-w-3-4 monis-md-max-w-md monis-flex monis-flex-col monis-bg-white monis-overflow-hidden monis-z-101 monis-mobile-drawer">
+      <div class="monis-flex monis-items-center monis-justify-between monis-h-14 monis-px-4 monis-border-b monis-flex-shrink-0">
+        <span class="monis-font-semibold monis-text-lg">Menu</span>
+        <button onclick="closeMobileDrawer()" class="monis-text-gray-500 monis-hover-text-gray-700">
+          <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+        </button>
+      </div>
+      <div class="monis-flex-1 monis-overflow-y-auto monis-pb-4">
+        <div class="monis-px-4 monis-pt-4 monis-pb-2">
+          <div class="monis-flex monis-flex-col monis-gap-1" id="monis-mobileCategoryContainer">
+            <!-- Categories will be generated by JavaScript -->
+          </div>
+          <hr class="monis-my-2" />
+          <div class="monis-flex monis-flex-col monis-gap-1 monis-pb-2" id="monis-mobileMenuItems">
+            <!-- Menu items will be generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Category Drawer -->
+    <div id="monis-categoryOverlay" class="monis-fixed monis-inset-0 monis-bg-black-20 monis-backdrop-blur-sm monis-z-100 monis-category-overlay" onclick="closeCategoryDrawer()"></div>
+    <nav id="monis-categoryDrawer" class="monis-fixed monis-inset-y-0 monis-left-0 monis-w-full monis-sm-w-3-4 monis-md-max-w-md monis-flex monis-flex-col monis-bg-white monis-overflow-hidden monis-z-101 monis-category-drawer">
+      <div class="monis-flex monis-items-center monis-justify-between monis-h-14 monis-px-4 monis-border-b monis-flex-shrink-0">
+        <span class="monis-font-semibold monis-text-lg">Categories</span>
+        <button onclick="closeCategoryDrawer()" class="monis-text-gray-500 monis-hover-text-gray-700">
+          <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+        </button>
+      </div>
+      <div class="monis-flex-1 monis-overflow-y-auto monis-pb-4">
+        <div class="monis-px-4 monis-pt-4 monis-pb-2">
+          <div class="monis-flex monis-flex-col monis-gap-1" id="monis-categoryDrawerCategoryContainer">
+            <!-- Categories will be generated by JavaScript -->
+          </div>
+          <hr class="monis-my-2" />
+          <div class="monis-flex monis-flex-col monis-gap-1 monis-pb-2" id="monis-categoryDrawerMenuItems">
+            <!-- Menu items will be generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Tablet Menu Drawer: open mobile drawer (category) like on mobile -->
+    <div id="monis-tabletOverlay" class="monis-fixed monis-inset-0 monis-bg-black-20 monis-backdrop-blur-sm monis-z-100 monis-desktop-overlay"></div>
+    <nav id="monis-tabletDrawer" class="monis-fixed monis-inset-y-0 monis-right-0 monis-w-full monis-sm-w-3-4 monis-md-max-w-md monis-flex monis-flex-col monis-bg-white monis-overflow-hidden monis-z-101 monis-desktop-drawer">
+      <div class="monis-flex monis-items-center monis-justify-between monis-h-14 monis-px-4 monis-border-b monis-flex-shrink-0">
+        <span class="monis-font-semibold monis-text-lg">Menu</span>
+        <button class="monis-text-gray-500 monis-hover-text-gray-700">
+          <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+        </button>
+      </div>
+      <div class="monis-flex-1 monis-overflow-y-auto monis-pb-4">
+        <div class="monis-px-4 monis-pt-4 monis-pb-2">
+          <div class="monis-flex monis-flex-col monis-py-1" id="monis-tabletMenuItems">
+            <!-- Menu items will be generated by JavaScript -->
+          </div>
+        </div>
+        <hr class="monis-my-2" />
+        <div class="monis-px-4 monis-pt-2">
+          <p class="monis-text-xs monis-mb-3 monis-text-neutral-500">Categories:</p>
+          <div class="monis-flex monis-flex-col monis-gap-1" id="monis-tabletCategoryContainer">
+            <!-- Categories will be generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    // Scope semua JavaScript ke dalam .monis-navbar
+    (function () {
+      const navbar = document.querySelector('.monis-navbar');
+      if (!navbar) return;
+
+      // --- Location Popup ---
+      const locationBtn = navbar.querySelector('#monis-locationBtn');
+      const locationPopup = navbar.querySelector('#monis-locationPopup');
+      const locationLabel = navbar.querySelector('#monis-locationLabel');
+      // --- Location Popup Tablet ---
+      const locationBtnTablet = navbar.querySelector('#monis-locationBtnTablet');
+      const locationPopupTablet = navbar.querySelector('#monis-locationPopupTablet');
+      const locationLabelTablet = navbar.querySelector('#monis-locationLabelTablet');
+      // --- Location Popup Mobile ---
+      const locationBtnMobile = navbar.querySelector('#monis-locationBtnMobile');
+      const locationPopupMobile = navbar.querySelector('#monis-locationPopupMobile');
+      const locationLabelMobile = navbar.querySelector('#monis-locationLabelMobile');
+
+      function updateAllLocationLabels(loc) {
+        if (locationLabel) locationLabel.textContent = loc;
+        if (locationLabelTablet) locationLabelTablet.textContent = loc;
+        if (locationLabelMobile) locationLabelMobile.textContent = loc;
+      }
+
+      function updateAllCategoryLinks(loc) {
+        // Update all category links for location
+        const categoryLinks = navbar.querySelectorAll('a[href*="/categories/"]');
+        categoryLinks.forEach(link => {
+          const currentPath = link.href.split('/categories/')[1];
+          if (currentPath) {
+            const category = currentPath.split('/')[0];
+            // Replace space with dash and lowercase
+            const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+            link.href = `https://my.monis.rent/categories/${category}/${formattedLocation}`;
+          }
+        });
+      }
+
+      function setLocation(loc) {
+        localStorage.setItem('selectedLocation', loc);
+        if (loc === 'Bali') {
+          window.location.href = 'https://www.monis.rent/locations/bali';
+          return;
+        } else if (loc === 'Chiang Mai') {
+          window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+          return;
+        }
+        updateAllLocationLabels(loc);
+        updateAllCategoryLinks(loc);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          updateCategoryMenus(loc);
+        } else {
+          document.addEventListener('DOMContentLoaded', function () {
+            updateCategoryMenus(loc);
+          });
+        }
+        if (locationPopup) locationPopup.classList.remove('monis-active');
+      }
+
+      function setLocationTablet(loc) {
+        localStorage.setItem('selectedLocation', loc);
+        if (loc === 'Bali') {
+          window.location.href = 'https://www.monis.rent/locations/bali';
+          return;
+        } else if (loc === 'Chiang Mai') {
+          window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+          return;
+        }
+        updateAllLocationLabels(loc);
+        updateAllCategoryLinks(loc);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          updateCategoryMenus(loc);
+        } else {
+          document.addEventListener('DOMContentLoaded', function () {
+            updateCategoryMenus(loc);
+          });
+        }
+        if (locationPopupTablet) locationPopupTablet.classList.remove('monis-active');
+      }
+
+      function setLocationMobile(loc) {
+        localStorage.setItem('selectedLocation', loc);
+        if (loc === 'Bali') {
+          window.location.href = 'https://www.monis.rent/locations/bali';
+          return;
+        } else if (loc === 'Chiang Mai') {
+          window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+          return;
+        }
+        updateAllLocationLabels(loc);
+        updateAllCategoryLinks(loc);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          updateCategoryMenus(loc);
+        } else {
+          document.addEventListener('DOMContentLoaded', function () {
+            updateCategoryMenus(loc);
+          });
+        }
+        if (locationPopupMobile) locationPopupMobile.classList.remove('monis-active');
+      }
+
+      const menuItems = [
+        { name: 'My Orders', href: 'https://my.monis.rent/orders', icon: 'mdi:clipboard-text-outline' },
+        { name: 'How does it work?', href: 'https://my.monis.rent/how-it-works', icon: 'mdi:help-circle-outline' },
+        { name: 'Help Desk', href: 'https://help.monis.rent/en/', icon: 'mdi:earth' },
+        { name: 'Affiliate Program', href: 'https://monis.rent/affiliate', icon: 'mdi:account-group-outline' },
+        { name: 'Become a Merchant', href: 'https://monis.rent/become-a-seller', icon: 'mdi:storefront-outline' },
+        { name: 'Loyalty Program', href: 'https://my.monis.rent/points-system', icon: 'mdi:currency-usd-circle-outline' }
+      ];
+
+      const locationCategories = {
+        'bali': [
+          { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+          { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+          { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+          { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+          { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+          { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+          { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+          { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+          { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+        ],
+        'chiang-mai': [
+          { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+          { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+          { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+          { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+          { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+          { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+          { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+          { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+          { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+        ]
+      };
+
+      function updateCategoryMenus(loc) {
+        const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+        const categories = locationCategories[formattedLocation] || locationCategories['bali'];
+
+        // Update desktop category menu
+        const desktopMenu = navbar.querySelector('#monis-desktopCategoryContainer');
+        if (desktopMenu) {
+          const newHTML = categories.map(cat => {
+            let href;
+            if (cat.anchor === 'https://my.monis.rent') {
+              href = `https://www.monis.rent/locations/${formattedLocation}`;
+            } else {
+              const categoryAnchor = cat.anchor;
+              href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+            }
+            return `<a href="${href}" class="monis-text-sm monis-font-normal monis-px-2 monis-py-1 monis-flex monis-items-center monis-select-none monis-transition-all monis-text-gray-800 monis-hover-text-black monis-whitespace-nowrap">${cat.name}</a>`;
+          }).join('');
+          desktopMenu.innerHTML = newHTML;
+        }
+
+        // Update mobile drawer
+        const mobileCategoryContainer = navbar.querySelector('#monis-mobileCategoryContainer');
+        if (mobileCategoryContainer) {
+          const existingCategoryLinks = mobileCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+          existingCategoryLinks.forEach(link => link.remove());
+          categories.forEach(cat => {
+            let href;
+            if (cat.anchor === 'https://my.monis.rent') {
+              href = `https://www.monis.rent/locations/${formattedLocation}`;
+            } else {
+              const categoryAnchor = cat.anchor;
+              href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+            }
+            const newLink = document.createElement('a');
+            newLink.href = href;
+            newLink.className = 'monis-flex monis-items-center monis-gap-3 monis-px-2 monis-py-2 monis-rounded-lg monis-hover-bg-gray-100';
+            newLink.innerHTML = `
+              <span class="iconify monis-text-xl" data-icon="${cat.icon}"></span>
+              <span class="monis-text-sm monis-flex-1">${cat.name}</span>
+              <span class="iconify monis-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            `;
+            mobileCategoryContainer.appendChild(newLink);
+          });
+        }
+
+        // Update mobile category drawer
+        const categoryDrawerCategoryContainer = navbar.querySelector('#monis-categoryDrawerCategoryContainer');
+        if (categoryDrawerCategoryContainer) {
+          const existingCategoryLinks = categoryDrawerCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+          existingCategoryLinks.forEach(link => link.remove());
+          categories.forEach(cat => {
+            let href;
+            if (cat.anchor === 'https://my.monis.rent') {
+              href = `https://www.monis.rent/locations/${formattedLocation}`;
+            } else {
+              const categoryAnchor = cat.anchor;
+              href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+            }
+            const newLink = document.createElement('a');
+            newLink.href = href;
+            newLink.className = 'monis-flex monis-items-center monis-gap-3 monis-px-2 monis-py-2 monis-rounded-lg monis-hover-bg-gray-100';
+            newLink.innerHTML = `
+              <span class="iconify monis-text-xl" data-icon="${cat.icon}"></span>
+              <span class="monis-text-sm monis-flex-1">${cat.name}</span>
+              <span class="iconify monis-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            `;
+            categoryDrawerCategoryContainer.appendChild(newLink);
+          });
+        }
+
+        // Update tablet drawer
+        const tabletCategoryContainer = navbar.querySelector('#monis-tabletCategoryContainer');
+        if (tabletCategoryContainer) {
+          const existingCategoryLinks = tabletCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+          existingCategoryLinks.forEach(link => link.remove());
+          categories.forEach(cat => {
+            let href;
+            if (cat.anchor === 'https://my.monis.rent') {
+              href = `https://www.monis.rent/locations/${formattedLocation}`;
+            } else {
+              const categoryAnchor = cat.anchor;
+              href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+            }
+            const newLink = document.createElement('a');
+            newLink.href = href;
+            newLink.className = 'monis-flex monis-items-center monis-gap-3 monis-px-2 monis-py-2 monis-rounded-lg monis-hover-bg-gray-100';
+            newLink.innerHTML = `
+              <span class="iconify monis-text-xl" data-icon="${cat.icon}"></span>
+              <span class="monis-text-sm monis-flex-1">${cat.name}</span>
+              <span class="iconify monis-text-gray-400" data-icon="mdi:chevron-right" data-width="18"></span>
+            `;
+            tabletCategoryContainer.appendChild(newLink);
+          });
+        }
+      }
+
+      function renderMenuItems(targetId, variant = 'desktop') {
+        const container = navbar.querySelector('#' + targetId);
+        if (!container) return;
+        let html = '';
+        menuItems.forEach(item => {
+          if (variant === 'desktop' || variant === 'tablet') {
+            html += `
+              <a href="${item.href}" class="monis-flex monis-items-center monis-gap-2 monis-px-3 monis-py-1-5 monis-rounded-md monis-hover-bg-black monis-hover-text-white monis-text-black monis-text-sm monis-transition-colors">
+                <span class="iconify monis-text-lg" data-icon="${item.icon}"></span>
+                <span>${item.name}</span>
+              </a>
+            `;
+          } else {
+            html += `
+              <a href="${item.href}" class="monis-flex monis-items-center monis-gap-3 monis-px-2 monis-py-2 monis-rounded-lg monis-hover-bg-gray-100">
+                <span class="iconify monis-text-xl" data-icon="${item.icon}"></span>
+                <span class="monis-text-sm monis-flex-1">${item.name}</span>
+                <span class="iconify monis-text-gray-400" data-icon="mdi:arrow-top-right"></span>
+              </a>
+            `;
+          }
+        });
+        container.innerHTML = html;
+      }
+
+      // Initialize
+      const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+      if (navbar.querySelector('#monis-desktopCategoryContainer')) {
+        updateCategoryMenus(savedLoc);
+      }
+
+      // Make functions globally available for onclick handlers
+      window.setLocation = setLocation;
+      window.setLocationTablet = setLocationTablet;
+      window.setLocationMobile = setLocationMobile;
+      window.closeMobileDrawer = function () {
+        const mobileDrawer = navbar.querySelector('#monis-mobileDrawer');
+        const mobileOverlay = navbar.querySelector('#monis-mobileOverlay');
+        if (mobileDrawer) mobileDrawer.classList.remove('monis-open');
+        if (mobileOverlay) mobileOverlay.classList.remove('monis-open');
+      };
+      window.closeCategoryDrawer = function () {
+        const categoryDrawer = navbar.querySelector('#monis-categoryDrawer');
+        const categoryOverlay = navbar.querySelector('#monis-categoryOverlay');
+        if (categoryDrawer) categoryDrawer.classList.remove('monis-open');
+        if (categoryOverlay) categoryOverlay.classList.remove('monis-open');
+      };
+
+      // Event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        // --- Location Popup Event ---
+        if (locationBtn && locationPopup) {
+          locationBtn.addEventListener('click', function (e) {
+            locationPopup.classList.toggle('monis-active');
+          });
+          document.addEventListener('click', function (e) {
+            if (!locationBtn.contains(e.target)) {
+              locationPopup.classList.remove('monis-active');
+            }
+          });
+        }
+        if (locationBtnTablet && locationPopupTablet) {
+          locationBtnTablet.addEventListener('click', function (e) {
+            locationPopupTablet.classList.toggle('monis-active');
+          });
+          document.addEventListener('click', function (e) {
+            if (!locationBtnTablet.contains(e.target)) {
+              locationPopupTablet.classList.remove('monis-active');
+            }
+          });
+        }
+        if (locationBtnMobile && locationPopupMobile) {
+          locationBtnMobile.addEventListener('click', function (e) {
+            locationPopupMobile.classList.toggle('monis-active');
+          });
+          document.addEventListener('click', function (e) {
+            if (!locationBtnMobile.contains(e.target)) {
+              locationPopupMobile.classList.remove('monis-active');
+            }
+          });
+        }
+
+        // --- Desktop Category Menu Hide/Show on Scroll ---
+        let lastScrollTop = 0;
+        const categoryMenu = navbar.querySelector('#monis-categoryMenu');
+
+        function showCategoryMenuIfAtTop() {
+          if (window.innerWidth >= 768 && (window.pageYOffset || document.documentElement.scrollTop) === 0) {
+            categoryMenu && categoryMenu.classList.remove('monis-hidden');
+          }
+        }
+
+        window.addEventListener('scroll', function () {
+          // Only run on desktop (lg and up)
+          if (window.innerWidth < 768) return;
+
+          if (!categoryMenu) return;
+
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+          // Always show menu at top
+          if (currentScroll === 0) {
+            categoryMenu.classList.remove('monis-hidden');
+            lastScrollTop = 0;
+            return;
+          }
+
+          if (currentScroll > lastScrollTop) {
+            // Hide on scroll down
+            categoryMenu.classList.add('monis-hidden');
+          } else {
+            // Show on scroll up
+            categoryMenu.classList.remove('monis-hidden');
+          }
+
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative value
+        });
+
+        // Reset category menu on resize
+        window.addEventListener('resize', function () {
+          if (window.innerWidth < 768) {
+            // Hide menu on mobile/tablet
+            if (categoryMenu) {
+              categoryMenu.classList.add('monis-hidden');
+            }
+          } else {
+            // Show menu on desktop
+            if (categoryMenu) {
+              categoryMenu.classList.remove('monis-hidden');
+            }
+            showCategoryMenuIfAtTop();
+          }
+        });
+
+        // --- Mobile & Tablet Drawer (Category) ---
+        const mobileMenuBtn = navbar.querySelector('#monis-mobileMenuBtn');
+        const tabletMenuBtn = navbar.querySelector('#monis-tabletMenuBtn');
+        const mobileDrawer = navbar.querySelector('#monis-mobileDrawer');
+        const mobileOverlay = navbar.querySelector('#monis-mobileOverlay');
+
+        function openMobileDrawer() {
+          mobileDrawer.classList.add('monis-open');
+          mobileOverlay.classList.add('monis-open');
+        }
+
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', openMobileDrawer);
+        }
+        if (tabletMenuBtn) {
+          tabletMenuBtn.addEventListener('click', openMobileDrawer);
+        }
+
+        // --- Category Drawer Mobile/Tablet ---
+        const mobileCategoryBtn = navbar.querySelector('#monis-mobileCategoryBtn');
+        const categoryDrawer = navbar.querySelector('#monis-categoryDrawer');
+        const categoryOverlay = navbar.querySelector('#monis-categoryOverlay');
+
+        function openCategoryDrawer() {
+          categoryDrawer.classList.add('monis-open');
+          categoryOverlay.classList.add('monis-open');
+        }
+
+        if (mobileCategoryBtn) {
+          mobileCategoryBtn.addEventListener('click', openCategoryDrawer);
+        }
+
+        // --- Desktop Drawer ---
+        const desktopMenuBtn = navbar.querySelector('#monis-desktopMenuBtn');
+        const desktopDropdown = navbar.querySelector('#monis-desktopDropdown');
+        const desktopProfileBtn = navbar.querySelector('#monis-desktopProfileBtn');
+        const desktopProfileDropdown = navbar.querySelector('#monis-desktopProfileDropdown');
+
+        if (desktopMenuBtn && desktopDropdown) {
+          desktopMenuBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            desktopDropdown.classList.toggle('monis-hidden');
+            // Hide profile dropdown if open
+            if (desktopProfileDropdown) desktopProfileDropdown.classList.add('monis-hidden');
+          });
+          document.addEventListener('click', function (e) {
+            if (!desktopMenuBtn.contains(e.target)) {
+              desktopDropdown.classList.add('monis-hidden');
+            }
+          });
+        }
+        if (desktopProfileBtn && desktopProfileDropdown) {
+          desktopProfileBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            desktopProfileDropdown.classList.toggle('monis-hidden');
+            // Hide menu dropdown if open
+            if (desktopDropdown) desktopDropdown.classList.add('monis-hidden');
+          });
+          document.addEventListener('click', function (e) {
+            if (!desktopProfileBtn.contains(e.target)) {
+              desktopProfileDropdown.classList.add('monis-hidden');
+            }
+          });
+        }
+
+        // Show menu at top on load (desktop)
+        showCategoryMenuIfAtTop();
+
+        // --- Tablet & Mobile Profile Dropdown ---
+        // Tablet
+        const tabletProfileBtn = navbar.querySelector('#monis-tabletProfileBtn');
+        const tabletProfileDropdown = navbar.querySelector('#monis-tabletProfileDropdown');
+        if (tabletProfileBtn && tabletProfileDropdown) {
+          tabletProfileBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            tabletProfileDropdown.classList.toggle('monis-hidden');
+          });
+          document.addEventListener('click', function (e) {
+            if (!tabletProfileBtn.contains(e.target)) {
+              tabletProfileDropdown.classList.add('monis-hidden');
+            }
+          });
+        }
+        // Mobile
+        const mobileProfileBtn = navbar.querySelector('#monis-mobileProfileBtn');
+        const mobileProfileDropdown = navbar.querySelector('#monis-mobileProfileDropdown');
+        if (mobileProfileBtn && mobileProfileDropdown) {
+          mobileProfileBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            mobileProfileDropdown.classList.toggle('monis-hidden');
+          });
+          document.addEventListener('click', function (e) {
+            if (!mobileProfileBtn.contains(e.target)) {
+              mobileProfileDropdown.classList.add('monis-hidden');
+            }
+          });
+        }
+
+        // Menu items for dropdown and drawer
+        renderMenuItems('monis-desktopDropdownContent', 'desktop');
+        renderMenuItems('monis-mobileMenuItems', 'mobile');
+        renderMenuItems('monis-categoryDrawerMenuItems', 'mobile');
+        renderMenuItems('monis-tabletMenuItems', 'tablet');
+      });
+
+      window.addEventListener('pageshow', function () {
+        const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+        updateAllLocationLabels(savedLoc);
+        updateAllCategoryLinks(savedLoc);
+        updateCategoryMenus(savedLoc);
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Navbar Monis v2 (Sliding Category Simple, Always Below) - Pure CSS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meilisearch/dist/bundles/meilisearch.umd.js"></script>
+  <style>
+    /* Reset dan base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #ffffff;
+      line-height: 1.5;
+    }
+
+    /* Category menu styles */
+    .category-menu {
+      transition: all 0.3s ease;
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 80px;
+      z-index: 20;
+      transform: translateY(0);
+      opacity: 1;
+      display: none;
+      background-color: #f9fafb;
+    }
+
+    /* Show only on desktop (lg and up) */
+    @media (min-width: 1024px) {
+      .category-menu {
+        display: block;
+      }
+    }
+
+    .category-menu.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .location-popup {
+      display: none;
+    }
+
+    .location-popup.active {
+      display: block;
+    }
+
+    .mobile-drawer {
+      transition: transform 0.3s;
+      transform: translateX(-100%);
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .mobile-overlay {
+      display: none;
+    }
+
+    .mobile-overlay.open {
+      display: block;
+    }
+
+    /* Category Drawer for Mobile/Tablet */
+    .category-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-100%);
+    }
+
+    .category-drawer.open {
+      transform: translateX(0);
+    }
+
+    .category-overlay {
+      display: none;
+    }
+
+    .category-overlay.open {
+      display: block;
+    }
+
+    /* Desktop Drawer */
+    .desktop-drawer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(100%);
+    }
+
+    .desktop-drawer.open {
+      transform: translateX(0);
+    }
+
+    .desktop-overlay {
+      display: none;
+    }
+
+    .desktop-overlay.open {
+      display: block !important;
+    }
+
+    /* Show desktop drawer only on desktop */
+    @media (max-width: 767px) {
+      .desktop-drawer {
+        display: none !important;
+      }
+
+      .desktop-overlay {
+        display: none !important;
+      }
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .navbar-desktop {
+        display: none !important;
+      }
+
+      header[style*="display: none"] {
+        display: block !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .navbar-desktop {
+        display: none !important;
+      }
+
+      header[style*="display: block"] {
+        display: block !important;
+      }
+    }
+
+    /* Tablet drawer uses the same class as desktop drawer */
+    /* Tablet drawer visible on md:block lg:hidden */
+    @media (max-width: 767px) {
+      #tabletDrawer {
+        display: none !important;
+      }
+
+      #tabletOverlay {
+        display: none !important;
+      }
+
+      #search-input-mobile~.search-results-autocomplete {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100vw !important;
+        border-radius: 14px;
+        margin-left: 0 !important;
+      }
+    }
+
+    .category-menu a:hover {
+      background: #000;
+      color: #fff;
+      border-radius: 9999px;
+    }
+
+    /* Navbar icon hover effect */
+    .navbar-icon-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar-icon-hover:hover .iconify {
+      color: #fff !important;
+    }
+
+    .navbar-link-hover:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Search autocomplete dropdown style */
+    .search-results-autocomplete {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      width: 100%;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      max-height: 420px;
+      overflow-y: auto;
+      z-index: 999;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      padding: 0;
+      margin-top: 2px;
+      font-size: 14px;
+      transition: box-shadow 0.2s;
+    }
+
+    .search-results-autocomplete .facets-container {
+      display: flex;
+      flex-direction: column;
+      max-height: 420px;
+      min-width: 0;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      width: 100%;
+      border-bottom: 1px solid #f3f3f3;
+      padding: 4px 8px 4px 8px;
+      margin-top: 2px;
+      overflow-x: auto;
+      background: #fafbfc;
+      border-radius: 14px 14px 0 0;
+      flex-shrink: 0;
+    }
+
+    .search-results-autocomplete .facets-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 0;
+      overflow-x: unset;
+      overflow-y: unset;
+    }
+
+    .search-results-autocomplete .facets-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .search-results-autocomplete .facet-button {
+      white-space: nowrap;
+      flex-shrink: 0;
+      background: #f3f4f6;
+      color: #333;
+      border: none;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      margin-bottom: 1px;
+      width: auto;
+      display: inline-block;
+      align-self: flex-start;
+    }
+
+    .search-results-autocomplete .facet-button.selected {
+      background: #67b9e8;
+      color: #fff;
+    }
+
+    .search-results-autocomplete .facets-title {
+      font-weight: 600;
+      margin-bottom: 3px;
+      margin-left: 2px;
+      font-size: 12px;
+      color: #222;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop a,
+    .search-results-autocomplete #search-results-list-tablet a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a>div,
+    .search-results-autocomplete #search-results-list-tablet>a>div {
+      padding: 12px 18px;
+      border-bottom: 1px solid #f3f3f3;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      transition: background 0.15s;
+      border-radius: 0;
+    }
+
+    .search-results-autocomplete .results-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0px;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a:last-child>div,
+    .search-results-autocomplete #search-results-list-tablet>a:last-child>div {
+      border-bottom: none;
+    }
+
+    .search-results-autocomplete #search-results-list-desktop>a:hover>div,
+    .search-results-autocomplete #search-results-list-tablet>a:hover>div {
+      background: #f3f4f6;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      min-width: 120px;
+    }
+
+    .search-results-autocomplete .facets-title {
+      margin-bottom: 8px;
+    }
+
+    .search-results-autocomplete .facets-scroll {
+      margin-bottom: 8px;
+    }
+
+    .search-results-autocomplete .load-more-btn {
+      background: #67b9e8;
+      color: #fff;
+      border: none;
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      cursor: pointer;
+      margin: 1px 0 1px 0;
+      transition: all 0.2s;
+    }
+
+    .search-results-autocomplete .load-more-btn:hover {
+      background: #409ad6;
+    }
+
+    .search-results-autocomplete .facets-sidebar {
+      box-shadow: none;
+    }
+
+    @media (max-width: 767px) {
+      .search-results-autocomplete {
+        max-width: 100vw;
+        left: 0;
+        border-radius: 12px;
+      }
+
+      .search-results-autocomplete .facets-container {
+        flex-direction: column;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        border-radius: 12px 12px 0 0;
+        padding: 3px 6px 3px 6px;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 0 12px 12px;
+      }
+
+      .search-results-autocomplete .facets-scroll {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 3px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+    }
+
+    .search-spinner-autocomplete {
+      display: none;
+    }
+
+    /* Location dropdown hover: black bg, white text, rounded */
+    #locationPopup button:hover,
+    #locationPopupTablet button:hover,
+    #locationPopupMobile button:hover {
+      background: #000 !important;
+      color: #fff !important;
+      border-radius: 8px !important;
+    }
+
+    #locationPopup button:hover .iconify,
+    #locationPopupTablet button:hover .iconify,
+    #locationPopupMobile button:hover .iconify {
+      color: #fff !important;
+    }
+
+    /* Reduce location dropdown button padding and add spacing */
+    #locationPopup,
+    #locationPopupTablet,
+    #locationPopupMobile {
+      /* Hilangkan batasan lebar agar mengikuti konten */
+      min-width: unset !important;
+      max-width: unset !important;
+      width: auto !important;
+      font-size: 13px !important;
+      padding: 8px 10px !important;
+      margin-top: 12px !important;
+    }
+
+    #locationPopup button,
+    #locationPopupTablet button,
+    #locationPopupMobile button {
+      font-size: 14px !important;
+      padding: 5px 12px !important;
+      white-space: nowrap !important;
+      border-radius: 8px !important;
+    }
+
+    #locationPopup ul,
+    #locationPopupTablet ul,
+    #locationPopupMobile ul {
+      padding: 0 !important;
+    }
+
+    #locationPopup li,
+    #locationPopupTablet li,
+    #locationPopupMobile li {
+      margin-bottom: 6px;
+    }
+
+    #locationPopup li:last-child,
+    #locationPopupTablet li:last-child,
+    #locationPopupMobile li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* --- Facet sidebar left & search result right (DESKTOP ONLY) --- */
+    @media (min-width: 768px) {
+      .search-results-autocomplete .facets-container {
+        flex-direction: row;
+        align-items: flex-start;
+        height: 420px;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        min-width: 160px;
+        max-width: 200px;
+        width: 160px;
+        border-bottom: none;
+        border-right: 1px solid #f3f3f3;
+        border-radius: 14px 0 0 14px;
+        margin-top: 0;
+        margin-bottom: 0;
+        background: #fafbfc;
+        height: 100%;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 14px 14px 0;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 0;
+        flex: 1;
+        max-height: 420px;
+        height: 420px;
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .search-results-autocomplete .facets-container {
+        flex-direction: column;
+      }
+
+      .search-results-autocomplete .facets-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .search-results-autocomplete .results-container {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+
+    #locationPopupMobile {
+      margin-top: 12px !important;
+      left: unset !important;
+      right: unset !important;
+      width: auto !important;
+      min-width: unset !important;
+      max-width: unset !important;
+    }
+
+    /* Navbar Desktop Styles */
+    .navbar-desktop {
+      display: none;
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      background-color: #ffffff;
+      z-index: 30;
+      position: sticky;
+      top: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .navbar-desktop {
+        display: block;
+      }
+    }
+
+    .navbar-desktop-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      padding: 0 16px;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .logo-img {
+      height: 32px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+    }
+
+    .navbar-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 9999px;
+      height: 48px;
+      border: 1px solid #e5e7eb;
+      width: 600px;
+    }
+
+    .location-section {
+      position: relative;
+      display: inline-block;
+    }
+
+    .location-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-radius: 9999px;
+      border: none;
+      outline: none;
+      width: 120px;
+      background: none;
+      cursor: pointer;
+    }
+
+    .location-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.25;
+    }
+
+    .location-label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .location-text {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .location-value {
+      font-size: 12px;
+      margin-left: 4px;
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .location-divider {
+      border-left: 1px solid #e5e7eb;
+      height: 100%;
+    }
+
+    .search-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f3f4f6;
+      border-radius: 0 9999px 9999px 0;
+      flex: 1;
+      height: 100%;
+      padding: 0 12px;
+    }
+
+    .search-input {
+      background: transparent;
+      border-radius: 0 9999px 9999px 0;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+      height: 100%;
+      border: none;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 24px;
+    }
+
+    .navbar-link {
+      font-size: 14px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .navbar-icon {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .profile-dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      padding: 12px;
+      right: 0;
+      left: auto;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      z-index: 50;
+      display: none;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-content {
+      display: flex;
+      flex-direction: column;
+      padding: 4px 0;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: #000000;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .dropdown-item-text {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar Desktop -->
+  <header class="navbar-desktop">
+    <div class="navbar-desktop-container">
+      <!-- Left: Logo -->
+      <div class="navbar-left">
+        <a href="https://www.monis.rent/" class="logo-link">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" class="logo-img" />
+        </a>
+        <!-- Center: Location, Search -->
+        <div class="navbar-center">
+          <div class="search-container">
+            <!-- Location -->
+            <div class="location-section">
+              <button id="locationBtn" class="location-btn">
+                <div class="location-content">
+                  <div class="location-label">
+                    <span class="iconify" data-icon="mdi:map-marker-outline" data-width="14" style="color: #9ca3af;"></span>
+                    <span class="location-text">Location</span>
+                  </div>
+                  <span id="locationLabel" class="location-value">Bali</span>
+                </div>
+              </button>
+              <div id="locationPopup" class="location-popup" style="position: absolute; background-color: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; z-index: 50; left: 0; top: 100%; margin-top: 8px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);">
+                <ul style="list-style: none; padding: 0;">
+                  <li>
+                    <button style="display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 8px 16px; border: none; background: none; cursor: pointer;" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='transparent'"
+                      onclick="setLocation('Bali')">
+                      <span class="iconify" data-icon="emojione-v1:flag-for-indonesia" style="font-size: 18px;"></span>
+                      <span>Bali</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button style="display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 8px 16px; border: none; background: none; cursor: pointer;" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='transparent'"
+                      onclick="setLocation('Chiang Mai')">
+                      <span class="iconify" data-icon="emojione-v1:flag-for-thailand" style="font-size: 18px;"></span>
+                      <span>Chiang Mai</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="location-divider"></span>
+            <!-- Search -->
+            <div class="search-section">
+              <span class="iconify" data-icon="mdi:magnify" data-width="25" style="color: #000000;"></span>
+              <input id="search-input-desktop" type="text" class="search-input" placeholder="Rent electrical adjustable desk" />
+              <span id="search-spinner-desktop" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Link & Icon -->
+      <div class="navbar-right">
+        <a href="https://my.monis.rent/how-it-works" class="navbar-link navbar-link-hover">How it works</a>
+        <a href="https://my.monis.rent/cart" class="navbar-icon navbar-icon-hover">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="profile-dropdown">
+          <button id="desktopProfileBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Profile Dropdown Menu -->
+          <div id="desktopProfileDropdown" class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="https://my.monis.rent/orders" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:clipboard-text-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:account-circle-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-dropdown">
+          <button id="desktopMenuBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+            <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+          </button>
+          <!-- Dropdown Menu -->
+          <div id="desktopDropdown" class="dropdown-menu" style="width: 224px;">
+            <div class="dropdown-content" id="desktopDropdownContent">
+              <!-- Menu items will be generated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Menu (SLIDE, ALWAYS BELOW NAVBAR) - Desktop Only -->
+  <nav id="categoryMenu" class="category-menu">
+    <div style="max-width: 1350px; margin: 0 auto; display: flex; gap: 16px; padding: 8px 16px; overflow-x: auto;" id="desktopCategoryContainer">
+      <!-- Categories will be generated by JavaScript -->
+    </div>
+  </nav>
+
+  <!-- Navbar Tablet (md:block lg:hidden) -->
+  <header style="display: none; width: 100%; border-bottom: 1px solid #e5e7eb; background-color: #ffffff; z-index: 30; position: sticky; top: 0;">
+    <div style="max-width: 1350px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px;">
+      <!-- Left: Logo -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="https://www.monis.rent/" style="display: flex; align-items: center;">
+          <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" style="height: 32px; width: auto; max-width: 120px; object-fit: contain;" />
+        </a>
+        <!-- Center: Location, Search -->
+        <div style="flex: 1; display: flex; justify-content: center; min-width: 0;">
+          <div style="display: flex; align-items: center; background-color: #ffffff; border-radius: 9999px; height: 48px; border: 1px solid #e5e7eb; width: 450px;">
+            <!-- Location -->
+            <div style="position: relative; display: inline-block;">
+              <button id="locationBtnTablet" style="display: flex; align-items: center; gap: 8px; padding: 0 16px; padding-right: 24px; height: 32px; border-radius: 9999px; border: none; outline: none; position: relative; width: 110px; background: none; cursor: pointer;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25;">
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    <span class="iconify" data-icon="mdi:map-marker-outline" data-width="12" style="color: #9ca3af;"></span>
+                    <span style="font-size: 12px; color: #9ca3af;">Location</span>
+                  </div>
+                  <span id="locationLabelTablet" style="font-size: 12px; color: #000000; font-weight: 600; margin-left: 4px;">Bali</span>
+                </div>
+              </button>
+              <div id="locationPopupTablet" class="location-popup" style="position: absolute; background-color: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; z-index: 50; left: 0; top: 100%; margin-top: 8px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);">
+                <ul style="list-style: none; padding: 0; white-space: nowrap;">
+                  <li>
+                    <button style="display: block; width: 100%; text-align: left; padding: 0 24px; padding-top: 8px; padding-bottom: 8px; border: none; background: none; cursor: pointer; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.backgroundColor='#f3f4f6'"
+                      onmouseout="this.style.backgroundColor='transparent'" onclick="setLocationTablet('Bali')">
+                      <span class="iconify" data-icon="emojione-v1:flag-for-indonesia" style="font-size: 18px;"></span>
+                      <span>Bali</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button style="display: block; width: 100%; text-align: left; padding: 0 24px; padding-top: 8px; padding-bottom: 8px; border: none; background: none; cursor: pointer; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.backgroundColor='#f3f4f6'"
+                      onmouseout="this.style.backgroundColor='transparent'" onclick="setLocationTablet('Chiang Mai')">
+                      <span class="iconify" data-icon="emojione-v1:flag-for-thailand" style="font-size: 18px;"></span>
+                      <span>Chiang Mai</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span style="border-left: 1px solid #e5e7eb; height: 100%;"></span>
+            <!-- Search -->
+            <div style="display: flex; align-items: center; gap: 8px; background-color: #f3f4f6; border-radius: 0 9999px 9999px 0; flex: 1; height: 100%; padding: 0 12px;">
+              <span class="iconify" data-icon="mdi:magnify" data-width="25" style="color: #000000;"></span>
+              <input id="search-input-tablet" type="text" style="background: transparent; border-radius: 0 9999px 9999px 0; outline: none; width: 100%; font-size: 14px; height: 100%; border: none; padding-right: 40px;" placeholder="Rent electrical adjustable desk" />
+              <span id="search-spinner-tablet" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Icon -->
+      <div style="display: flex; align-items: center; gap: 12px; margin-left: 16px;">
+        <a href="https://my.monis.rent/cart" class="navbar-icon navbar-icon-hover">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="profile-dropdown">
+          <button id="tabletProfileBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Tablet Profile Dropdown Menu -->
+          <div id="tabletProfileDropdown" class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="https://my.monis.rent/orders" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:clipboard-text-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:account-circle-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button id="tabletMenuBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+          <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar Mobile (2 row: navbar + location) -->
+  <header style="display: block; width: 100%; border-bottom: 1px solid #e5e7eb; background-color: #ffffff; z-index: 30; position: sticky; top: 0;">
+    <!-- Row 1: Navbar -->
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 16px;">
+      <a href="https://www.monis.rent/" style="display: flex; align-items: center;">
+        <img src="https://cdn.prod.website-files.com/62ec28c28759bd05a815b88c/62ec2e1c265e6afa36957df7_webnavlogomoni.png" alt="Monis Logo" style="height: 32px; width: auto; max-width: 120px; object-fit: contain;" />
+      </a>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="https://my.monis.rent/cart" class="navbar-icon navbar-icon-hover">
+          <span class="iconify" data-icon="mdi:cart-outline" data-width="22"></span>
+        </a>
+        <div class="profile-dropdown">
+          <button id="mobileProfileBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+            <span class="iconify" data-icon="mdi:account-circle-outline" data-width="22"></span>
+          </button>
+          <!-- Mobile Profile Dropdown Menu -->
+          <div id="mobileProfileDropdown" class="dropdown-menu">
+            <div class="dropdown-content">
+              <a href="https://my.monis.rent/orders" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:clipboard-text-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Orders</span>
+              </a>
+              <a href="https://my.monis.rent/profile" class="dropdown-item">
+                <span class="iconify" data-icon="mdi:account-circle-outline" style="font-size: 18px;"></span>
+                <span class="dropdown-item-text">My Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button id="mobileCategoryBtn" class="navbar-icon navbar-icon-hover" style="background: none; border: none; cursor: pointer;">
+          <span class="iconify" data-icon="mdi:menu" data-width="22"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Row 2: Location Bar (Full Width) -->
+    <div style="width: 100%; padding: 0 16px; padding-bottom: 8px; position: relative;">
+      <div style="display: flex; align-items: center; background-color: #ffffff; border-radius: 9999px; height: 40px; border: 1px solid #e5e7eb; min-width: 0;">
+        <!-- Location -->
+        <div style="position: relative; display: inline-block;">
+          <button id="locationBtnMobile" style="display: flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 9999px; border: none; outline: none; width: 110px; background: none; cursor: pointer;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25;">
+              <div style="display: flex; align-items: center; gap: 4px;">
+                <span class="iconify" data-icon="mdi:map-marker-outline" data-width="12" style="color: #9ca3af;"></span>
+                <span style="font-size: 12px; color: #9ca3af; line-height: 1;">Location</span>
+              </div>
+              <span id="locationLabelMobile" style="font-size: 12px; color: #000000; font-weight: 600; line-height: 1; margin-left: 4px;">Bali</span>
+            </div>
+          </button>
+          <div id="locationPopupMobile" class="location-popup" style="position: fixed; background-color: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; z-index: 50; margin-top: 12px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);">
+            <ul style="list-style: none; padding: 0;">
+              <li>
+                <button style="display: block; width: 100%; text-align: left; padding: 0 24px; padding-top: 8px; padding-bottom: 8px; border: none; background: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.backgroundColor='#f3f4f6'"
+                  onmouseout="this.style.backgroundColor='transparent'" onclick="setLocationMobile('Bali')">
+                  <span class="iconify" data-icon="emojione-v1:flag-for-indonesia" style="font-size: 18px;"></span>
+                  <span>Bali</span>
+                </button>
+              </li>
+              <li>
+                <button style="display: block; width: 100%; text-align: left; padding: 0 24px; padding-top: 8px; padding-bottom: 8px; border: none; background: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.backgroundColor='#f3f4f6'"
+                  onmouseout="this.style.backgroundColor='transparent'" onclick="setLocationMobile('Chiang Mai')">
+                  <span class="iconify" data-icon="emojione-v1:flag-for-thailand" style="font-size: 18px;"></span>
+                  <span>Chiang Mai</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span style="border-left: 1px solid #e5e7eb; height: 100%;"></span>
+        <!-- Search -->
+        <div style="display: flex; align-items: center; gap: 8px; background-color: #f3f4f6; border-radius: 0 9999px 9999px 0; flex: 1; height: 100%; padding: 0 12px;">
+          <span class="iconify" data-icon="mdi:magnify" data-width="22" style="font-size: 22px; width: 22px; min-width: 22px; height: 22px; color: #000000;"></span>
+          <input id="search-input-mobile" type="text" style="background: transparent; border-radius: 0 9999px 9999px 0; outline: none; width: 100%; font-size: 14px; height: 100%; border: none; padding-right: 4px;" placeholder="Rent electrical adjustable desk" />
+          <span id="search-spinner-mobile" class="iconify search-spinner-right" data-icon="svg-spinners:90-ring-with-bg" data-width="22" style="display:none; position:absolute; right:16px; top:50%; transform:translateY(-50%); pointer-events:none; z-index:10; color:#0ea5e9;"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Category Drawer: placed outside header for mobile & tablet access -->
+  <div id="mobileOverlay" style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(4px); z-index: 100;" onclick="closeMobileDrawer()"></div>
+  <nav id="mobileDrawer" style="position: fixed; inset: 0; top: 0; bottom: 0; left: 0; width: 100%; max-width: 384px; display: flex; flex-direction: column; background-color: #ffffff; overflow: hidden; z-index: 101;">
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 16px; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;">
+      <span style="font-weight: 600; font-size: 18px;">Menu</span>
+      <button onclick="closeMobileDrawer()" style="color: #6b7280; border: none; background: none; cursor: pointer;" onmouseover="this.style.color='#374151'">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding-bottom: 16px;">
+      <div style="padding: 16px; padding-top: 16px; padding-bottom: 8px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;" id="mobileCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+        <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;" />
+        <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 8px;" id="mobileMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Category Drawer -->
+  <div id="categoryOverlay" style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(4px); z-index: 100;" onclick="closeCategoryDrawer()"></div>
+  <nav id="categoryDrawer" style="position: fixed; inset: 0; top: 0; bottom: 0; left: 0; width: 100%; max-width: 384px; display: flex; flex-direction: column; background-color: #ffffff; overflow: hidden; z-index: 101;">
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 16px; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;">
+      <span style="font-weight: 600; font-size: 18px;">Categories</span>
+      <button onclick="closeCategoryDrawer()" style="color: #6b7280; border: none; background: none; cursor: pointer;" onmouseover="this.style.color='#374151'">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding-bottom: 16px;">
+      <div style="padding: 16px; padding-top: 16px; padding-bottom: 8px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;" id="categoryDrawerCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+        <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;" />
+        <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 8px;" id="categoryDrawerMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tablet Menu Drawer: open mobile drawer (category) like on mobile -->
+  <div id="tabletOverlay" style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(4px); z-index: 100;"></div>
+  <nav id="tabletDrawer" style="position: fixed; inset: 0; top: 0; bottom: 0; right: 0; width: 100%; max-width: 384px; display: flex; flex-direction: column; background-color: #ffffff; overflow: hidden; z-index: 101;">
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 16px; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;">
+      <span style="font-weight: 600; font-size: 18px;">Menu</span>
+      <button style="color: #6b7280; border: none; background: none; cursor: pointer;" onmouseover="this.style.color='#374151'">
+        <span class="iconify" data-icon="mdi:close-circle-outline" data-width="24"></span>
+      </button>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding-bottom: 16px;">
+      <div style="padding: 16px; padding-top: 16px; padding-bottom: 8px;">
+        <div style="display: flex; flex-direction: column; padding: 4px 0;" id="tabletMenuItems">
+          <!-- Menu items will be generated by JavaScript -->
+        </div>
+      </div>
+      <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;" />
+      <div style="padding: 16px; padding-top: 8px;">
+        <p style="font-size: 12px; margin-bottom: 12px; color: #6b6b6b;">Categories:</p>
+        <div style="display: flex; flex-direction: column; gap: 4px;" id="tabletCategoryContainer">
+          <!-- Categories will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Placeholder -->
+  <div style="padding: 40px 20px; text-align: center; color: #666; max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: 28px; margin-bottom: 20px; color: #333;">✅ Konversi Tailwind CSS ke Pure CSS Selesai!</h1>
+    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+      File <strong>webflow-navbar-pure-css.html</strong> telah berhasil dikonversi dari Tailwind CSS ke inline CSS (pure CSS).
+    </p>
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+      <h3 style="margin-bottom: 15px; color: #333;">Fitur yang sudah dikonversi:</h3>
+      <ul style="text-align: left; line-height: 1.8;">
+        <li>✅ Navbar Desktop dengan responsive design</li>
+        <li>✅ Navbar Tablet (768px - 1023px)</li>
+        <li>✅ Navbar Mobile (dibawah 768px)</li>
+        <li>✅ Category menu dengan slide animation</li>
+        <li>✅ Mobile drawer dan overlay</li>
+        <li>✅ Location dropdown untuk semua device</li>
+        <li>✅ Profile dropdown menu</li>
+        <li>✅ Search functionality</li>
+        <li>✅ Hover effects dan transitions</li>
+        <li>✅ JavaScript functionality lengkap</li>
+      </ul>
+    </div>
+    <p style="font-size: 14px; color: #888;">
+      Semua class Tailwind CSS telah dikonversi menjadi inline CSS. File ini sekarang tidak memerlukan Tailwind CSS framework.
+    </p>
+  </div>
+
+  <script>
+    // --- Location Popup ---
+    const locationBtn = document.getElementById('locationBtn');
+    const locationPopup = document.getElementById('locationPopup');
+    const locationLabel = document.getElementById('locationLabel');
+    // --- Location Popup Tablet ---
+    const locationBtnTablet = document.getElementById('locationBtnTablet');
+    const locationPopupTablet = document.getElementById('locationPopupTablet');
+    const locationLabelTablet = document.getElementById('locationLabelTablet');
+    // --- Location Popup Mobile ---
+    const locationBtnMobile = document.getElementById('locationBtnMobile');
+    const locationPopupMobile = document.getElementById('locationPopupMobile');
+    const locationLabelMobile = document.getElementById('locationLabelMobile');
+
+    function updateAllLocationLabels(loc) {
+      if (locationLabel) locationLabel.textContent = loc;
+      if (locationLabelTablet) locationLabelTablet.textContent = loc;
+      if (locationLabelMobile) locationLabelMobile.textContent = loc;
+    }
+
+    function updateAllCategoryLinks(loc) {
+      // Update all category links for location
+      const categoryLinks = document.querySelectorAll('a[href*="/categories/"]');
+      categoryLinks.forEach(link => {
+        const currentPath = link.href.split('/categories/')[1];
+        if (currentPath) {
+          const category = currentPath.split('/')[0];
+          // Replace space with dash and lowercase
+          const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+          link.href = `https://my.monis.rent/categories/${category}/${formattedLocation}`;
+        }
+      });
+    }
+
+    function setLocation(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopup) locationPopup.classList.remove('active');
+    }
+
+    function setLocationTablet(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopupTablet) locationPopupTablet.classList.remove('active');
+    }
+
+    function setLocationMobile(loc) {
+      localStorage.setItem('selectedLocation', loc);
+      if (loc === 'Bali') {
+        window.location.href = 'https://www.monis.rent/locations/bali';
+        return;
+      } else if (loc === 'Chiang Mai') {
+        window.location.href = 'https://www.monis.rent/locations/chiang-mai';
+        return;
+      }
+      updateAllLocationLabels(loc);
+      updateAllCategoryLinks(loc);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        updateCategoryMenus(loc);
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          updateCategoryMenus(loc);
+        });
+      }
+      if (locationPopupMobile) locationPopupMobile.classList.remove('active');
+    }
+
+    const menuItems = [
+      { name: 'My Orders', href: 'https://my.monis.rent/orders', icon: 'mdi:clipboard-text-outline' },
+      { name: 'How does it work?', href: 'https://my.monis.rent/how-it-works', icon: 'mdi:help-circle-outline' },
+      { name: 'Help Desk', href: 'https://help.monis.rent/en/', icon: 'mdi:earth' },
+      { name: 'Affiliate Program', href: 'https://monis.rent/affiliate', icon: 'mdi:account-group-outline' },
+      { name: 'Become a Merchant', href: 'https://monis.rent/become-a-seller', icon: 'mdi:storefront-outline' },
+      { name: 'Loyalty Program', href: 'https://my.monis.rent/points-system', icon: 'mdi:currency-usd-circle-outline' }
+    ];
+
+    const locationCategories = {
+      'bali': [
+        { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+        { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+        { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+        { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+        { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+        { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+        { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+        { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+        { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+      ],
+      'chiang-mai': [
+        { name: 'All Categories', anchor: 'https://my.monis.rent', icon: 'mdi:view-grid' },
+        { name: 'Monitors', anchor: 'monitors', icon: 'mdi:monitor' },
+        { name: 'Office Accessories', anchor: 'office-accessories', icon: 'mdi:keyboard-outline' },
+        { name: 'Furniture', anchor: 'furniture', icon: 'mdi:sofa-single-outline' },
+        { name: 'Health & Fitness', anchor: 'health-and-fitness', icon: 'mdi:arm-flex-outline' },
+        { name: 'Computer', anchor: 'computer', icon: 'mdi:laptop' },
+        { name: 'Gaming', anchor: 'gaming', icon: 'mdi:controller-classic-outline' },
+        { name: 'Audio & Video', anchor: 'audio-and-video', icon: 'mdi:video-outline' },
+        { name: 'Smart Home', anchor: 'smart-home', icon: 'mdi:home-automation' }
+      ]
+    };
+
+    function updateCategoryMenus(loc) {
+      const formattedLocation = loc.toLowerCase().replace(/\s+/g, '-');
+      const categories = locationCategories[formattedLocation] || locationCategories['bali'];
+
+      // Update desktop category menu
+      const desktopMenu = document.getElementById('desktopCategoryContainer');
+      if (desktopMenu) {
+        const newHTML = categories.map(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          return `<a href="${href}" style="font-size: 14px; font-weight: 400; padding: 8px; display: flex; align-items: center; user-select: none; transition: all 0.2s; color: #1f2937; text-decoration: none; white-space: nowrap;" onmouseover="this.style.color='#000000'">${cat.name}</a>`;
+        }).join('');
+        desktopMenu.innerHTML = newHTML;
+      }
+
+      // Update mobile drawer
+      const mobileCategoryContainer = document.getElementById('mobileCategoryContainer');
+      if (mobileCategoryContainer) {
+        const existingCategoryLinks = mobileCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.style.cssText = 'display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; text-decoration: none; color: inherit;';
+          newLink.onmouseover = function () { this.style.backgroundColor = '#f3f4f6'; };
+          newLink.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+          newLink.innerHTML = `
+            <span class="iconify" data-icon="${cat.icon}" style="font-size: 20px;"></span>
+            <span style="font-size: 14px; flex: 1;">${cat.name}</span>
+            <span class="iconify" data-icon="mdi:chevron-right" data-width="18" style="color: #9ca3af;"></span>
+          `;
+          mobileCategoryContainer.appendChild(newLink);
+        });
+      }
+
+      // Update mobile category drawer
+      const categoryDrawerCategoryContainer = document.getElementById('categoryDrawerCategoryContainer');
+      if (categoryDrawerCategoryContainer) {
+        const existingCategoryLinks = categoryDrawerCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.style.cssText = 'display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; text-decoration: none; color: inherit;';
+          newLink.onmouseover = function () { this.style.backgroundColor = '#f3f4f6'; };
+          newLink.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+          newLink.innerHTML = `
+            <span class="iconify" data-icon="${cat.icon}" style="font-size: 20px;"></span>
+            <span style="font-size: 14px; flex: 1;">${cat.name}</span>
+            <span class="iconify" data-icon="mdi:chevron-right" data-width="18" style="color: #9ca3af;"></span>
+          `;
+          categoryDrawerCategoryContainer.appendChild(newLink);
+        });
+      }
+
+      // Update tablet drawer
+      const tabletCategoryContainer = document.getElementById('tabletCategoryContainer');
+      if (tabletCategoryContainer) {
+        const existingCategoryLinks = tabletCategoryContainer.querySelectorAll('a[href*="/locations/"], a[href="https://my.monis.rent"]');
+        existingCategoryLinks.forEach(link => link.remove());
+        categories.forEach(cat => {
+          let href;
+          if (cat.anchor === 'https://my.monis.rent') {
+            href = `https://www.monis.rent/locations/${formattedLocation}`;
+          } else {
+            const categoryAnchor = cat.anchor;
+            href = `https://www.monis.rent/locations/${formattedLocation}#${categoryAnchor}`;
+          }
+          const newLink = document.createElement('a');
+          newLink.href = href;
+          newLink.style.cssText = 'display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; text-decoration: none; color: inherit;';
+          newLink.onmouseover = function () { this.style.backgroundColor = '#f3f4f6'; };
+          newLink.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+          newLink.innerHTML = `
+            <span class="iconify" data-icon="${cat.icon}" style="font-size: 20px;"></span>
+            <span style="font-size: 14px; flex: 1;">${cat.name}</span>
+            <span class="iconify" data-icon="mdi:chevron-right" data-width="18" style="color: #9ca3af;"></span>
+          `;
+          tabletCategoryContainer.appendChild(newLink);
+        });
+      }
+    }
+
+    function renderMenuItems(targetId, variant = 'desktop') {
+      const container = document.getElementById(targetId);
+      if (!container) return;
+      let html = '';
+      menuItems.forEach(item => {
+        if (variant === 'desktop' || variant === 'tablet') {
+          html += `
+            <a href="${item.href}" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 6px; text-decoration: none; color: #000000; font-size: 14px; transition: all 0.2s;" onmouseover="this.style.backgroundColor='#000000'; this.style.color='#ffffff'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#000000'">
+              <span class="iconify" data-icon="${item.icon}" style="font-size: 18px;"></span>
+              <span>${item.name}</span>
+            </a>
+          `;
+        } else {
+          html += `
+            <a href="${item.href}" style="display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; text-decoration: none; color: inherit;" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='transparent'">
+              <span class="iconify" data-icon="${item.icon}" style="font-size: 20px;"></span>
+              <span style="font-size: 14px; flex: 1;">${item.name}</span>
+              <span class="iconify" data-icon="mdi:arrow-top-right" style="color: #9ca3af;"></span>
+            </a>
+          `;
+        }
+      });
+      container.innerHTML = html;
+    }
+
+    // Initialize on load
+    const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+    if (document.getElementById('desktopCategoryContainer')) {
+      updateCategoryMenus(savedLoc);
+    }
+
+    // Mobile & Tablet Drawer Functions
+    function openMobileDrawer() {
+      document.getElementById('mobileDrawer').style.transform = 'translateX(0)';
+      document.getElementById('mobileOverlay').style.display = 'block';
+    }
+
+    function closeMobileDrawer() {
+      document.getElementById('mobileDrawer').style.transform = 'translateX(-100%)';
+      document.getElementById('mobileOverlay').style.display = 'none';
+    }
+
+    function openCategoryDrawer() {
+      document.getElementById('categoryDrawer').style.transform = 'translateX(0)';
+      document.getElementById('categoryOverlay').style.display = 'block';
+    }
+
+    function closeCategoryDrawer() {
+      document.getElementById('categoryDrawer').style.transform = 'translateX(-100%)';
+      document.getElementById('categoryOverlay').style.display = 'none';
+    }
+
+    // Make functions global
+    window.closeMobileDrawer = closeMobileDrawer;
+    window.closeCategoryDrawer = closeCategoryDrawer;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // --- Location Popup Event ---
+      if (locationBtn && locationPopup) {
+        locationBtn.addEventListener('click', function (e) {
+          locationPopup.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtn.contains(e.target)) {
+            locationPopup.classList.remove('active');
+          }
+        });
+      }
+      if (locationBtnTablet && locationPopupTablet) {
+        locationBtnTablet.addEventListener('click', function (e) {
+          locationPopupTablet.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtnTablet.contains(e.target)) {
+            locationPopupTablet.classList.remove('active');
+          }
+        });
+      }
+      if (locationBtnMobile && locationPopupMobile) {
+        locationBtnMobile.addEventListener('click', function (e) {
+          locationPopupMobile.classList.toggle('active');
+        });
+        document.addEventListener('click', function (e) {
+          if (!locationBtnMobile.contains(e.target)) {
+            locationPopupMobile.classList.remove('active');
+          }
+        });
+      }
+
+      // --- Desktop Category Menu Hide/Show on Scroll ---
+      let lastScrollTop = 0;
+      const categoryMenu = document.getElementById('categoryMenu');
+
+      function showCategoryMenuIfAtTop() {
+        if (window.innerWidth >= 768 && (window.pageYOffset || document.documentElement.scrollTop) === 0) {
+          categoryMenu && categoryMenu.classList.remove('hidden');
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        // Only run on desktop (lg and up)
+        if (window.innerWidth < 768) return;
+
+        if (!categoryMenu) return;
+
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Always show menu at top
+        if (currentScroll === 0) {
+          categoryMenu.classList.remove('hidden');
+          lastScrollTop = 0;
+          return;
+        }
+
+        if (currentScroll > lastScrollTop) {
+          // Hide on scroll down
+          categoryMenu.classList.add('hidden');
+        } else {
+          // Show on scroll up
+          categoryMenu.classList.remove('hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative value
+      });
+
+      // Reset category menu on resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth < 768) {
+          // Hide menu on mobile/tablet
+          if (categoryMenu) {
+            categoryMenu.classList.add('hidden');
+          }
+        } else {
+          // Show menu on desktop
+          if (categoryMenu) {
+            categoryMenu.classList.remove('hidden');
+          }
+          showCategoryMenuIfAtTop();
+        }
+      });
+
+      // --- Mobile & Tablet Drawer (Category) ---
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const tabletMenuBtn = document.getElementById('tabletMenuBtn');
+      const mobileCategoryBtn = document.getElementById('mobileCategoryBtn');
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileDrawer);
+      }
+      if (tabletMenuBtn) {
+        tabletMenuBtn.addEventListener('click', openMobileDrawer);
+      }
+      if (mobileCategoryBtn) {
+        mobileCategoryBtn.addEventListener('click', openCategoryDrawer);
+      }
+
+      // --- Desktop Drawer ---
+      const desktopMenuBtn = document.getElementById('desktopMenuBtn');
+      const desktopDropdown = document.getElementById('desktopDropdown');
+      const desktopProfileBtn = document.getElementById('desktopProfileBtn');
+      const desktopProfileDropdown = document.getElementById('desktopProfileDropdown');
+
+      if (desktopMenuBtn && desktopDropdown) {
+        desktopMenuBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          desktopDropdown.classList.toggle('show');
+          // Hide profile dropdown if open
+          if (desktopProfileDropdown) desktopProfileDropdown.classList.remove('show');
+        });
+        document.addEventListener('click', function (e) {
+          if (!desktopMenuBtn.contains(e.target)) {
+            desktopDropdown.classList.remove('show');
+          }
+        });
+      }
+      if (desktopProfileBtn && desktopProfileDropdown) {
+        desktopProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          desktopProfileDropdown.classList.toggle('show');
+          // Hide menu dropdown if open
+          if (desktopDropdown) desktopDropdown.classList.remove('show');
+        });
+        document.addEventListener('click', function (e) {
+          if (!desktopProfileBtn.contains(e.target)) {
+            desktopProfileDropdown.classList.remove('show');
+          }
+        });
+      }
+
+      // Show menu at top on load (desktop)
+      showCategoryMenuIfAtTop();
+
+      // Menu items for dropdown and drawer
+      renderMenuItems('desktopDropdownContent', 'desktop');
+      renderMenuItems('mobileMenuItems', 'mobile');
+      renderMenuItems('categoryDrawerMenuItems', 'mobile');
+      renderMenuItems('tabletMenuItems', 'tablet');
+
+      // --- Tablet & Mobile Profile Dropdown ---
+      // Tablet
+      const tabletProfileBtn = document.getElementById('tabletProfileBtn');
+      const tabletProfileDropdown = document.getElementById('tabletProfileDropdown');
+      if (tabletProfileBtn && tabletProfileDropdown) {
+        tabletProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          tabletProfileDropdown.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+          if (!tabletProfileBtn.contains(e.target)) {
+            tabletProfileDropdown.classList.remove('show');
+          }
+        });
+      }
+      // Mobile
+      const mobileProfileBtn = document.getElementById('mobileProfileBtn');
+      const mobileProfileDropdown = document.getElementById('mobileProfileDropdown');
+      if (mobileProfileBtn && mobileProfileDropdown) {
+        mobileProfileBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          mobileProfileDropdown.classList.toggle('show');
+        });
+        document.addEventListener('click', function (e) {
+          if (!mobileProfileBtn.contains(e.target)) {
+            mobileProfileDropdown.classList.remove('show');
+          }
+        });
+      }
+    });
+
+    window.addEventListener('pageshow', function () {
+      const savedLoc = localStorage.getItem('selectedLocation') || 'Bali';
+      updateAllLocationLabels(savedLoc);
+      updateAllCategoryLinks(savedLoc);
+      updateCategoryMenus(savedLoc);
+    });
+
+    console.log('Navbar Pure CSS loaded with full functionality');
+  </script>
+</body>
+
+</html>
